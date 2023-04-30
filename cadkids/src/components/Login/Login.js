@@ -1,16 +1,17 @@
-import React from "react";
-import { useState } from "react";
-import { StyleSheet } from "react-native";
-import { View, Text, TextInput,ImageBackground } from "react-native";
+import React,{ useState }  from "react";
+import { StyleSheet }      from "react-native";
+import { View, Text, TextInput, ImageBackground } from "react-native";
 
-import plano_fundo_padrao   from '../static/img/fundo_padrao.png'
-import FlatButton_entrar    from "./form/Flatbutton_entrar";
-import Flatbutton_cadastrar from "./form/Flatbutton_cadastrar";
+import plano_fundo      from '../static/img/fundo_padrao.png'
+import Button_entrar    from "./form/button_entrar";
+import Button_cadastrar from "./form/button_cadastrar";
+import Button_senha     from "./form/button_esqueci_senha";
 
-export default function Login({navigation}){
+
+export default function Login({navigation})
+{
     return(
-        <ImageBackground source={plano_fundo_padrao} style={Style.container}>
-     
+        <ImageBackground source={plano_fundo} style={Style.container}>
             
             <View style={Style.container_login}>
                 <Text style={Style.text} >Cpf</Text>
@@ -25,15 +26,16 @@ export default function Login({navigation}){
                         style={Style.textInput}
                     />
                 
-                <View style={Style.view_flat_entrar}>
-                    <FlatButton_entrar/>
-                </View>
+                <View style={Style.view_but_senha} > <Button_senha /> </View>
+                
+                <View style={Style.view_but_entrar}> <Button_entrar/> </View>
             </View> 
             
-            <View style={Style.view_flat_cadastrar}>
-                <Flatbutton_cadastrar navigation={navigation}/>
+            <View style={Style.view_but_cadastrar}>
+                <Button_cadastrar navigation={navigation}/>
             </View>
    
+
         </ImageBackground>
     );
 }
@@ -43,14 +45,14 @@ const Style = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundImage: `url(${plano_fundo_padrao})`
+        backgroundImage: `url(${plano_fundo})`
     },
     
     container_login:{
         backgroundColor:'rgba(149, 196, 241, 0.326)',
         width :350,
         height:250,
-        
+
         padding:5,
         borderRadius:10,
         alignItems: 'center',
@@ -69,16 +71,14 @@ const Style = StyleSheet.create({
         paddingLeft :12,
         paddingRight:12,        
         borderRadius:16,
-
-        
     },
 
-    view_flat_entrar:{
+    view_but_entrar:{
         padding:22,
         borderRadius:20
     },
 
-    view_flat_cadastrar:{
+    view_but_senha:{
        paddingTop:7
     }
 

@@ -3,9 +3,10 @@ import { StyleSheet } from "react-native";
 import { TouchableOpacity, View, Text } from "react-native";
 
 
-export default function FlatButton({navigation}){
+export default function Button({navigation})
+{
     return(
-        <TouchableOpacity onPress={()=>navigation.navigate('Cadastro1')}>
+        <TouchableOpacity onPress={()=>navigation.navigate('formulario_1')}>
             <View>
                 <Text style={Style.text}>Quero me cadastrar</Text>
             </View>

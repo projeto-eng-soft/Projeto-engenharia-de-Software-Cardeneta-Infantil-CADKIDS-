@@ -1,11 +1,25 @@
-import React from "react";
-import { StyleSheet } from "react-native";
-import { View ,Text } from "react-native";
+import   React          from "react";
+import { useState }     from "react";
+import { StyleSheet }   from "react-native";
+import { View, Text, TextInput,ImageBackground } from "react-native";
 
-export default function Cadastro(){
+import plano_fundo_padrao  from '../static/img/fundo_padrao.png'
+
+export default function Formulario_1(){
     return(
-        <View>
-            <Text>a</Text>
-        </View>
-    )
+        <ImageBackground source={plano_fundo_padrao} style={Style.container}>
+            <View>
+                <Text>A</Text>
+            </View>
+        </ImageBackground>
+    );
 }
+
+const Style = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundImage: `url(${plano_fundo_padrao})`
+    },
+})
