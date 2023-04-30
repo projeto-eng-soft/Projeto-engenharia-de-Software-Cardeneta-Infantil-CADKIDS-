@@ -17,7 +17,7 @@ export default function Button({navigation})
 
 const Style = StyleSheet.create({
     text:{
-        fontSize:15,
+        fontSize:14,
         textDecorationLine:'underline',
         color:'rgb(157, 113, 252)'
     }

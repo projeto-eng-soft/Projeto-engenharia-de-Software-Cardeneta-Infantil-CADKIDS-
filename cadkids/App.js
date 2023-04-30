@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Login     from './src/components/Login/Login';
 import formulario_1 from './src/components/Cadastro/formulario_1/formulario_1';
-
+import formulario_2 from './src/components/Cadastro/formulario_2/formulario_2'
 const Stack = createStackNavigator();
 
 export default function App() {

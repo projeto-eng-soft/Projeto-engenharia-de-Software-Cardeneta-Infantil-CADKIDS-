@@ -26,7 +26,6 @@ const Style = StyleSheet.create({
 
         borderRadius:19,
         fontSize:16,
-
     
     }
 })
