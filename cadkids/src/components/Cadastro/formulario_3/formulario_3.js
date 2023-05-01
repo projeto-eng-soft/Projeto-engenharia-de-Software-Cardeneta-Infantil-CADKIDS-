@@ -2,9 +2,11 @@ import   React,{ useState } from "react";
 import { StyleSheet }     from "react-native";
 import { View, Text, TextInput,ImageBackground } from "react-native";
 
-
-import plano_fundo  from '../static/img/fundo_padrao.png';
+import { getStyles } from "./estilo/style";
+import plano_fundo  from 'static/img/fundo_padrao.png';
 import Button_criar from './form_touch/button_cria';
+
+const Style = getStyles();
 
 export default function Formulario_3({navigation}){
     return(
@@ -41,44 +43,3 @@ export default function Formulario_3({navigation}){
         </ImageBackground>
     );
 }
-
-
-const Style = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundImage: `url(${plano_fundo})`
-    },
-
-    formulario_view:{
-        backgroundColor:'rgba(221, 222, 239, 0.419)',
-        alignItems: 'center',
-        width :350,
-        height:330,
-        padding:5,
-        borderRadius:10,
-    },
-
-    text:{
-        fontSize:17,
-        marginTop:15,
-        marginLeft:4
-    },
-    
-    textInput:{
-        backgroundColor:'white',
-        fontSize:14,
-        width :300,
-        height:40 ,
-        paddingLeft :12,
-        paddingRight:12,        
-        borderRadius:16,
-    },
-
-    button_continua:{
-        padding:20,
-        borderRadius:20
-        
-    }
-})

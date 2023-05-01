@@ -3,7 +3,7 @@ import { StyleSheet }     from "react-native";
 import { View, Text, TextInput,ImageBackground } from "react-native";
 
 
-import plano_fundo      from '../static/img/fundo_padrao.png';
+import plano_fundo      from 'static/img/fundo_padrao.png';
 import Button_continuar from './form_touch/button_continua';
 
 export default function Formulario_1({navigation}){
