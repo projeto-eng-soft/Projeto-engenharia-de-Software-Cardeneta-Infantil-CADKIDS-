@@ -6,9 +6,9 @@ import { TouchableOpacity, View, Text } from "react-native";
 export default function Button({navigation})
 {
     return(
-        <TouchableOpacity onPress={()=>navigation.navigate('formulario_2')}>
+        <TouchableOpacity >
             <View>
-                <Text style={Style.text}>Continuar</Text>
+                <Text style={Style.text}>Criar conta</Text>
             </View>
         </TouchableOpacity>
     );

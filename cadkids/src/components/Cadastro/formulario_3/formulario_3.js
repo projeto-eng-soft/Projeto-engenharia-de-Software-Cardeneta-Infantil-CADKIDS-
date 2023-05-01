@@ -3,46 +3,38 @@ import { StyleSheet }     from "react-native";
 import { View, Text, TextInput,ImageBackground } from "react-native";
 
 
-import plano_fundo      from '../static/img/fundo_padrao.png';
-import Button_continuar from './form_touch/button_continua';
+import plano_fundo  from '../static/img/fundo_padrao.png';
+import Button_criar from './form_touch/button_cria';
 
-export default function Formulario_1({navigation}){
+export default function Formulario_3({navigation}){
     return(
         <ImageBackground source={plano_fundo} style={Style.container}>
             <View style={Style.formulario_view}>
                 <View>
-                    <Text style={Style.text}>Nome Completo </Text>
+                    <Text style={Style.text}>E-mail</Text>
                     <TextInput 
-                        placeholder  ="Digite seu nome"
-                        style={Style.textInput}
+                        placeholder  = "Digite seu nome"
+                        style        = {Style.textInput}
                     />
                     
-                    <Text style={Style.text}>Data de nascimento </Text>
+                    <Text style={Style.text}>Crie sua senha </Text>
                     <TextInput
-                        
-                        style={Style.textInput}
+                        placeholder = "Digite a senha"
+                        style       = {Style.textInput}
                     />
 
-                    <Text style={Style.text}>Registro Geral (R.G)</Text>
+                    <Text style={Style.text}>Confirme sua senha</Text>
                     <TextInput 
-                        placeholder  ="Digite seu r.g"
+                        placeholder  ="Repita a senha"
                         style        = {Style.textInput}
                         keyboardType = "numeric"
                         maxLength    = {7}
 
                     />
-
-                    <Text style={Style.text}>Cadastro de pessoa física (C.P.F)</Text>
-                    <TextInput 
-                        placeholder  ="Digite seu Cpf"
-                        style        = {Style.textInput}
-                        keyboardType = "numeric"
-                        maxLength    = {11}
-                    />
                 </View>
 
                 <View style = {Style.button_continua}>
-                    <Button_continuar navigation={navigation}/>
+                    <Button_criar />
                 </View>
             
             </View>
@@ -63,7 +55,7 @@ const Style = StyleSheet.create({
         backgroundColor:'rgba(221, 222, 239, 0.419)',
         alignItems: 'center',
         width :350,
-        height:410,
+        height:330,
         padding:5,
         borderRadius:10,
     },

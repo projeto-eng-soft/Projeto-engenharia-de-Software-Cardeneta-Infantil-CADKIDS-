@@ -98,6 +98,4 @@ const Style = StyleSheet.create({
     button_cadastrar:{
        paddingTop:7
     }
-
-    
 })
