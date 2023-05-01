@@ -3,16 +3,17 @@ import { StyleSheet } from "react-native";
 import { TouchableOpacity, View, Text } from "react-native";
 
 
-export default function Button ()
+const Button_entrar = ({onPress}) =>
 {
     return(
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onPress}>
             <View >
                 <Text style={Style.text}>Entrar</Text>
             </View>
         </TouchableOpacity>
     );
 }
+export default Button_entrar
 
 
 const Style = StyleSheet.create({

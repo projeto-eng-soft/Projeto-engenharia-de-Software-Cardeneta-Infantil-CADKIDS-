@@ -1,5 +1,5 @@
 import   React,{ useState } from "react";
-import { StyleSheet, View, Text, TextInput, ImageBackground } from "react-native";
+import { View, Text, TextInput, ImageBackground } from "react-native";
 
 import { getStyles }    from "./estilo/style"
 import plano_fundo      from 'static/img/fundo_padrao.png';
@@ -9,6 +9,8 @@ import Button_continuar from './form_touch/button_continua';
 const Style = getStyles();
 
 export default function Formulario_2({navigation}){
+
+
     return(
         <ImageBackground source={plano_fundo} style={Style.container}>
             

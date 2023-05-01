@@ -1,21 +1,32 @@
 import React ,{ useState } from "react";
-import { StyleSheet } from "react-native";
 import { View, Text, TextInput,ImageBackground ,Image } from "react-native";
 
-
+import { Usuario }      from "./crud/usuario";
 import { getStyles }    from "./estilo/style";
 import plano_fundo      from 'static/img/fundo_padrao.png';
 import Button_entrar    from "./form_touch/button_entrar";
-import Button_cadastrar from "./form_touch/button_cadastrar";
 import Button_senha     from "./form_touch/button_esqueci_senha";
+import Button_cadastrar from "./form_touch/button_cadastrar";
 
 const Style = getStyles();
 
 export default function Login({navigation}){
 
-    const [cpf   ,getcpf  ] = useState(null)
-    const [senha ,getsenha] = useState(null)
+    const [cpf   ,setCpf  ] = useState(null)
+    const [senha ,setSenha] = useState(null)
 
+    const Entrar = () => {
+        setSenha(cpf)
+        if (Usuario(cpf,senha))
+        {
+            setCpf(null)
+            setSenha(null)
+            navigation.navigate('cliente')
+        }
+        setCpf(null)
+        setSenha(null)
+    }
+    
     return(
         <ImageBackground source={plano_fundo} style={Style.container}>
                 
@@ -27,7 +38,7 @@ export default function Login({navigation}){
                         maxLength    = {11}
                         style        = {Style.textInput}
                         value        = {cpf}
-                        onChangeText = {getcpf}
+                        onChangeText = {setCpf}
                     />
 
                 <Text style={Style.text} >Senha</Text>
@@ -35,7 +46,7 @@ export default function Login({navigation}){
                         placeholder  = "Digite sua senha"
                         style        = {Style.textInput}
                         value        = {senha}
-                        onChangeText = {getsenha}
+                        onChangeText = {setSenha}
                     />
                 
                 <View style={Style.Button_senha}>
@@ -43,12 +54,12 @@ export default function Login({navigation}){
                 </View>
                 
                 <View style={Style.button_entrar}> 
-                    <Button_entrar onPress={()=>dados()}/> 
+                    <Button_entrar onPress={Entrar}/> 
                 </View>
             </View> 
             
             <View style={Style.button_cadastrar}>
-                <Button_cadastrar navigation={navigation}/>
+                <Button_cadastrar navigation={navigation} />
             </View>
    
         </ImageBackground>
