@@ -10,6 +10,8 @@ const Style = getStyles();
 
 export default function Formulario_2({navigation}){
 
+    const [Cep,setCep]           = useState(null);
+    const [nome_Rua,setNome_Rua] = useState(null);
 
     return(
         <ImageBackground source={plano_fundo} style={Style.container}>

@@ -1,5 +1,4 @@
 import   React,{ useState } from "react";
-import { StyleSheet }     from "react-native";
 import { View, Text, TextInput,ImageBackground } from "react-native";
 
 import { getStyles } from "./estilo/style";

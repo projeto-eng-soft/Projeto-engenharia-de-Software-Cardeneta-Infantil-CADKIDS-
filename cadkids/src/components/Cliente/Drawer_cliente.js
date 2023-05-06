@@ -1,4 +1,3 @@
-import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import Cliente from "./pagina/Cliente";
@@ -10,7 +9,7 @@ export default function Page() {
     return (
       <Drawer.Navigator>
         <Drawer.Screen name="Cliente" component={Cliente} />
-        <Drawer.Screen name="Ajuda"   component={Ajuda} />
+        <Drawer.Screen name="Ajuda"   component={Ajuda}   />
       </Drawer.Navigator>
     );
 }
