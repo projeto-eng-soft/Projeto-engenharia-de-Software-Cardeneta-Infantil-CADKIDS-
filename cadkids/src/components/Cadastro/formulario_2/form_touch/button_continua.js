@@ -6,7 +6,7 @@ import { TouchableOpacity, View, Text } from "react-native";
 export default function Button({navigation})
 {
     return(
-        <TouchableOpacity onPress={()=>navigation.navigate('formulario_3')}>
+        <TouchableOpacity onPress={()=>navigation.navigate('Formulario_3')}>
             <View>
                 <Text style={Style.text}>Continuar</Text>
             </View>

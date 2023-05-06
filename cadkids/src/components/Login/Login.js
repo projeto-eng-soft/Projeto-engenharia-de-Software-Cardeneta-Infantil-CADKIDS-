@@ -21,7 +21,7 @@ export default function Login({navigation}){
         {
             setCpf(null)
             setSenha(null)
-            navigation.navigate('cliente')
+            navigation.navigate('Home_Cliente')
         }
         setCpf(null)
         setSenha(null)
