@@ -1,5 +1,5 @@
 import { StyleSheet }   from "react-native";
-import  plano_fundo     from 'static/img/fundo_padrao.png';
+import  plano_fundo     from 'static/imagens/fundo_padrao.png';
 
 export const getStyles = () => 
 {

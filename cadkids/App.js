@@ -6,7 +6,7 @@ import Login        from './src/components/Login/Login';
 import Formulario_1 from './src/components/Cadastro/formulario_1/formulario_1';
 import Formulario_2 from './src/components/Cadastro/formulario_2/formulario_2';
 import Formulario_3 from './src/components/Cadastro/formulario_3/formulario_3';
-import Home_Cliente from './src/components/Cliente/cliente';
+import Home_Cliente from './src/components/Cliente/Home_Cliente';
 
 const Stack = createStackNavigator();
 

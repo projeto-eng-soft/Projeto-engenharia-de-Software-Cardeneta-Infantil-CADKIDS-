@@ -1,9 +1,10 @@
 import React ,{ useState } from "react";
-import { View, Text, TextInput,ImageBackground ,Image } from "react-native";
+import { View, Text, TextInput,ImageBackground } from "react-native";
 
 import { Usuario }      from "./crud/usuario";
 import { getStyles }    from "./estilo/style";
-import plano_fundo      from 'static/img/fundo_padrao.png';
+
+import plano_fundo      from "static/imagens/fundo_padrao.png";
 import Button_entrar    from "./form_touch/button_entrar";
 import Button_senha     from "./form_touch/button_esqueci_senha";
 import Button_cadastrar from "./form_touch/button_cadastrar";

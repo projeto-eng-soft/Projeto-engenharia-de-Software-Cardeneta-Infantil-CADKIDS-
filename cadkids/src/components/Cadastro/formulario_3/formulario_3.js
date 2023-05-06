@@ -3,8 +3,8 @@ import { StyleSheet }     from "react-native";
 import { View, Text, TextInput,ImageBackground } from "react-native";
 
 import { getStyles } from "./estilo/style";
-import plano_fundo  from 'static/img/fundo_padrao.png';
-import Button_criar from './form_touch/button_cria';
+import plano_fundo   from 'static/imagens/fundo_padrao.png';
+import Button_criar  from './form_touch/button_cria';
 
 const Style = getStyles();
 

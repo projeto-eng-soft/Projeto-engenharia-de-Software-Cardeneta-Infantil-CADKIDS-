@@ -1,8 +1,8 @@
 import   React,{ useState } from "react";
 import { View, Text, TextInput,ImageBackground } from "react-native";
 
-import { getStyles } from "./estilo/style";
-import plano_fundo      from 'static/img/fundo_padrao.png';
+import { getStyles }    from "./estilo/style";
+import plano_fundo      from 'static/imagens/fundo_padrao.png';
 import Button_continuar from './form_touch/button_continua';
 
 const Style = getStyles();
