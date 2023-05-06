@@ -2,10 +2,10 @@ import { NavigationContainer  }       from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
-import Login        from './src/components/Login/Login';
-import Formulario_1 from './src/components/Cadastro/formulario_1/formulario_1';
-import Formulario_2 from './src/components/Cadastro/formulario_2/formulario_2';
-import Formulario_3 from './src/components/Cadastro/formulario_3/formulario_3';
+import Login           from './src/components/Login/Login';
+import Formulario_1    from './src/components/Cadastro/formulario_1/formulario_1';
+import Formulario_2    from './src/components/Cadastro/formulario_2/formulario_2';
+import Formulario_3    from './src/components/Cadastro/formulario_3/formulario_3';
 
 import Cliente         from './src/components/Cliente/Drawer_cliente';
 import Recuperar_senha from './src/components/Recuperar_senha/Recuperar_senha';
