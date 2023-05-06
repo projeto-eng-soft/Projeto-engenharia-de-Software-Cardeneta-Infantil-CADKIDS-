@@ -13,12 +13,12 @@ export const getStyles = () =>
         },
     
         formulario_view:{
-            backgroundColor:'rgba(221, 222, 239, 0.419)',
+            backgroundColor:'rgba(221, 222, 239, 0.519)',
             alignItems: 'center',
             width :350,
             height:410,
             padding:5,
-            borderRadius:10,
+            borderRadius:20,
         },
     
         text:{

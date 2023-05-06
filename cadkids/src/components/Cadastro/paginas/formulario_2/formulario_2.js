@@ -10,9 +10,13 @@ const Style = getStyles();
 
 export default function Formulario_2({navigation}){
 
-    const [Cep,setCep]           = useState(null);
-    const [nome_Rua,setNome_Rua] = useState(null);
-
+    const [Cep,setCep]                     = useState(null);
+    const [nome_Rua,setNome_Rua]           = useState(null);
+    const [numero_Rua,setNumero_Rua]       = useState(null);
+    const [Bairro,setBairro]               = useState(null);
+    const [Completemento,setCompletemento] = useState(null);
+    const [Cidade,setCidade]               = useState(null);
+    const [Estado,setEstado]               = useState(null);
     return(
         <ImageBackground source={plano_fundo} style={Style.container}>
             
@@ -24,6 +28,9 @@ export default function Formulario_2({navigation}){
                         style        = {Style.textInput}
                         keyboardType = "numeric"
                         maxLength    = {8}
+                        value        = {Cep}
+                        onChangeText = {setCep}
+
                     />
 
                     <View style={Style.container_bairro_rua}>
@@ -32,6 +39,8 @@ export default function Formulario_2({navigation}){
                             <TextInput
                                 placeholder  ="Digite o nome da rua"
                                 style        = {Style.textInput_rua}
+                                value        = {nome_Rua}
+                                onChangeText = {setNome_Rua}
                             />
                         </View>
 
@@ -41,6 +50,8 @@ export default function Formulario_2({navigation}){
                                 placeholder  ="Digite o numero"
                                 keyboardType ='numeric'
                                 style        = {Style.textInput_numero}
+                                value        = {numero_Rua}
+                                onChangeText = {setNome_Rua}
                             />
                         </View>
                     </View>
@@ -50,6 +61,8 @@ export default function Formulario_2({navigation}){
                         placeholder  ="Digite nome de seu bairro"
                         style        = {Style.textInput}
                         maxLength    = {7}
+                        value        = {Bairro}
+                        onChangeText = {setBairro}
 
                     />
 
@@ -58,6 +71,9 @@ export default function Formulario_2({navigation}){
                         placeholder  ="Digite seu complemento"
                         style        = {Style.textInput}
                         maxLength    = {11}
+                        value        = {Completemento}
+                        onChangeText = {setCompletemento}
+
                     />
 
                     <Text style={Style.text}>Cidade</Text>
@@ -65,6 +81,9 @@ export default function Formulario_2({navigation}){
                         placeholder  ="Digite sua cidade"
                         style        = {Style.textInput}
                         maxLength    = {11}
+                        value        = {Cidade}
+                        onChangeText = {setCidade}
+
                     />
 
                     <Text style={Style.text}>Estado</Text>
@@ -72,6 +91,8 @@ export default function Formulario_2({navigation}){
                         placeholder  ="Digite seu Estado"
                         style        = {Style.textInput}
                         maxLength    = {11}
+                        value        = {Estado}
+                        onChangeText = {setEstado}
                     />
                 </View>
 

@@ -7,32 +7,45 @@ export const getStyles = () =>
         container: {
             flex: 1,
             alignItems: 'center',
-            justifyContent: 'center',
-            backgroundImage: `url(${plano_fundo})`
+            justifyContent: 'flex-start',
+            backgroundImage: `url(${plano_fundo})`,
+    
+        },
+        icone:{
+            width:100,
+            height:100,
+            marginTop:100,
+            marginBottom:80
+        },
+        icone_cadkids:{
+            width:110,
+            height:50,
+            marginTop:190,
         },
         
         container_login:{
-            backgroundColor:'rgba(149, 196, 241, 0.326)',
+            backgroundColor:'rgba(255, 255, 255, 0.419)',
             alignItems: 'center',
             width :350,
-            height:285,
+            height:290,
             padding:5,
-            borderRadius:10,
+            borderRadius:20,
         },
     
         text:{
             fontSize:17,
-            paddingTop:15
+            marginTop:20,
         },
     
         textInput:{
-            backgroundColor:'white',
+            backgroundColor:'rgba(255, 255, 255, 0)',
             fontSize:14,
             width :290,
             height:42 ,
             paddingLeft :12,
             paddingRight:12,        
-            borderRadius:16,
+            borderRadius:0,
+            borderBottomWidth:1.5
         },
     
         Button_senha:{

@@ -22,7 +22,7 @@ export const getStyles = () =>
             width :350,
             height:540,
             padding:5,
-            borderRadius:10,
+            borderRadius:20,
         },
     
         text:{

@@ -21,13 +21,16 @@ export default function Formulario_1({navigation}){
                     <Text style={Style.text}>Nome Completo </Text>
                     <TextInput 
                         placeholder  ="Digite seu nome"
-                        style={Style.textInput}
+                        style        = {Style.textInput}
+                        value        = {Nome}
+                        onChange     = {setNome}
                     />
                     
                     <Text style={Style.text}>Data de nascimento </Text>
                     <TextInput
-                        
-                        style={Style.textInput}
+                        style        = {Style.textInput}
+                        value        = {dataNascimento}
+                        onChangeText = {setdataNascimento}
                     />
 
                     <Text style={Style.text}>Registro Geral (R.G)</Text>
@@ -36,6 +39,8 @@ export default function Formulario_1({navigation}){
                         style        = {Style.textInput}
                         keyboardType = "numeric"
                         maxLength    = {7}
+                        value        = {Rg}
+                        onChangeText = {setRg}
 
                     />
 
@@ -45,6 +50,8 @@ export default function Formulario_1({navigation}){
                         style        = {Style.textInput}
                         keyboardType = "numeric"
                         maxLength    = {11}
+                        value        = {Cpf}
+                        onChangeText = {setCpf}
                     />
                 </View>
 

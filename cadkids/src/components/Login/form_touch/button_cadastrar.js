@@ -19,6 +19,6 @@ const Style = StyleSheet.create({
     text:{
         fontSize:14,
         textDecorationLine:'underline',
-        color:'rgb(157, 113, 252)'
+        color:'rgba(255, 0, 157, 0.712)'
     }
 })
