@@ -3,9 +3,9 @@ import { StyleSheet } from "react-native";
 import { TouchableOpacity, View, Text } from "react-native";
 
 
-export default function Button(){
+export default function Button({onPress}){
     return(
-        <TouchableOpacity /*onPress={()=>navigation.navigate('formulario_1')}*/>
+        <TouchableOpacity onPress={onPress}>
             <View>
                 <Text style={Style.text}>Esqueceu sua senha?</Text>
             </View>

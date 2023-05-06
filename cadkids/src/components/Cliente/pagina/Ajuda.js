@@ -1,11 +1,10 @@
 import React from "react";
 import { View , Text } from "react-native";
 
-export default function Cliente({navigation})
-{
+export default function Menu_op(){
     return(
         <View>
-            <Text>oi kkkk ,ou</Text>
+            <Text>a</Text>
         </View>
     );
 }

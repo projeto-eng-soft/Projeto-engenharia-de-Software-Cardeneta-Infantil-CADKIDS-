@@ -8,6 +8,7 @@ import plano_fundo      from "static/imagens/fundo_padrao.png";
 import Button_entrar    from "./form_touch/button_entrar";
 import Button_senha     from "./form_touch/button_esqueci_senha";
 import Button_cadastrar from "./form_touch/button_cadastrar";
+import Recuperar_senha from "../Recuperar_senha/Recuperar_senha";
 
 const Style = getStyles();
 
@@ -15,17 +16,18 @@ export default function Login({navigation}){
 
     const [cpf   ,setCpf  ] = useState(null)
     const [senha ,setSenha] = useState(null)
-
     const Entrar = () => {
         setSenha(cpf)
         if (Usuario(cpf,senha))
         {
-            setCpf(null)
-            setSenha(null)
-            navigation.navigate('Home_Cliente')
+            setCpf(null) ;setSenha(null)
+            navigation.navigate('home_Cliente', { screen: 'Cliente' });
         }
-        setCpf(null)
-        setSenha(null)
+        setCpf(null) ; setSenha(null)
+    }
+
+    const Senha = () =>{
+        navigation.navigate('Recuperar_senha')
     }
     
     return(
@@ -51,7 +53,7 @@ export default function Login({navigation}){
                     />
                 
                 <View style={Style.Button_senha}>
-                    <Button_senha />
+                    <Button_senha  onPress={Senha}/>
                 </View>
                 
                 <View style={Style.button_entrar}> 
