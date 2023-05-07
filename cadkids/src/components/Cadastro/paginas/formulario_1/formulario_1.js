@@ -9,10 +9,10 @@ const Style = getStyles();
 
 export default function Formulario_1({navigation}){
 
-    const [Nome,setNome] = useState(null)
-    const [dataNascimento,setdataNascimento] = useState(null)
-    const [Rg,setRg]    = useState(null)
-    const [Cpf,setCpf]  = useState(null)
+    const [Nome,setNome]                     = useState(null);
+    const [dataNascimento,setdataNascimento] = useState(null);
+    const [Rg,setRg]                         = useState(null);
+    const [Cpf,setCpf]                       = useState(null);
 
     return(
         <ImageBackground source={plano_fundo} style={Style.container}>

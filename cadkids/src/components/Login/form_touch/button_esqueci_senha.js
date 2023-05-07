@@ -1,6 +1,4 @@
-import React from "react";
-import { StyleSheet } from "react-native";
-import { TouchableOpacity, View, Text } from "react-native";
+import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
 
 
 export default function Button({onPress}){
@@ -16,8 +14,8 @@ export default function Button({onPress}){
 
 const Style = StyleSheet.create({
     text:{
+        color:'rgb(31, 138, 239)',
         textDecorationLine:'underline',
         fontSize:12,
-        color:'rgb(31, 138, 239)'
     }
 })

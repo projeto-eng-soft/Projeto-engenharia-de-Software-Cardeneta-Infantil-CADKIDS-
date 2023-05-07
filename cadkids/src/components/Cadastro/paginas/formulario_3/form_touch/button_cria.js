@@ -3,10 +3,10 @@ import { StyleSheet } from "react-native";
 import { TouchableOpacity, View, Text } from "react-native";
 
 
-export default function Button({navigation})
+export default function Button({onPress})
 {
     return(
-        <TouchableOpacity >
+        <TouchableOpacity onPress={onPress}>
             <View>
                 <Text style={Style.text}>Criar conta</Text>
             </View>

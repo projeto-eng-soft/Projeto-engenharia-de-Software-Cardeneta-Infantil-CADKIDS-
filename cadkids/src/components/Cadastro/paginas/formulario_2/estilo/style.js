@@ -5,9 +5,9 @@ export const getStyles = () =>
 {
     const Style = StyleSheet.create({
         container: {
-            flex: 1,
-            alignItems: 'center',
-            justifyContent: 'center',
+            flex           : 1,
+            alignItems     : 'center',
+            justifyContent : 'center',
             backgroundImage: `url(${plano_fundo})`
         },
         
@@ -19,38 +19,36 @@ export const getStyles = () =>
         formulario_view:{
             backgroundColor:'rgba(221, 222, 239, 0.419)',
             alignItems: 'center',
-            width :350,
-            height:540,
+            width  :350,
+            height :540,
             padding:5,
             borderRadius:20,
         },
     
         text:{
-            fontSize:17,
-            marginTop:10,
+            fontSize :17,
+            marginTop :10,
             marginLeft:4
         },
     
         text_bairro_rua:{
-            fontSize:17,
+            fontSize  :17,
             marginLeft:4
-    
         },
     
         textInput_rua:{
             backgroundColor:'white',
-            width:180,
-            height:40,
+            width       :180,
+            height      :40,
             paddingLeft :12,
             paddingRight:12, 
             borderRadius:16
-    
         },
         
         textInput_numero:{
             backgroundColor:'white',
-            width:100,
-            height:40,
+            width       :100,
+            height      :40,
             paddingLeft :12,
             paddingRight:12, 
             borderRadius:16
@@ -59,8 +57,8 @@ export const getStyles = () =>
         textInput:{
             backgroundColor:'white',
             fontSize:14,
-            width :300,
-            height:40 ,
+            width       :300,
+            height      :40 ,
             paddingLeft :12,
             paddingRight:12,        
             borderRadius:16,
@@ -69,7 +67,6 @@ export const getStyles = () =>
         button_continua:{
             padding:20,
             borderRadius:20
-            
         }
     })
     return Style;

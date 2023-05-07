@@ -10,6 +10,8 @@ import plano_fundo      from "static/imagens/fundo_padrao.png";
 import Button_entrar    from "./form_touch/button_entrar";
 import Button_senha     from "./form_touch/button_esqueci_senha";
 import Button_cadastrar from "./form_touch/button_cadastrar";
+import Visivel_senha    from "./form_touch/button_senha";
+
 
 const Style = getStyles();
 
@@ -18,8 +20,12 @@ export default function Login( {navigation} )
 
     const [cpf   ,setCpf  ] = useState(null)
     const [senha ,setSenha] = useState(null)
+    const [Olho  ,setOlho] = useState(true)
 
-    const Entrar = () => {
+    const Senha_visibilidade = () => setOlho(!Olho)
+    
+    const Entrar = () =>
+    {
 
         if ( Usuario(cpf,senha) )
         {
@@ -31,15 +37,19 @@ export default function Login( {navigation} )
         }
     }
 
-    const Senha = () =>{
+    const Senha = () =>
+    {
         navigation.navigate('Recuperar_senha')
     }
     
+
     return(
         <ImageBackground source={plano_fundo} style={Style.container}>
+            
             <View>
                 <Image source={Logo} style={Style.icone}/>
             </View>
+
             <View style={Style.container_login}>
                 <Text style={Style.text} >Cpf</Text>
                     <TextInput 
@@ -50,15 +60,27 @@ export default function Login( {navigation} )
                         value        = {cpf}
                         onChangeText = {setCpf}
                     />
-
-                <Text style={Style.text} >Senha</Text>
-                    <TextInput 
-                        placeholder  = "Digite sua senha"
-                        style        = {Style.textInput}
-                        value        = {senha}
-                        onChangeText = {setSenha}
-                    />
                 
+                <Text style={Style.text} >Senha</Text>
+
+                <View>
+
+                    <View>                 
+                        <TextInput 
+                            placeholder     = "Digite sua senha"
+                            style           = {Style.textInput}
+                            maxLength       = {25}
+                            value           = {senha}
+                            onChangeText    = {setSenha} 
+                            secureTextEntry = {Olho}
+                        />
+                    </View> 
+                    <View style={Style.container_icone}>
+                        <Visivel_senha onPress={Senha_visibilidade}/>
+                    </View>
+
+                </View>
+               
                 <View style={Style.Button_senha}>
                     <Button_senha  onPress={Senha}/>
                 </View>
