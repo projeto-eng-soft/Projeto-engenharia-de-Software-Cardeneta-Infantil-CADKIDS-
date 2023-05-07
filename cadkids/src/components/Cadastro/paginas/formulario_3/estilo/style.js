@@ -1,5 +1,5 @@
 import { StyleSheet }   from "react-native";
-import  plano_fundo     from 'static/imagens/fundo_padrao.png';
+import  plano_de_fundo     from 'static/imagens/plano_de_fundo_padrao.png';
 
 export const getStyles = () => 
 {
@@ -8,7 +8,7 @@ export const getStyles = () =>
             flex: 1,
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundImage: `url(${plano_fundo})`
+            backgroundImage: `url(${plano_de_fundo})`
         },
     
         formulario_view:{
@@ -21,7 +21,7 @@ export const getStyles = () =>
         },
     
         text:{
-            fontSize:17,
+            fontSize:16,
             marginTop:15,
             marginLeft:4
         },

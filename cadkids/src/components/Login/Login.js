@@ -1,12 +1,12 @@
 import React ,{ useState } from "react";
-import { View, Text, TextInput,ImageBackground , Image } from "react-native";
+import { View, Text, TextInput,ImageBackground , Image  } from "react-native";
 
 import { Usuario }      from "./crud/usuario";
 import { getStyles }    from "./estilo/style";
 
 import Logo             from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
-import plano_fundo      from "static/imagens/fundo_padrao.png";
+import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
 import Button_entrar    from "./form_touch/button_entrar";
 import Button_senha     from "./form_touch/button_esqueci_senha";
 import Button_cadastrar from "./form_touch/button_cadastrar";
@@ -22,8 +22,8 @@ export default function Login( {navigation} )
     const [senha ,setSenha] = useState(null)
     const [Olho  ,setOlho] = useState(true)
 
-    const Senha_visibilidade = () => setOlho(!Olho)
-    
+    const Senha_visibilidade   = () => setOlho(!Olho)
+
     const Entrar = () =>
     {
 
@@ -33,7 +33,7 @@ export default function Login( {navigation} )
             navigation.navigate('home_Cliente', { screen: 'Cliente' });
         }else{
             setCpf(null) ;setSenha(null)
-            alert('Usuario ou Senha Invalid')
+            alert('Usuario ou Senha Invalido')
         }
     }
 
@@ -44,7 +44,7 @@ export default function Login( {navigation} )
     
 
     return(
-        <ImageBackground source={plano_fundo} style={Style.container}>
+        <ImageBackground source={plano_de_fundo} style={Style.container}>
             
             <View>
                 <Image source={Logo} style={Style.icone}/>
@@ -53,8 +53,8 @@ export default function Login( {navigation} )
             <View style={Style.container_login}>
                 <Text style={Style.text} >Cpf</Text>
                     <TextInput 
-                        placeholder  ="Digite seu cpf"
-                        keyboardType ="numeric"
+                        placeholder  = "Digite seu cpf"
+                        keyboardType = "numeric"
                         maxLength    = {11}
                         style        = {Style.textInput}
                         value        = {cpf}
@@ -64,7 +64,6 @@ export default function Login( {navigation} )
                 <Text style={Style.text} >Senha</Text>
 
                 <View>
-
                     <View>                 
                         <TextInput 
                             placeholder     = "Digite sua senha"

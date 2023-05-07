@@ -7,9 +7,9 @@ const Drawer = createDrawerNavigator()
 
 export default function Page() {
     return (
-      <Drawer.Navigator>
-        <Drawer.Screen name="Cliente" component={Cliente} />
-        <Drawer.Screen name="Ajuda"   component={Ajuda}   />
-      </Drawer.Navigator>
+        <Drawer.Navigator>
+            <Drawer.Screen name="Cliente" component={Cliente} />
+            <Drawer.Screen name="Ajuda"   component={Ajuda}   />
+        </Drawer.Navigator>
     );
 }

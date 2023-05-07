@@ -2,7 +2,7 @@ import   React,{ useState } from "react";
 import { View, Text, TextInput, ImageBackground } from "react-native";
 
 import { getStyles }    from "./estilo/style"
-import plano_fundo      from 'static/imagens/fundo_padrao.png';
+import plano_de_fundo      from 'static/imagens/plano_de_fundo_padrao.png';
 import Button_continuar from './form_touch/button_continua';
 
 
@@ -18,7 +18,7 @@ export default function Formulario_2({navigation}){
     const [Cidade,setCidade]               = useState(null);
     const [Estado,setEstado]               = useState(null);
     return(
-        <ImageBackground source={plano_fundo} style={Style.container}>
+        <ImageBackground source={plano_de_fundo} style={Style.container}>
             
             <View style={Style.formulario_view}>
                 <View>
