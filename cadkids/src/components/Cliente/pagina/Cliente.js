@@ -1,10 +1,49 @@
-import React from "react";
-import { View , Text } from "react-native";
+import { useState } from "react";
+import { TouchableOpacity,View , Text , ImageBackground ,Image} from "react-native";
 
-export default function Cliente(){
+import { getStyles }            from '../estilo/Cliente';
+import plano_de_fundo           from 'static/imagens/plano_de_fundo_padrao.png';
+import Icone_criancas           from 'static/icons/icon_crianças.png';
+import Button_menu              from "../form_touch/button_menu";
+import Button_adicionar_crianca from '../form_touch/button_cadastrar_crianca';
+
+const Style = getStyles();
+
+export default function Cliente({navigation}){
+    const [view, setView] = useState([]);
+
+    const Crianca = () =>{
+       
+        setView([view,
+            <TouchableOpacity style={Style.container_crianca} value={1}>
+                <Text>oi</Text>
+            </TouchableOpacity>
+        ])
+    }
+    const Abrir_menu = () => {
+        navigation.openDrawer();
+    }
+
     return(
-        <View>
-            <Text>a</Text>
-        </View>
+        <ImageBackground source={plano_de_fundo} style={Style.container}>
+            <View style={Style.container_button_menu}>
+                <Button_menu onPress={Abrir_menu}/>      
+            </View>
+
+            <View>
+                
+
+            </View>
+            <View>
+                <Image source={Icone_criancas} style={Style.icone_crianca}/>
+            </View>
+            
+            {view.map((view) => view)} 
+
+            <View style={Style.container_button_adcionar}> 
+                <Text style={Style.text_cadastrar_crianca}>Cadastrar Criança</Text>
+                <Button_adicionar_crianca navigation={navigation}/>
+            </View>
+        </ImageBackground>
     );
 }

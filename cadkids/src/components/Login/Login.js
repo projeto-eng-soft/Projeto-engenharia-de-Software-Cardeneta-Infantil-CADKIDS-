@@ -37,11 +37,7 @@ export default function Login( {navigation} )
         }
     }
 
-    const Senha = () =>
-    {
-        navigation.navigate('Recuperar_senha')
-    }
-    
+
 
     return(
         <ImageBackground source={plano_de_fundo} style={Style.container}>
@@ -81,7 +77,7 @@ export default function Login( {navigation} )
                 </View>
                
                 <View style={Style.Button_senha}>
-                    <Button_senha  onPress={Senha}/>
+                    <Button_senha  navigation={navigation}/>
                 </View>
                 
                 <View style={Style.button_entrar}> 

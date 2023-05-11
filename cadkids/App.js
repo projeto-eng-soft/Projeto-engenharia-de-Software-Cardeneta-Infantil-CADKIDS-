@@ -10,7 +10,7 @@ import Formulario_3    from './src/components/Cadastro/paginas/formulario_3/form
 import Cliente         from './src/components/Cliente/Drawer_cliente';
 import Recuperar_senha from './src/components/Recuperar_senha/Recuperar_senha';
 
-
+import Cadastro_crianca from './src/components/Cadastro/paginas/cadastro_criança/Cadastro_crianca'
 const Stack  = createNativeStackNavigator();
 
 export default function App() {
@@ -24,6 +24,7 @@ export default function App() {
                 <Stack.Screen name='Formulario_3'       component={Formulario_3}    />
                 <Stack.Screen name='home_Cliente'       component={Cliente}         />
                 <Stack.Screen name='Recuperar_senha'    component={Recuperar_senha} />
+                <Stack.Screen name='Cadastro_Crianca'   component={Cadastro_crianca}/>
 
             </Stack.Navigator>
         </NavigationContainer>
