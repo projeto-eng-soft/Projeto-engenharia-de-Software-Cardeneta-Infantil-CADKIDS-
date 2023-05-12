@@ -7,10 +7,10 @@ import { getStyles }    from "./estilo/style";
 import Logo             from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
 import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
-import Button_entrar    from "./form_touch/button_entrar";
-import Button_senha     from "./form_touch/button_esqueci_senha";
-import Button_cadastrar from "./form_touch/button_cadastrar";
-import Visivel_senha    from "./form_touch/button_senha";
+import Button_entrar    from "./form_button/button_entrar";
+import Button_senha     from "./form_button/button_esqueci_senha";
+import Button_cadastrar from "./form_button/button_cadastrar";
+import Visivel_senha    from "./form_button/button_visibilidade_senha";
 
 
 const Style = getStyles();

@@ -1,6 +1,6 @@
 import { StyleSheet,TouchableOpacity ,Image } from "react-native";
 
-import Visivel_senha from 'static/icons/visivel.png';
+import Visivel_senha from 'static/icons/icon_olho.png';
 
 
 export default function Button_senha({onPress}){

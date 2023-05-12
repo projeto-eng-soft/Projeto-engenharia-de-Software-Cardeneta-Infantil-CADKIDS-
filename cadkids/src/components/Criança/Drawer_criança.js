@@ -1,7 +1,6 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { Text } from "react-native";
-import Cliente from "./pagina/Cliente";
-import Ajuda   from "./pagina/Ajuda";
+import Cliente from "./paginas/Home/home_Criança";
+import Ajuda   from "./paginas/Ajuda/Ajuda";
 
 const Drawer = createDrawerNavigator()
 
