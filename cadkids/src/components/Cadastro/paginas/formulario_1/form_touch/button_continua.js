@@ -1,6 +1,4 @@
-import React from "react";
-import { StyleSheet } from "react-native";
-import { TouchableOpacity, View, Text } from "react-native";
+import { StyleSheet , TouchableOpacity , View , Text } from "react-native";
 
 
 export default function Button({navigation})

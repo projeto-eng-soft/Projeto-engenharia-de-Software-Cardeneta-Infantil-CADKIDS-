@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { View , Text , TextInput ,ImageBackground ,Image} from "react-native";
+import { View , Text , TextInput ,ImageBackground ,Image } from "react-native";
 
-import { getStyles } from "./estilo/style";
+import { getStyles }  from "./estilo/style";
 import plano_de_fundo from 'static/imagens/plano_de_fundo_padrao.png';
 import icone_logo     from 'static/icons/icon_logo.png';
 
 const Style = getStyles();
+
 export default function Recuperar_senha({navigation}){
 
     const [E_mail,setE_mail] = useState(null);

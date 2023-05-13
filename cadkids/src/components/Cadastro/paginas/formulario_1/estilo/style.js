@@ -1,5 +1,5 @@
 import { StyleSheet }   from "react-native";
-import  plano_de_fundo     from 'static/imagens/plano_de_fundo_padrao.png';
+import  plano_de_fundo  from 'static/imagens/plano_de_fundo_padrao.png';
 
 
 export const getStyles = () => 
@@ -15,9 +15,9 @@ export const getStyles = () =>
         formulario_view:{
             backgroundColor:'rgba(221, 222, 239, 0.519)',
             alignItems: 'center',
-            width :350,
-            height:410,
-            padding:5,
+            width     :350,
+            height    :410,
+            padding   :5,
             borderRadius:20,
         },
     

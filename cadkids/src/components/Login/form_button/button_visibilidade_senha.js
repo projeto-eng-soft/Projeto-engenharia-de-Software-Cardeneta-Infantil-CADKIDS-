@@ -1,4 +1,4 @@
-import { StyleSheet,TouchableOpacity ,Image } from "react-native";
+import { StyleSheet , TouchableOpacity ,Image } from "react-native";
 
 import Visivel_senha from 'static/icons/icon_olho.png';
 

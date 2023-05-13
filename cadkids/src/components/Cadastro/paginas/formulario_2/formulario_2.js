@@ -1,9 +1,9 @@
 import   React,{ useState } from "react";
-import { View, Text, TextInput, ImageBackground } from "react-native";
+import { View , Text , TextInput , ImageBackground } from "react-native";
 
-import { getStyles }    from "./estilo/style"
-import plano_de_fundo      from 'static/imagens/plano_de_fundo_padrao.png';
-import Button_continuar from './form_touch/button_continua';
+import { getStyles }     from "./estilo/style"
+import plano_de_fundo    from 'static/imagens/plano_de_fundo_padrao.png';
+import Button_continuar  from './form_touch/button_continua';
 
 
 const Style = getStyles();
@@ -17,6 +17,7 @@ export default function Formulario_2({navigation}){
     const [Completemento,setCompletemento] = useState(null);
     const [Cidade,setCidade]               = useState(null);
     const [Estado,setEstado]               = useState(null);
+
     return(
         <ImageBackground source={plano_de_fundo} style={Style.container}>
             
@@ -51,7 +52,7 @@ export default function Formulario_2({navigation}){
                                 keyboardType ='numeric'
                                 style        = {Style.textInput_numero}
                                 value        = {numero_Rua}
-                                onChangeText = {setNome_Rua}
+                                onChangeText = {setNumero_Rua}
                             />
                         </View>
                     </View>

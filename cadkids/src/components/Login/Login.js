@@ -1,5 +1,5 @@
 import React ,{ useState } from "react";
-import { View, Text, TextInput,ImageBackground , Image  } from "react-native";
+import { View , Text , TextInput , ImageBackground , Image  } from "react-native";
 
 import { Usuario }      from "./crud/usuario";
 import { getStyles }    from "./estilo/style";

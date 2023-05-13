@@ -1,4 +1,4 @@
-import { StyleSheet,TouchableOpacity, View, Text } from "react-native";
+import { StyleSheet , TouchableOpacity , View , Text } from "react-native";
 
 export default function Button({navigation})
 {
@@ -11,11 +11,11 @@ export default function Button({navigation})
     );
 }
 
-
 const Style = StyleSheet.create({
     text:{
-        fontSize:14,
         textDecorationLine:'underline',
-        color:'rgba(255, 0, 157, 0.712)'
+        color   :'rgba(255, 0, 157, 0.712)',
+        fontSize:14,
+
     }
 })

@@ -12,7 +12,7 @@ import Recuperar_senha from './src/components/Recuperar_senha/Recuperar_senha';
 /**/
 import Criança         from './src/components/Criança/Drawer_criança';
 
-import Cadastro_crianca from './src/components/Criança/paginas/cadastro_criança/Cadastro_crianca'
+import Cadastro_crianca from './src/components/Criança/paginas/Cadastro_criança/Cadastro_crianca'
 const Stack  = createNativeStackNavigator();
 
 export default function App() {

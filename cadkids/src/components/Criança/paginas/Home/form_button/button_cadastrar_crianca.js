@@ -1,5 +1,5 @@
 import { TouchableOpacity, Image, StyleSheet } from "react-native";
-import icon_adcionar_crianca from 'static/icons/icon_adcionar_criança.png'
+import icon_adcionar_crianca                   from 'static/icons/icon_adcionar_criança.png'
 
 
 export default function Button_cadastrar_crianca({navigation}){
@@ -12,7 +12,7 @@ export default function Button_cadastrar_crianca({navigation}){
 
 const Style = StyleSheet.create({
     icone:{
-        width:45,
+        width :45,
         height:45,
     }
 })
