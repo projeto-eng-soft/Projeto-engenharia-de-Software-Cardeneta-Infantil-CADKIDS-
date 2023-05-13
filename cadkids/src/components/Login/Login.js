@@ -30,7 +30,7 @@ export default function Login( {navigation} )
         if ( Usuario(cpf,senha) )
         {
             setCpf(null) ;setSenha(null)
-            navigation.navigate('home_Cliente', { screen: 'Cliente' });
+            navigation.navigate('home_Criança');
         }else{
             setCpf(null) ;setSenha(null)
             alert('Usuario ou Senha Invalido')

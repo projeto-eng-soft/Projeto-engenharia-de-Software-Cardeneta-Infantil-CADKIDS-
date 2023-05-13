@@ -1,6 +1,7 @@
 import { TouchableOpacity, Image, StyleSheet } from "react-native";
 import icon_adcionar_crianca from 'static/icons/icon_adcionar_criança.png'
 
+
 export default function Button_cadastrar_crianca({navigation}){
     return(
         <TouchableOpacity onPress={()=>navigation.navigate('Cadastro_Crianca')}>
@@ -14,5 +15,4 @@ const Style = StyleSheet.create({
         width:45,
         height:45,
     }
-
 })

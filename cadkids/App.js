@@ -12,7 +12,7 @@ import Recuperar_senha from './src/components/Recuperar_senha/Recuperar_senha';
 /**/
 import Criança         from './src/components/Criança/Drawer_criança';
 
-import Cadastro_crianca from './src/components/Cadastro/paginas/cadastro_criança/Cadastro_crianca'
+import Cadastro_crianca from './src/components/Criança/paginas/cadastro_criança/Cadastro_crianca'
 const Stack  = createNativeStackNavigator();
 
 export default function App() {
@@ -24,7 +24,7 @@ export default function App() {
                 <Stack.Screen name='Formulario_1'       component={Formulario_1}    />
                 <Stack.Screen name='Formulario_2'       component={Formulario_2}    />
                 <Stack.Screen name='Formulario_3'       component={Formulario_3}    />
-                <Stack.Screen name='home_Cliente'       component={Criança}         />
+                <Stack.Screen name='home_Criança'       component={Criança}         />
                 <Stack.Screen name='Recuperar_senha'    component={Recuperar_senha} />
                 <Stack.Screen name='Cadastro_Crianca'   component={Cadastro_crianca}/>
 
