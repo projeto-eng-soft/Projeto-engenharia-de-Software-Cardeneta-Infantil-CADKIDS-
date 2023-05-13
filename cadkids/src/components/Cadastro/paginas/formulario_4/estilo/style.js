@@ -36,17 +36,12 @@ export const getStyles = () =>
             paddingRight:12,        
             borderRadius:16,
         },
-    
         button_continua:{
             padding:20,
             borderRadius:20
             
         },
 
-        button_medico:{
-            marginEnd:140,
-            marginTop:650,
-        }
     })
     return Style;
 };

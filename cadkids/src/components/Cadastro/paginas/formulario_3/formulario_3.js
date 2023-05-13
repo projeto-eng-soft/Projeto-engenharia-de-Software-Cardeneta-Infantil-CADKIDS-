@@ -1,9 +1,10 @@
 import   React,{ useState } from "react";
 import { View, Text, TextInput,ImageBackground } from "react-native";
 
-import { getStyles } from "./estilo/style";
+import { getStyles }    from "./estilo/style";
 import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
-import Button_criar  from './form_touch/button_cria';
+import Button_criar     from './form_touch/button_cria';
+import Button_medico    from "./form_touch/button_medico";
 
 const Style = getStyles();
 
@@ -25,7 +26,8 @@ export default function Formulario_3({navigation}){
 
     return(
         <ImageBackground source={plano_de_fundo} style={Style.container}>
-            <View style={Style.formulario_view}>
+            
+            <View style={Style.formulario_view}>          
                 <View>
                     <Text style={Style.text}>E-mail</Text>
                     <TextInput 
@@ -58,6 +60,9 @@ export default function Formulario_3({navigation}){
                     <Button_criar onPress={criar_Conta}/>
                 </View>
             
+            </View>
+            <View style={Style.button_medico}>
+                <Button_medico navigation={navigation}/>
             </View>
         </ImageBackground>
     );

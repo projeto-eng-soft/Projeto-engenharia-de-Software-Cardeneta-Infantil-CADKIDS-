@@ -16,8 +16,8 @@ export default function Button({onPress})
 const Style = StyleSheet.create({
     text:{
         backgroundColor:'rgb(31, 138, 239)',
-        color   :'white',
-        fontSize: 16,
+        color:'white',
+        fontSize:16,
         padding     :10,
         paddingLeft :14,
         paddingRight:14,
