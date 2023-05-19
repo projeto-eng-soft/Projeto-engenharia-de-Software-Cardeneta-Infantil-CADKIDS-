@@ -51,8 +51,9 @@ export const getStyles = () =>
             width   :290,
             height  :42 ,
             paddingLeft :12,
-            paddingRight:12,        
-            borderRadius:0,
+            paddingRight:12,
+            paddingTop  :10,         
+            borderRadius:0 , 
             borderBottomWidth:1.5
         },
    

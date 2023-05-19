@@ -5,9 +5,8 @@ export const getStyles = () =>
 {
     const Style = StyleSheet.create({
         container: {
-            flex: 1,
             alignItems: 'center',
-            justifyContent: 'center',
+            justifyContent:'flex-start',
             backgroundImage: `url(${plano_de_fundo})`
         },
     
@@ -19,8 +18,22 @@ export const getStyles = () =>
             padding:5,
             position:'absolute',
             borderRadius:20,
+            marginTop  :250
+        },
+
+        icone_logo:{
+            width :100,
+            height:100,
+            marginTop   :80,
+            marginBottom:65
         },
     
+        icone_cadkids:{
+            width    :110,
+            height   :50,
+            marginTop:200,
+        },
+
         text:{
             fontSize:16,
             marginTop:15,
@@ -28,24 +41,25 @@ export const getStyles = () =>
         },
         
         textInput:{
-            backgroundColor:'white',
+            backgroundColor:'rgba(255, 255, 255, 0)',
             fontSize:14,
             width :300,
             height:40 ,
             paddingLeft :12,
             paddingRight:12,        
-            borderRadius:16,
+            borderBottomWidth:1.5,
+            marginTop:2
         },
     
         button_continua:{
             padding:20,
-            borderRadius:20
+            borderRadius:20,
             
         },
 
         button_medico:{
-            marginEnd:140,
-            marginTop:650,
+            marginTop:350,
+            marginRight:150 
         }
     })
     return Style;

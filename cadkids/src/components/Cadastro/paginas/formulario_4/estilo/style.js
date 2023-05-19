@@ -5,24 +5,35 @@ export const getStyles = () =>
 {
     const Style = StyleSheet.create({
         container: {
-            flex: 1,
             alignItems: 'center',
-            justifyContent: 'center',
+            justifyContent: 'flex-start',
             backgroundImage: `url(${plano_de_fundo})`
         },
     
         formulario_view:{
             backgroundColor:'rgba(221, 222, 239, 0.419)',
             alignItems: 'center',
-            width :350,
-            height:330,
+            width  :350,
+            height :330,
             padding:5,
-            position:'absolute',
             borderRadius:20,
         },
-    
+        
+        icone_logo:{
+            width :100,
+            height:100,
+            marginTop   :80,
+            marginBottom:65
+        },
+
+        icone_cadkids:{
+            width    :110,
+            height   :50,
+            marginTop:225,
+        },
+
         text:{
-            fontSize:16,
+            fontSize :16,
             marginTop:15,
             marginLeft:4
         },
@@ -34,8 +45,9 @@ export const getStyles = () =>
             height:40 ,
             paddingLeft :12,
             paddingRight:12,        
-            borderRadius:16,
+            borderRadius:15,
         },
+
         button_continua:{
             padding:20,
             borderRadius:20

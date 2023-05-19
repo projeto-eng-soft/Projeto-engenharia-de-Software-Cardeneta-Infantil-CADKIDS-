@@ -5,7 +5,7 @@ export default function Button({navigation})
 {
     return(
         <TouchableOpacity onPress={()=>navigation.navigate('Formulario_3')}>
-            <View>
+            <View style={Style.view}>
                 <Text style={Style.text}>Continuar</Text>
             </View>
         </TouchableOpacity>
@@ -14,13 +14,15 @@ export default function Button({navigation})
 
 const Style = StyleSheet.create({
     text:{
-        backgroundColor:'rgb(31, 138, 239)',
         color:'white',
-        fontSize:16,
+        fontSize:15,
+    
+    },
+    view:{
+        backgroundColor:'rgb(31, 138, 239)',
         padding     :10,
         paddingLeft :14,
         paddingRight:14,
-        borderRadius:19,
-    
+        borderRadius:10,
     }
 })

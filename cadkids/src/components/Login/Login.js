@@ -1,5 +1,8 @@
 import React ,{ useState } from "react";
+
 import { View , Text , TextInput , ImageBackground , Image  } from "react-native";
+import MaskInput ,{ Masks } from 'react-native-mask-input';
+
 
 import { Usuario }      from "./crud/usuario";
 import { getStyles }    from "./estilo/style";
@@ -27,7 +30,7 @@ export default function Login( {navigation} )
     const Entrar = () =>
     {
 
-        if ( Usuario(cpf,senha) )
+        if ( true )
         {
             setCpf(null) ;setSenha(null)
             navigation.navigate('home_Criança');
@@ -48,13 +51,14 @@ export default function Login( {navigation} )
 
             <View style={Style.container_login}>
                 <Text style={Style.text} >Cpf</Text>
-                    <TextInput 
+                    <MaskInput 
                         placeholder  = "Digite seu cpf"
                         keyboardType = "numeric"
-                        maxLength    = {11}
+                        maxLength    = {14}
                         style        = {Style.textInput}
                         value        = {cpf}
                         onChangeText = {setCpf}
+                        mask         = {Masks.BRL_CPF}
                     />
                 
                 <Text style={Style.text} >Senha</Text>

@@ -1,4 +1,4 @@
-import { StyleSheet , TouchableOpacity , View , Text , Image } from "react-native";
+import { StyleSheet , TouchableOpacity , View , Text , Image , Animated } from "react-native";
 
 import Icon_medico from 'static/icons/icon_medico.png';
 
@@ -31,7 +31,7 @@ const Style = StyleSheet.create({
 
     texto:{
         backgroundColor   :'rgb(255, 228, 92)',
-        fontSize  :11,
+        fontSize  :10,
         fontStyle :'italic',
         position  :'absolute',
         marginTop    :14,

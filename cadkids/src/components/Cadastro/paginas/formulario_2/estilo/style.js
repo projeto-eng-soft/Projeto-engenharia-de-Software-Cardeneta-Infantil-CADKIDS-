@@ -5,9 +5,8 @@ export const getStyles = () =>
 {
     const Style = StyleSheet.create({
         container: {
-            flex           : 1,
             alignItems     : 'center',
-            justifyContent : 'center',
+            justifyContent : 'flex-start',
             backgroundImage: `url(${plano_de_fundo})`
         },
         
@@ -20,13 +19,26 @@ export const getStyles = () =>
             backgroundColor:'rgba(221, 222, 239, 0.419)',
             alignItems: 'center',
             width  :350,
-            height :540,
+            height :580,
             padding:5,
             borderRadius:20,
         },
-    
+
+        icone_logo:{
+            width :90,
+            height:90,
+            marginTop   :40,
+            marginBottom:20
+        },
+
+        icone_cadkids:{
+            width    :110,
+            height   :50,
+            marginTop:69,
+        },
+        
         text:{
-            fontSize :16,
+            fontSize :15,
             marginTop :10,
             marginLeft:4
         },
@@ -37,35 +49,41 @@ export const getStyles = () =>
         },
     
         textInput_rua:{
-            backgroundColor:'white',
+            backgroundColor:'rgba(255, 255, 255, 0)',
             width       :180,
             height      :40,
             paddingLeft :12,
             paddingRight:12, 
-            borderRadius:16
+            borderBottomWidth:1.5,
+            marginTop:2,
+            marginBottom:8
         },
         
         textInput_numero:{
-            backgroundColor:'white',
+            backgroundColor:'rgba(255, 255, 255, 0)',
             width       :100,
             height      :40,
             paddingLeft :12,
             paddingRight:12, 
-            borderRadius:16
+            borderBottomWidth:1.5,
+            marginTop:2,
+            marginBottom:8
         },
     
         textInput:{
-            backgroundColor:'white',
+            backgroundColor:'rgba(255, 255, 255, 0)',
             fontSize:14,
             width       :300,
             height      :40 ,
             paddingLeft :12,
             paddingRight:12,        
-            borderRadius:16,
+            borderBottomWidth:1.5,
+            marginTop:2,
+            marginBottom:8
         },
     
         button_continua:{
-            padding:20,
+            padding:15,
             borderRadius:20
         }
     })
