@@ -1,5 +1,6 @@
-import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
+import { TouchableOpacity, View, Text } from "react-native";
 
+import { getStyles } from "../../estilo_button_continuar/continuar";
 
 export default function Button({navigation})
 {
@@ -12,17 +13,4 @@ export default function Button({navigation})
     );
 }
 
-const Style = StyleSheet.create({
-    text:{
-        color:'white',
-        fontSize:15,
-    
-    },
-    view:{
-        backgroundColor:'rgb(31, 138, 239)',
-        padding     :10,
-        paddingLeft :14,
-        paddingRight:14,
-        borderRadius:10,
-    }
-})
+const Style = getStyles();

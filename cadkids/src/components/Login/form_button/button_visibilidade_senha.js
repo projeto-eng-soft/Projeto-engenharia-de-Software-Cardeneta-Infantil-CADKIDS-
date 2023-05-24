@@ -1,5 +1,6 @@
-import { StyleSheet , TouchableOpacity ,Image } from "react-native";
+import { TouchableOpacity , Image } from "react-native";
 
+import { getStyles } from "./estilo/visibilidade_senha";
 import Visivel_senha from 'static/icons/icon_olho.png';
 
 
@@ -10,10 +11,4 @@ export default function Button_senha({onPress}){
         </TouchableOpacity>
     );
 }
-
-const Style = StyleSheet.create({
-    icone:{
-        width :25,
-        height:25,
-    }
-})
+const Style = getStyles();

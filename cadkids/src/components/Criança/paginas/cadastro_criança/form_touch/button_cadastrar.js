@@ -1,6 +1,6 @@
 import { StyleSheet , TouchableOpacity , View , Text } from "react-native";
 
-
+import { getStyles } from "./estilo/casdatrar";
 export default function Button_cadastrar({onPress}){
     return(
         <TouchableOpacity onPress={onPress}>
@@ -11,15 +11,4 @@ export default function Button_cadastrar({onPress}){
     );
 }
 
-
-const Style = StyleSheet.create({
-    text:{
-        backgroundColor:'rgb(31, 138, 239)',
-        color   :'white',
-        fontSize:16,
-        padding     :10,
-        paddingLeft :14,
-        paddingRight:14,
-        borderRadius:19,
-    }
-})
+const Style = getStyles();

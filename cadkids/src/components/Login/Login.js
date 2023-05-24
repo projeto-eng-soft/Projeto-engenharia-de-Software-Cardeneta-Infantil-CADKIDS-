@@ -5,11 +5,12 @@ import MaskInput ,{ Masks } from 'react-native-mask-input';
 
 
 import { Usuario }      from "./crud/usuario";
-import { getStyles }    from "./estilo/style";
-
+import { getStyles }    from "./estilo/login";
+/*Imagens*/ 
 import Logo             from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
 import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
+/*buttons de entrar ,esqueci a senha , cadastrar além de icone de ver a senha*/ 
 import Button_entrar    from "./form_button/button_entrar";
 import Button_senha     from "./form_button/button_esqueci_senha";
 import Button_cadastrar from "./form_button/button_cadastrar";
@@ -23,13 +24,12 @@ export default function Login( {navigation} )
 
     const [cpf   ,setCpf  ] = useState(null)
     const [senha ,setSenha] = useState(null)
-    const [Olho  ,setOlho] = useState(true)
+    const [Olho  ,setOlho ] = useState(true)
 
-    const Senha_visibilidade   = () => setOlho(!Olho)
+    const Senha_visibilidade = () => setOlho(!Olho)
 
     const Entrar = () =>
     {
-
         if ( true )
         {
             setCpf(null) ;setSenha(null)
@@ -39,8 +39,6 @@ export default function Login( {navigation} )
             alert('Usuario ou Senha Invalido')
         }
     }
-
-
 
     return(
         <ImageBackground source={plano_de_fundo} style={Style.container}>
@@ -64,6 +62,7 @@ export default function Login( {navigation} )
                 <Text style={Style.text} >Senha</Text>
 
                 <View>
+            
                     <View>                 
                         <TextInput 
                             placeholder     = "Digite sua senha"
@@ -87,11 +86,13 @@ export default function Login( {navigation} )
                 <View style={Style.button_entrar}> 
                     <Button_entrar onPress={Entrar}/> 
                 </View>
+            
             </View> 
             
             <View style={Style.button_cadastrar}>
                 <Button_cadastrar navigation={navigation} />
             </View>
+
             <View>
                 <Image source={icon_Cadkids} style={Style.icone_cadkids}/>
             </View>

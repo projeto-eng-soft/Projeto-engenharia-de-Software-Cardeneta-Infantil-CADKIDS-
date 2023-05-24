@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { View ,Text, TextInput ,ImageBackground } from "react-native";
 
-import { getStyles }    from './estilo/style';
+import { getStyles }    from './estilo/cad_crianca';
 import Button_cadastrar from './form_touch/button_cadastrar';
 
 const Style = getStyles();

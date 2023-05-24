@@ -1,7 +1,8 @@
-import {StyleSheet, TouchableOpacity, View, Text } from "react-native";
+import { TouchableOpacity , View , Text } from "react-native";
 
+import { getStyles } from "./estilo/entrar";
 
-const Button_entrar = ({onPress}) =>
+export default function Button_entrar({onPress}) 
 {
     return(
         <TouchableOpacity onPress={onPress}>
@@ -11,19 +12,4 @@ const Button_entrar = ({onPress}) =>
         </TouchableOpacity>
     );
 }
-export default Button_entrar
-
-
-const Style = StyleSheet.create({
-    text:{
-        color   :'white',
-        fontSize:16,
-    },
-    view:{
-        backgroundColor:'rgb(31, 138, 239)',
-        padding     :10,
-        paddingLeft :14,
-        paddingRight:14,
-        borderRadius:15,
-    }
-})
+const Style = getStyles();

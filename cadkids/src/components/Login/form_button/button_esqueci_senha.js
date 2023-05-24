@@ -1,5 +1,6 @@
-import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
+import { TouchableOpacity , View , Text } from "react-native";
 
+import { getStyles } from "./estilo/esqueci_senha";
 
 export default function Button({navigation}){
     return(
@@ -10,12 +11,4 @@ export default function Button({navigation}){
         </TouchableOpacity>
     );
 }
-
-
-const Style = StyleSheet.create({
-    text:{
-        color:'rgb(31, 138, 239)',
-        textDecorationLine:'underline',
-        fontSize:12,
-    }
-})
+const Style = getStyles();

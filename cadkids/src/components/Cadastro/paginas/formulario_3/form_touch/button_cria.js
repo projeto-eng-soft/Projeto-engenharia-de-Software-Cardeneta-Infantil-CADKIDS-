@@ -1,5 +1,7 @@
 import { StyleSheet , TouchableOpacity, View, Text } from "react-native";
 
+import { getStyles } from "../../estilo_button_continuar/continuar";
+import { get } from "react-native/Libraries/TurboModule/TurboModuleRegistry";
 
 export default function Button({onPress})
 {
@@ -13,16 +15,4 @@ export default function Button({onPress})
 }
 
 
-const Style = StyleSheet.create({
-    text:{
-        color   :'white',
-        fontSize: 15,
-
-    },view:{
-        backgroundColor:'rgb(31, 138, 239)',
-        padding     :10,
-        paddingLeft :14,
-        paddingRight:14,
-        borderRadius:10,
-    }
-})
+const Style = getStyles();

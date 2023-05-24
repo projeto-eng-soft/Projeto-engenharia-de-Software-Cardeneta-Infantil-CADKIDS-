@@ -1,4 +1,6 @@
-import { StyleSheet , TouchableOpacity , View , Text } from "react-native";
+import { TouchableOpacity , View , Text } from "react-native";
+
+import { getStyles } from "./estilo/cadastrar";
 
 export default function Button({navigation})
 {
@@ -10,12 +12,4 @@ export default function Button({navigation})
         </TouchableOpacity>
     );
 }
-
-const Style = StyleSheet.create({
-    text:{
-        textDecorationLine:'underline',
-        color   :'rgba(255, 0, 157, 0.712)',
-        fontSize:14,
-
-    }
-})
+const Style = getStyles();
