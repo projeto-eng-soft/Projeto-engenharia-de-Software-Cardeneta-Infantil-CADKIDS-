@@ -1,5 +1,4 @@
 import { StyleSheet }  from "react-native";
-import  plano_de_fundo from 'static/imagens/plano_de_fundo_padrao.png';
 
 export const getStyles = () => 
 {
@@ -9,7 +8,6 @@ export const getStyles = () =>
             flex           : 1,
             alignItems     : 'center',
             justifyContent : 'flex-start',
-            backgroundImage: `url(${plano_de_fundo})`,
         },
 
         icone:{
@@ -63,7 +61,7 @@ export const getStyles = () =>
         },
     
         button_entrar:{
-            padding     :5,
+            marginTop:5,
             borderRadius:20
         },
     

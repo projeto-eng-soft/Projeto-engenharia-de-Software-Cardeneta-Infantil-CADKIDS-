@@ -7,10 +7,9 @@ export const getStyles = () => {
             fontSize:16,
         },
         view:{
+            alignItems:'center',
             backgroundColor:'rgb(31, 138, 239)',
             padding     :10,
-            paddingLeft :14,
-            paddingRight:14,
             borderRadius:15,
         }
     });

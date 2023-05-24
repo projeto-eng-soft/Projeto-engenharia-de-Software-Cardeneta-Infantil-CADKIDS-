@@ -1,7 +1,7 @@
 import { TouchableOpacity , View , Text , Image } from "react-native";
 
 import { getStyles } from "./estilo/medico";
-import Icon_medico from 'static/icons/icon_medico.png';
+import Icon_medico   from 'static/icons/icon_medico.png';
 
 export default function Button_medico({navigation})
 {

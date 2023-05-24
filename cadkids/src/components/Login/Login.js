@@ -3,7 +3,6 @@ import React ,{ useState } from "react";
 import { View , Text , TextInput , ImageBackground , Image  } from "react-native";
 import MaskInput ,{ Masks } from 'react-native-mask-input';
 
-
 import { Usuario }      from "./crud/usuario";
 import { getStyles }    from "./estilo/login";
 /*Imagens*/ 
@@ -40,6 +39,7 @@ export default function Login( {navigation} )
         }
     }
 
+    
     return(
         <ImageBackground source={plano_de_fundo} style={Style.container}>
             

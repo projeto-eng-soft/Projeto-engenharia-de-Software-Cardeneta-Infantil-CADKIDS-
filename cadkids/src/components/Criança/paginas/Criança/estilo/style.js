@@ -9,26 +9,35 @@ export const getStyles = () => {
             justifyContent : 'flex-start',
 
         },   
-        
-
+        container_opcoes:{
+            marginTop :50,
+        },        
         container_button_menu:{
             marginTop:30,
             marginRight:320,
         },
-        
-        container_button_adcionar:{
-            alignItems:'center'
+
+        button_opcoes:{
+            backgroundColor:'rgb(0, 132, 255)',
+            alignItems:'center',
+            width:350,
+            padding:10,
+            marginBottom:20,
+            borderRadius:10,
+
         },
         
-        icone_crianca:{
-            width:180,
-            height:50,
-            marginTop:15,
+        text:{
+            color:'rgb(255, 255, 255)',
+            fontSize:20,
         },
 
-        text_cadastrar_crianca:{
-            marginTop:10
+        text_nome_usuario:{
+            fontSize:25,
         }
+        
+
+
         
     })
     return Style
