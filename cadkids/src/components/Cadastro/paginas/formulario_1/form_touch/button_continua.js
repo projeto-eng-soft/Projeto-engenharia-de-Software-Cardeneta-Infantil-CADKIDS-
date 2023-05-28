@@ -2,10 +2,10 @@ import { TouchableOpacity , View , Text } from "react-native";
 
 import { getStyles } from "../../estilo_button_continuar/continuar";
 
-export default function Button({navigation})
+export default function Button({onPress})
 {
     return(
-        <TouchableOpacity onPress={()=>navigation.navigate('Formulario_2')}>
+        <TouchableOpacity onPress={onPress}>
             <View style={Style.view}>
                 <Text style={Style.text}>Continuar</Text>
             </View>

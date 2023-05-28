@@ -1,7 +1,16 @@
 import   React,{ useState } from "react";
+import { useRoute } from "@react-navigation/native";
 import { View , Text , TextInput , ImageBackground , Image, ScrollView } from "react-native";
 
-import { getStyles }    from "./estilo/style";
+
+
+/**/
+import { createCliente }     from "src/back_end/FireBase/create/createCliente";
+/**/
+import { Dados_cadastro } from "../../validacoes_de_formulario/Dados";
+import { VSenha }         from "../../validacoes_de_formulario/Formulario_3";
+import { getStyles }      from "./estilo/style";
+/**/ 
 import Logo             from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
 import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
@@ -11,19 +20,27 @@ import Button_medico    from "./form_touch/button_medico";
 const Style = getStyles();
 
 export default function Formulario_3({navigation}){
-
+    const route = new useRoute();
     const [E_mail,setE_mail]  = useState(null);
     const [Senha ,setSenha]   = useState(null);
     const [Rsenha,setRsenha]  = useState(null);
 
     const criar_Conta = () =>{
-        if (Senha == Rsenha) 
-        {
-            alert('valido')
-            navigation.navigate('Login')
+        setE_mail(E_mail);
+        setRsenha(Rsenha);
+        setSenha(Senha);
+
+        if (VSenha(Senha,Rsenha)) 
+        {    
+            const Valor    = Dados_cadastro(route,E_mail,Senha);
+            createCliente(Valor)
+            alert('Cadastrado')
+            navigation.navigate('Login');
+            //  
         }else{
             alert('Invalido')
         }
+        return;
     }
 
     return(

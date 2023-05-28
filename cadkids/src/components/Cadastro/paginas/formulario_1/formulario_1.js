@@ -2,6 +2,10 @@ import   React,{ useState } from "react";
 import { View , Text , TextInput , ImageBackground , Image, ScrollView } from "react-native";
 import MaskInput ,{ Masks } from 'react-native-mask-input';
 
+
+
+import { VdataNascimento ,VRg ,Vcpf } from "../../validacoes_de_formulario/Formulario_1";
+
 import { getStyles }    from "./estilo/style";
 import Logo             from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
@@ -12,11 +16,39 @@ const Style = getStyles();
 
 export default function Formulario_1({navigation}){
 
-    const [Nome,setNome]                     = useState(null);
+    const [NomeUser,setNomeUser]            = useState(null);
     const [dataNascimento,setdataNascimento] = useState(null);
     const [Rg,setRg]                         = useState(null);
     const [Cpf,setCpf]                       = useState(null);
+    
+    const Cadastro_form1 = () =>{
 
+        const bool_data = VdataNascimento(dataNascimento);
+        const bool_Rg   = Vcpf(Cpf);
+        const bool_Cpf  = VRg(Rg)  ;
+
+        if(bool_data && bool_Rg && bool_Cpf) {
+            setNomeUser(NomeUser);
+            setdataNascimento(dataNascimento);
+            setRg(Rg);
+            setCpf(Cpf);
+
+            navigation.navigate('Formulario_2',{
+                NomeUser      : NomeUser,
+                dataNascimento: dataNascimento,
+                Rg:Rg,
+                Cpf:Cpf
+            });
+        }
+
+        else {
+            alert("Cadastro invalido! \n"+
+                    "Data nascimento :" + dataNascimento +"\n"+
+                    "RG :"              + Rg             +"\n"+
+                    "Cpf :"             + Cpf);
+            }
+        
+    }
     return(
         <ImageBackground source={plano_de_fundo} style={{flex:1}}>
             
@@ -34,9 +66,10 @@ export default function Formulario_1({navigation}){
                         <Text style={Style.text}>Nome Completo </Text>
                         <TextInput 
                             placeholder  ="Digite seu nome"
+                            keyboardType = "default"
                             style        = {Style.textInput}
-                            value        = {Nome}
-                            onChange     = {setNome}
+                            value        = {NomeUser}
+                            onChangeText = {setNomeUser}
                         />
                         
                         <Text style={Style.text}>Data de nascimento </Text>
@@ -81,7 +114,7 @@ export default function Formulario_1({navigation}){
                     </View>
 
                     <View style = {Style.button_continua}>
-                        <Button_continuar navigation={navigation}/>
+                        <Button_continuar onPress={Cadastro_form1}/>
                     </View>
                 
                 </View>

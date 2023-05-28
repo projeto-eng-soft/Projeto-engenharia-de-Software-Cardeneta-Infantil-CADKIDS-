@@ -1,6 +1,8 @@
 import   React,{ useState } from "react";
+import { useRoute } from "@react-navigation/native";
 import { View , Text , TextInput , ImageBackground ,Image, ScrollView } from "react-native";
 
+import { Dados_nulos }  from "../../validacoes_de_formulario/Formulario_2";
 import   MaskInput      from 'react-native-mask-input';
 import { getStyles }    from "./estilo/style";
 import Logo             from 'static/icons/icon_logo.png';
@@ -11,10 +13,8 @@ import Button_continuar from './form_touch/button_continua';
 
 const Style = getStyles();
 
-
-
 export default function Formulario_2({navigation}){
-
+    const route   = useRoute();
     const [Cep,setCep]                     = useState(null);
     const [nome_Rua,setNome_Rua]           = useState(null);
     const [numero_Rua,setNumero_Rua]       = useState(null);
@@ -23,10 +23,44 @@ export default function Formulario_2({navigation}){
     const [Cidade,setCidade]               = useState(null);
     const [Estado,setEstado]               = useState(null);
 
+    const setValores = () => {        
+        setCep(Cep);               setNome_Rua(nome_Rua); 
+        setNumero_Rua(numero_Rua); setBairro(Bairro);
+        setCompletemento(Completemento);
+        setCidade(Cidade);         setEstado(Estado);
+    }
+
+
+    const Continuar = () =>{
+        setValores();
+        const dados = [Cep,nome_Rua,numero_Rua,Bairro,Completemento,Cidade,Estado]
+        
+        if ( Dados_nulos(dados) ) 
+        {
+            alert('dados nulos'); return;
+        }
+        
+        navigation.navigate(
+            'Formulario_3',{
+                NomeUser      : route.params.NomeUser,
+                dataNascimento: route.params.dataNascimento,
+                Rg           :  route.params.Rg,
+                Cpf          :  route.params.Cpf,
+                Cep          :Cep,
+                nome_Rua     :nome_Rua,
+                numero_Rua   :numero_Rua,
+                Bairro       :Bairro,
+                Completemento:Completemento,
+                Cidade       :Cidade,
+                Estado       :Estado
+            });
+    
+    }
     return(
         <ImageBackground source={plano_de_fundo} style={{flex:1}}>
             
             <ScrollView>
+               
             <View style={Style.container}>
                 <View>
                     <Image source={Logo} style={Style.icone_logo}/>
@@ -109,7 +143,7 @@ export default function Formulario_2({navigation}){
                     </View>
 
                     <View style = {Style.button_continua}>
-                        <Button_continuar navigation={navigation} />
+                        <Button_continuar onPress={Continuar} />
                     </View>
                 </View>
 

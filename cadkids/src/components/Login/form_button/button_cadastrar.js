@@ -5,7 +5,7 @@ import { getStyles } from "./estilo/cadastrar";
 export default function Button({navigation})
 {
     return(
-        <TouchableOpacity onPress={()=>navigation.navigate('Formulario_1')}>
+        <TouchableOpacity onPress={()=>navigation.navigate('Cadastro')}>
             <View>
                 <Text style={Style.text}>Quero me cadastrar</Text>
             </View>
