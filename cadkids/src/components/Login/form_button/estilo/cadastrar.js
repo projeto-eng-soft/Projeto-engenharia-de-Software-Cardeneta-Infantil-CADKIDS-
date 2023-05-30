@@ -4,7 +4,7 @@ export const getStyles = () => {
     const Style = StyleSheet.create({
         text:{
             textDecorationLine:'underline',
-            color   :'rgba(255, 0, 157, 0.712)',
+            color   :'rgb(245, 14, 222)',
             fontSize:14,
     
         }

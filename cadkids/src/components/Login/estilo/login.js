@@ -14,13 +14,17 @@ export const getStyles = () =>
             width       :100,
             height      :100,
             marginTop   :100,
-            marginBottom:80
+            marginBottom:80,
+            //backgroundColor:'rgb(255, 255, 255)',
+            borderRadius:100,
+
         },
 
         icone_cadkids:{
             width    :110,
             height   :50,
             marginTop:190,
+            
         },
         
         container_login:{
@@ -30,6 +34,7 @@ export const getStyles = () =>
             height:295,
             padding:5,
             borderRadius:20,
+
         },
         
         container_icone:{
@@ -41,6 +46,8 @@ export const getStyles = () =>
         text:{
             fontSize :17,
             marginTop:20,
+            fontFamily:'Roboto'
+
         },
     
         textInput:{

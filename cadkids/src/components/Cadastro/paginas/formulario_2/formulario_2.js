@@ -24,15 +24,19 @@ export default function Formulario_2({navigation}){
     const [Estado,setEstado]               = useState(null);
 
     const setValores = () => {        
-        setCep(Cep);               setNome_Rua(nome_Rua); 
-        setNumero_Rua(numero_Rua); setBairro(Bairro);
+        setCep(Cep);               
+        setNome_Rua(nome_Rua); 
+        setNumero_Rua(numero_Rua); 
+        setBairro(Bairro);
         setCompletemento(Completemento);
-        setCidade(Cidade);         setEstado(Estado);
+        setCidade(Cidade);         
+        setEstado(Estado);
     }
 
 
     const Continuar = () =>{
         setValores();
+
         const dados = [Cep,nome_Rua,numero_Rua,Bairro,Completemento,Cidade,Estado]
         
         if ( Dados_nulos(dados) ) 
@@ -106,7 +110,6 @@ export default function Formulario_2({navigation}){
                         <TextInput 
                             placeholder  ="Digite nome de seu bairro"
                             style        = {Style.textInput}
-                            maxLength    = {7}
                             value        = {Bairro}
                             onChangeText = {setBairro}
 
@@ -116,7 +119,6 @@ export default function Formulario_2({navigation}){
                         <TextInput 
                             placeholder  ="Digite seu complemento"
                             style        = {Style.textInput}
-                            maxLength    = {11}
                             value        = {Completemento}
                             onChangeText = {setCompletemento}
 
@@ -126,7 +128,6 @@ export default function Formulario_2({navigation}){
                         <TextInput 
                             placeholder  ="Digite sua cidade"
                             style        = {Style.textInput}
-                            maxLength    = {11}
                             value        = {Cidade}
                             onChangeText = {setCidade}
 
@@ -136,7 +137,6 @@ export default function Formulario_2({navigation}){
                         <TextInput 
                             placeholder  ="Digite seu Estado"
                             style        = {Style.textInput}
-                            maxLength    = {11}
                             value        = {Estado}
                             onChangeText = {setEstado}
                         />

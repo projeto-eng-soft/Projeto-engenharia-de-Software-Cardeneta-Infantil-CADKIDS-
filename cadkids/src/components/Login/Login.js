@@ -3,7 +3,7 @@ import React ,{ useState } from "react";
 import { View , Text , TextInput , ImageBackground , Image  } from "react-native";
 import MaskInput ,{ Masks } from 'react-native-mask-input';
 
-import { Usuario }      from "./crud/usuario";
+import { readCliente } from "src/back_end/FireBase/read/login";
 import { getStyles }    from "./estilo/login";
 /*Imagens*/ 
 import Logo             from 'static/icons/icon_logo.png';
@@ -21,20 +21,27 @@ const Style = getStyles();
 export default function Login( {navigation} )
 {
 
-    const [cpf   ,setCpf  ] = useState(null)
-    const [senha ,setSenha] = useState(null)
+
+    const [Cpf   ,setCpf  ] = useState(null)
+    const [Senha ,setSenha] = useState(null)
     const [Olho  ,setOlho ] = useState(true)
 
     const Senha_visibilidade = () => setOlho(!Olho)
 
     const Entrar = () =>
     {
+
         if ( true )
         {
-            setCpf(null) ;setSenha(null)
-            navigation.navigate('home_Criança');
+            var cpf_dominio = Cpf;
+            cpf_dominio = cpf_dominio.replace('.','');
+            cpf_dominio = cpf_dominio.replace('.','');
+            cpf_dominio = cpf_dominio.replace('-','');
+
+            readCliente(cpf_dominio+"@dominio.com",Senha,navigation)
+           
         }else{
-            setCpf(null) ;setSenha(null)
+            setCpf(Cpf) ;setSenha(Senha);
             alert('Usuario ou Senha Invalido')
         }
     }
@@ -48,13 +55,13 @@ export default function Login( {navigation} )
             </View>
 
             <View style={Style.container_login}>
-                <Text style={Style.text} >Cpf</Text>
+                <Text style={Style.text} >CPF</Text>
                     <MaskInput 
                         placeholder  = "Digite seu cpf"
                         keyboardType = "numeric"
                         maxLength    = {14}
                         style        = {Style.textInput}
-                        value        = {cpf}
+                        value        = {Cpf}
                         onChangeText = {setCpf}
                         mask         = {Masks.BRL_CPF}
                     />
@@ -68,7 +75,7 @@ export default function Login( {navigation} )
                             placeholder     = "Digite sua senha"
                             style           = {Style.textInput}
                             maxLength       = {25}
-                            value           = {senha}
+                            value           = {Senha}
                             onChangeText    = {setSenha} 
                             secureTextEntry = {Olho}
                         />

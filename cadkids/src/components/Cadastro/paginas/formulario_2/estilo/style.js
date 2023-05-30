@@ -16,7 +16,7 @@ export const getStyles = () =>
         },
     
         formulario_view:{
-            backgroundColor:'rgba(221, 222, 239, 0.419)',
+            backgroundColor:'rgba(255, 255, 255, 0.450)',
             alignItems: 'center',
             width  :350,
             height :580,

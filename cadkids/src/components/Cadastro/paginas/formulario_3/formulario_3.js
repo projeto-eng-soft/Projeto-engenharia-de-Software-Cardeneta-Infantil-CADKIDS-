@@ -5,7 +5,7 @@ import { View , Text , TextInput , ImageBackground , Image, ScrollView } from "r
 
 
 /**/
-import { createCliente }     from "src/back_end/FireBase/create/createCliente";
+import { createCliente }  from "src/back_end/FireBase/create/createCliente";
 /**/
 import { Dados_cadastro } from "../../validacoes_de_formulario/Dados";
 import { VSenha }         from "../../validacoes_de_formulario/Formulario_3";
@@ -25,22 +25,20 @@ export default function Formulario_3({navigation}){
     const [Senha ,setSenha]   = useState(null);
     const [Rsenha,setRsenha]  = useState(null);
 
-    const criar_Conta = () =>{
+    const criar_Conta = () =>
+    {
         setE_mail(E_mail);
         setRsenha(Rsenha);
         setSenha(Senha);
 
         if (VSenha(Senha,Rsenha)) 
         {    
-            const Valor    = Dados_cadastro(route,E_mail,Senha);
-            createCliente(Valor)
-            alert('Cadastrado')
-            navigation.navigate('Login');
-            //  
+            const Valor = Dados_cadastro(route,E_mail,Senha);
+            createCliente(Valor,navigation);
         }else{
-            alert('Invalido')
+            alert('Invalido');
+            return;
         }
-        return;
     }
 
     return(
