@@ -23,11 +23,11 @@ export default function Formulario_1({navigation}){
     
     const Cadastro_form1 = () =>{
 
-        const bool_data = VdataNascimento(dataNascimento);
-        const bool_Rg   = Vcpf(Cpf);
-        const bool_Cpf  = VRg(Rg)  ;
+        //const bool_data = VdataNascimento(dataNascimento);
+        //const bool_Rg   = Vcpf(Cpf);
+        //const bool_Cpf  = VRg(Rg)  ;
 
-        if(bool_data && bool_Rg && bool_Cpf) {
+        if(true) {
             setNomeUser(NomeUser);
             setdataNascimento(dataNascimento);
             setRg(Rg);

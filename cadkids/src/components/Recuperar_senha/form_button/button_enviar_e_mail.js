@@ -1,10 +1,12 @@
-import { StyleSheet , TouchableOpacity , Text } from "react-native";
+import { TouchableOpacity , Text } from "react-native";
+import { getStyles } from "./estilo/button";
 
+const Style = getStyles();
 
 export default function Button_enviar_e_mail({navigation}){
     return(
-        <TouchableOpacity>
-            <Text>Enviar codigo</Text>
+        <TouchableOpacity style={Style.view}>
+            <Text style={Style.text}>Enviar codigo</Text>
         </TouchableOpacity>
     );
 }

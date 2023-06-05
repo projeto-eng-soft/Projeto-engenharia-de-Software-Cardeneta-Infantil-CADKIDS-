@@ -39,7 +39,7 @@ export default function Formulario_2({navigation}){
 
         const dados = [Cep,nome_Rua,numero_Rua,Bairro,Completemento,Cidade,Estado]
         
-        if ( Dados_nulos(dados) ) 
+        if ( false /*Dados_nulos(dados)*/ ) 
         {
             alert('dados nulos'); return;
         }
@@ -58,8 +58,9 @@ export default function Formulario_2({navigation}){
                 Cidade       :Cidade,
                 Estado       :Estado
             });
-    
     }
+
+    
     return(
         <ImageBackground source={plano_de_fundo} style={{flex:1}}>
             

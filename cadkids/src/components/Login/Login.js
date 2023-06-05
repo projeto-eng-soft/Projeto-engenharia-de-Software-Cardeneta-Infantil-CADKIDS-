@@ -30,8 +30,7 @@ export default function Login( {navigation} )
 
     const Entrar = () =>
     {
-
-        if ( true )
+        if ( true && Cpf!= null )
         {
             var cpf_dominio = Cpf;
             cpf_dominio = cpf_dominio.replace('.','');

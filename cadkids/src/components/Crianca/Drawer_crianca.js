@@ -2,13 +2,13 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createStackNavigator  } from "@react-navigation/stack";
 
 
-import Home_Criança      from "./paginas/Home/Home_Crianças";
+import Home_Criança      from "./paginas/Home/paginas/Home_Criancas";
 import Ajuda             from "./paginas/Ajuda/Ajuda";
-import Cadastro_criança  from "./paginas/Cadastro_criança/Cadastro_crianca";
-import Crianca           from "./paginas/Criança/Criança";
-import Vacinas           from "./paginas/Vacinas/Vacinas";
+import Cadastro_criança  from "./paginas/Cadastro_crianca/Cadastro_crianca";
+import Crianca           from "./paginas/Crianca/Crianca";
+import Vacinas           from "./paginas/Vacinas/home_Vacinas";
 import Desenvolvimento_c from "./paginas/Desenvolvimento_Cognitivo/Desenvolvimento_c";
-import Desenvolvimento_f from "./paginas/Desenvolvimento_Fisico/Desenvolvimento_fisico";
+import Desenvolvimento_f from "./paginas/Desenvolvimento_Fisico/paginas/Desenvolvimento_fisico";
 
 
 const Drawer = createDrawerNavigator()
