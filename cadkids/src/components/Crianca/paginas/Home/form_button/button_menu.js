@@ -12,7 +12,7 @@ export default function Button_menu({onPress}){
 
 const Style = StyleSheet.create({
     icone_menu:{
-        width :45,
-        height:40,
+        width :55,
+        height:50,
     }
 });

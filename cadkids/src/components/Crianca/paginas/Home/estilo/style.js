@@ -7,6 +7,7 @@ export const getStyles = () => {
             flex           : 1,
             alignItems     : 'center',
             justifyContent : 'flex-start',
+            resizeMode:'center'
 
         },   
         
@@ -14,10 +15,21 @@ export const getStyles = () => {
         container_button_menu:{
             marginTop:30,
             marginRight:320,
+            backgroundColor:'white',
+            borderRadius:20,
+            borderWidth:1.4
         },
-        
+
+        conteiner_nome_crianca:{
+            marginTop:10
+        },
+
         container_button_adcionar:{
             alignItems:'center'
+        },
+
+        scrollview:{
+            marginTop:50,
         },
         
         icone_crianca:{
@@ -27,7 +39,8 @@ export const getStyles = () => {
         },
 
         text_cadastrar_crianca:{
-            marginTop:10
+            marginTop:10,
+           
         }
         
     })

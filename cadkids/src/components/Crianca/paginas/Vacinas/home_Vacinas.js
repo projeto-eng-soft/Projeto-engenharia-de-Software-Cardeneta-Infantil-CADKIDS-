@@ -1,13 +1,16 @@
-import { Image ,TouchableOpacity, View } from "react-native";
+import { Image ,TouchableOpacity  } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useNavigation }            from "@react-navigation/native";
 
+/* */ 
 import { getStyles } from "./estilo/style";
-import Vacinas_aplicadas  from './paginas/Vacinas_aplicadas';
-import Vacinas_pendentes   from './paginas/Vacinas_Faltando';
-
+import Vacinas_aplicadas   from './paginas/Vacinas_aplicadas';
+import Vacinas_pendentes   from './paginas/Vacinas_pendentes';
+import Vacinas_atrasadas   from './paginas/Vacinas_atrasadas';
+/**/
 import Icon_aplicadas from 'static/icons/icon_vacina_aplicada.png';
 import Icon_pendentes from 'static/icons/icon_vacina_pendente.png';
+import Icon_atrasadas from 'static/icons/icon_vacina_atrasada.png';
 
 
 const Style =  getStyles();
@@ -21,15 +24,19 @@ export default function Vacinas(){
                         headerShown:false,
                         tabBarStyle:{
                             position:'absolute',
-                            backgroundColor:'rgba(249, 245, 32, 0.226)',
+                            backgroundColor:'rgba(255, 255, 255, 0.690)',
                             borderTopWidth:0, 
-                            bottom:10,
-                            left :14,
-                            right:14,
+                            bottom:0,
+                            left :2,
+                            right:2,
   
                             elevation:0,
-                            borderRadius:40,
+                            borderTopLeftRadius:30,
+                            borderTopRightRadius:30,
+            
+
                             height:50,
+                            
                             }
                         }}>
 
@@ -47,8 +54,7 @@ export default function Vacinas(){
                                     </TouchableOpacity>
                                 );
                             },
-                        }}
-                        initialParams={{dados:[1]}}/>
+                        }}/>
 
             <Tab.Screen name="Pendentes"  
                         component={Vacinas_pendentes} 
@@ -64,7 +70,21 @@ export default function Vacinas(){
                                 </TouchableOpacity>);
                             }, 
                         }}/>
-
+                        
+            <Tab.Screen name="Atrasadas"  
+                        component={Vacinas_atrasadas} 
+                        options={
+                            {
+                            tabBarLabel:'',
+                            tabBarIcon : () => {
+                            return(
+                                <TouchableOpacity onPress={()=>navigation.navigate('Atrasadas')}
+                                                  activeOpacity={0.3} 
+                                >
+                                    <Image source={Icon_atrasadas} style={{ width: 50, height:50 }}/>
+                                </TouchableOpacity>);
+                            }, 
+                        }}/>
             </Tab.Navigator>
     );
 }

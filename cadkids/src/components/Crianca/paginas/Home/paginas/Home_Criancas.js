@@ -1,44 +1,81 @@
-import { useState } from "react";
-import { TouchableOpacity , View , Text , ImageBackground , Image } from "react-native";
+import { useState ,useEffect } from "react";
+import { useRoute }            from "@react-navigation/native";
 
-import { getStyles }            from '../estilo/style';
-import plano_de_fundo           from 'static/imagens/plano_de_fundo_padrao.png';
+import { TouchableOpacity , View , Text , 
+         ImageBackground , Image , ScrollView } from "react-native";
+
+/**/ 
+import { Getcriancas } from "src/back_end/FireBase/read/Criancas";
+import { getStyles }   from '../estilo/style';
+
+/**/ 
+import plano_de_fundo           from 'static/imagens/plano_de_fundo_home_crianca.jpg';
 import Icone_criancas           from 'static/icons/icon_crianças.png';
 import Button_menu              from "../form_button/button_menu";
 import Button_adicionar_crianca from '../form_button/button_cadastrar_crianca';
 
 const Style = getStyles();
-const cores = [
-    "rgb(0, 132, 255)","rgb(7, 63, 114)","rgb(209, 2, 255)",
-    "rgb(122, 1, 122)","rgb(255, 6, 255)","rgb(255, 6, 197)",
-    "rgb(250, 189, 236)","rgb(252, 70, 100)","rgb(70, 252, 170)",
-    "rgb(101, 199, 101)","rgb(249, 255, 75)","rgb(255, 234, 75)",
-    "cyan"]
+const paletaCores = [
+   '#aef0f6',
+   '#fd8bf3',
+   '#fb8f9f',
+   '#5e638c',
+   '#df91de',
+   '#b5eb95',
+   '#ec861a',
+   '#5b737b',
+   '#9e647c',
+   '#cfec5a',
+   '#b6c9bc',
+   '#f34560'
+  ];
+  
+
 export default function Home({navigation}){
 
+    const route = useRoute();
+    const [Cores,setCores] = useState([]);
     const [view, setView] = useState([]);
+    const [Criancas,setCriancas] = useState([]);
 
-
-    const Crianca = () =>{
-        const random =  Math.floor(Math.random() * cores.length);
-        setView([view,
-            <TouchableOpacity style={{
-                backgroundColor:cores[random],
-                width    :350,
-                padding  :10,
-                marginTop   :15,
-                paddingLeft :10,
-                borderRadius:15,
-                }} value={1}>
-
-                <Text value={1} >oi</Text>
-            
-            </TouchableOpacity>
-        ])
-    }
     
-    const Abrir_menu = () => { navigation.openDrawer(); }
+    useEffect(() => {
+        const addcionar_cores = (tamanho) =>{
+            var cores = [];
+            cores.push(Math.ceil(Math.random() * paletaCores.length))
 
+            while (tamanho != 0){
+                var c = Math.ceil(Math.random() * 10)
+                if (cores.indexOf(c) == -1)
+                {
+                    cores.push(c);tamanho -=1;
+                }      
+            }
+            setCores(cores);
+        }
+        const fetchValores = async () => {
+          const valoresData = await Getcriancas(route.params.Email);
+          addcionar_cores(valoresData.length);
+          setCriancas(valoresData);
+        };
+    
+        fetchValores();
+      }, 
+    []);
+    
+    const Cadastro = () =>{
+        navigation.navigate('Cadastro_Crianca',{Email:route.params.Email})
+    }  
+
+    const Crianca = (Nome) =>{
+        navigation.navigate('Crianca',{Nome:Nome})
+    }
+
+    const Abrir_menu = () => { 
+        navigation.openDrawer(); 
+    }
+   
+    
     return(
         <ImageBackground source={plano_de_fundo} style={Style.container}>
 
@@ -46,17 +83,41 @@ export default function Home({navigation}){
                 <Button_menu onPress={Abrir_menu}/>      
             </View>
 
-            <View>
+            <View style={Style.conteiner_nome_crianca}>
                 <Image source={Icone_criancas} style={Style.icone_crianca}/>
             </View>
-         
-            {view.map((view) => view)} 
+
+            <ScrollView style={Style.scrollview}>
+                {Criancas.map((item,index) =>
+                    <TouchableOpacity style={
+                        {   
+                            backgroundColor:paletaCores[Cores[index]],
+                            alignItems    :'center',
+                            justifyContent: 'center',
+                            width:350,
+                            height:50,
+                            marginBottom:20,
+                            borderRadius:10,
+                            borderWidth:1.2,
+                        }
+                    } key={index} onPress={()=>Crianca(item.Nome)}>
+                        <Text style={
+                            {   
+                                color:'white',
+                                fontWeight:'bold',
+                                fontSize:15
+                            }
+                            }>{item.Nome}</Text>
+                    </TouchableOpacity>
+                )}
 
             <View style={Style.container_button_adcionar}> 
                 <Text style={Style.text_cadastrar_crianca}>Cadastrar Criança</Text>
-                <Button_adicionar_crianca navigation={navigation}/>
+                <Button_adicionar_crianca onPress={Cadastro}/>
             </View>
             
+            </ScrollView>
+
         </ImageBackground>
     );
 }

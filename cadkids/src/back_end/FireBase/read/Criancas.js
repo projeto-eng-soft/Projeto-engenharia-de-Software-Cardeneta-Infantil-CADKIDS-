@@ -1,9 +1,9 @@
 import { DB } from "src/firebaseConfig";
-import { getDocs , collection, query , orderBy } from "firebase/firestore";
+import { getDocs , collection, query  ,where} from "firebase/firestore";
 
-export const Getvacinas_12 = async() => {
+export const Getcriancas = async(email) => {
     const dicionario = []
-    const cursor_exe    = query(collection(DB, "vacinas_ate_12meses"),orderBy('index'));
+    const cursor_exe    = query(collection(DB, "Criança"),where('Email','==',email));
     const querySnapshot = await getDocs(cursor_exe);
     
     querySnapshot.forEach((doc) => {

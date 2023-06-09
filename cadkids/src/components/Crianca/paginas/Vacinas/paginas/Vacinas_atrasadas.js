@@ -1,21 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState ,useEffect } from "react";
 import { View , Text , ImageBackground , 
-        Image , TouchableOpacity , ScrollView ,
-        Modal } from "react-native";
+    Image , TouchableOpacity , ScrollView ,
+    Modal } from "react-native";
 
-/**/
 import { Getvacinas_12 } from "src/back_end/FireBase/read/Getvacinas";
 import { getStyles }    from "./estilo/estilo";
-import { getAplicadas } from "./estilo/estilo";
+import { getAtrasadas } from "./estilo/estilo";
 import Fechar        from "./form_button/modal_button";
-/**/
+
 import Logo          from 'static/icons/icon_logo.png';
 import plano_padrao  from 'static/imagens/plano_de_fundo_vacinas.jpg';
 
-const Styles = getStyles('rgb(30, 144, 255');
-const Styles_container  = getAplicadas();
+const Styles = getStyles();
+const Styles_container = getAtrasadas();
 
-export default function Aplicadas_Vacinas({navigation}){
+export default function Atrasadas_vacinas({navigation}){
     const [Item   ,setItem]    = useState({});
     const [Visible,setVisible] = useState(false);
     const [Vacinas,setVacinas] = useState([])
@@ -25,6 +24,7 @@ export default function Aplicadas_Vacinas({navigation}){
           const valoresData = await Getvacinas_12();
           setVacinas(valoresData);
         };
+    
         fetchValores();
       }, 
     []);
@@ -37,14 +37,12 @@ export default function Aplicadas_Vacinas({navigation}){
     const Close_popup = () =>{
         setVisible(false);
     }
-    
     return(
-
         <ImageBackground source={plano_padrao} style={Styles.container}>
             <Image source={Logo} style={Styles.icone_logo}/>
             
             <View style={Styles.container_title}>
-                <Text style={Styles.text_title}>Vacinas Aplicadas</Text>
+                <Text style={Styles.text_title}>Vacinas Atrasadas</Text>
             </View>
 
             <ScrollView style={Styles.scrollview_vacinas}>
@@ -52,7 +50,7 @@ export default function Aplicadas_Vacinas({navigation}){
                     <TouchableOpacity style={Styles_container.containers_vacinas} key={index} onPress={()=>Informacao(item)}>
                         <Text style={Styles.vac_text}>{item.DOSES}</Text>
                         <Text style={Styles.vac_text}>&#8226; {item.VACINAS}</Text>
-                    </TouchableOpacity>        
+                    </TouchableOpacity>
                 )}
             </ScrollView>
 
@@ -63,9 +61,9 @@ export default function Aplicadas_Vacinas({navigation}){
                     
                     <View style={Styles.modal_informacao}>
                             <Text style={Styles.modal_text_2}>&#x025AB; Lote   :</Text>
-                            <Text style={Styles.modal_text_2}>&#x025AB; Doses  :  {Item.DOSES}</Text>
-                            <Text style={Styles.modal_text_2}>&#x025AB; Vacina :  {Item.VACINAS}</Text>
-                            <Text style={Styles.modal_text_2}>&#x025AB; Idade   :  {Item.IDADE}</Text>
+                            <Text style={Styles.modal_text_2}>&#x025AB; Doses  :  {Item.DOSES}  </Text>
+                            <Text style={Styles.modal_text_2}>&#x025AB; Vacina :  {Item.VACINAS} </Text>
+                            <Text style={Styles.modal_text_2}>&#x025AB; Idade   :  {Item.IDADE}  </Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Data da aplicação:</Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Doenças evitadas :  {Item['DOENÇAS EVITADAS']}  </Text>
                     </View>
@@ -77,4 +75,3 @@ export default function Aplicadas_Vacinas({navigation}){
         </ImageBackground>
     );
 }
-

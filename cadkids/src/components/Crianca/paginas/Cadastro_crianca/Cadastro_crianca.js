@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useRoute } from "@react-navigation/native";
 import MaskInput,{ Masks } from "react-native-mask-input";
 import { View , Text , TextInput , ImageBackground , Image} from "react-native";
 
-import { getStyles }    from './estilo/cad_crianca';
+import { createCrianca } from "src/back_end/FireBase/create/createCriança";
+import { getStyles }     from './estilo/cad_crianca';
 /**/
 import Logo             from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
@@ -12,12 +14,20 @@ import Button_cadastrar from './form_touch/button_cadastrar';
 
 const Style = getStyles();
 export default function Cadastro_criança({navigation}){
+    const route = useRoute()
 
     const [Certidao,setCertidao]             = useState(null);
     const [Nome,setNome]                     = useState(null);
     const [dataNascimento,setDataNascimento] = useState(null);
 
-    const Cadastrando_criança = () =>{ navigation.navigate('Crianca'); }
+    const Cadastrando_criança = () =>{  
+        createCrianca({
+            Email:route.params.Email,
+            Certidao:Certidao,
+            Nome:Nome,
+            dataNascimento:dataNascimento
+        },navigation)
+    }
     
     return(
         <ImageBackground style={Style.container} source={plano_de_fundo}>
@@ -33,7 +43,7 @@ export default function Cadastro_criança({navigation}){
                     style        = {Style.textInput}
                     placeholder  ="digite o número de certidão"
                     keyboardType ="numeric" 
-                    maxLength    = {42}
+                    maxLength    = {19}
                     value        = {Certidao}
                     onChangeText = {setCertidao}
                     mask         = {certidao_caracter}
@@ -78,11 +88,6 @@ export default function Cadastro_criança({navigation}){
 
 
 const certidao_caracter = [
-    /\d/, /\d/, /\d/, /\d/,/\d/, /\d/, /\d/, /\d/, /\d/, /\d/,'  ',
-    /\d/, /\d/, /\d/, /\d/,"  ",
-    /\d/, "  ", /\d/, /\d/, /\d/, /\d/,'  ',
-    /\d/, /\d/, /\d/, "  ",
-    /\d/, /\d/, /\d/, /\d/, /\d/, /\d/,/\d/,"  ",
-    /\d/, /\d/
-                                    
+    /\d/, /\d/, /\d/,' ',/\d/, /\d/, /\d/,' ',/\d/, /\d/, /\d/,' ',
+    /\d/, /\d/, /\d/," ",/\d/, /\d/, /\d/                       
 ]

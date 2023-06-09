@@ -7,7 +7,7 @@ export function readCliente(email,password,navigation){
     
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-        navigation.navigate('home_Criança');
+        navigation.navigate('home_Criança',{Email:email});
     })
     .catch((error) => {
         alert(error.code+"\n"+error.message);
