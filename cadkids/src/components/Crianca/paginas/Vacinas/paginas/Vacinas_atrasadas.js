@@ -9,7 +9,8 @@ import { getAtrasadas } from "./estilo/estilo";
 import Fechar        from "./form_button/modal_button";
 
 import Logo          from 'static/icons/icon_logo.png';
-import plano_padrao  from 'static/imagens/plano_de_fundo_vacinas.jpg';
+import plano_padrao  from 'static/imagens/plano_de_fundo_crianca.jpg';
+
 
 const Styles = getStyles();
 const Styles_container = getAtrasadas();
@@ -39,8 +40,11 @@ export default function Atrasadas_vacinas({navigation}){
     }
     return(
         <ImageBackground source={plano_padrao} style={Styles.container}>
-            <Image source={Logo} style={Styles.icone_logo}/>
             
+            <View style={Styles.container_logo}>
+                <Image source={Logo} style={Styles.icone_logo}/>
+            </View>
+
             <View style={Styles.container_title}>
                 <Text style={Styles.text_title}>Vacinas Atrasadas</Text>
             </View>
@@ -60,7 +64,7 @@ export default function Atrasadas_vacinas({navigation}){
                     <Text style={Styles.modal_text_1}>Informações adicionais</Text>
                     
                     <View style={Styles.modal_informacao}>
-                            <Text style={Styles.modal_text_2}>&#x025AB; Lote   :</Text>
+                            <Text style={Styles.modal_text_2}>&#x025AB; Atraso :</Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Doses  :  {Item.DOSES}  </Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Vacina :  {Item.VACINAS} </Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Idade   :  {Item.IDADE}  </Text>

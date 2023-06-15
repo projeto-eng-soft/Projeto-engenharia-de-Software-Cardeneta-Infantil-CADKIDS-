@@ -16,18 +16,13 @@ import Button_adicionar_crianca from '../form_button/button_cadastrar_crianca';
 
 const Style = getStyles();
 const paletaCores = [
-   '#aef0f6',
-   '#fd8bf3',
-   '#fb8f9f',
-   '#5e638c',
-   '#df91de',
-   '#b5eb95',
-   '#ec861a',
-   '#5b737b',
-   '#9e647c',
-   '#cfec5a',
-   '#b6c9bc',
-   '#f34560'
+    '#eecbca',
+    '#80c6f2',
+    '#d3b5f6',
+    '#c17383',
+    '#ff7fa8',
+    '#e5804d',
+    '#938672'
   ];
   
 
@@ -40,25 +35,27 @@ export default function Home({navigation}){
 
     
     useEffect(() => {
-        const addcionar_cores = (tamanho) =>{
+        const addcionar_cores = (tamanho) =>
+        {
             var cores = [];
-            cores.push(Math.ceil(Math.random() * paletaCores.length))
-
-            while (tamanho != 0){
-                var c = Math.ceil(Math.random() * 10)
-                if (cores.indexOf(c) == -1)
+            cores.push(paletaCores[Math.ceil(Math.random() * paletaCores.length-1)])
+            
+            while (tamanho-1 != 0)
+            {
+                var c = Math.ceil(Math.random() * paletaCores.length-1)
+                if (cores.indexOf(paletaCores[c]) == -1)
                 {
-                    cores.push(c);tamanho -=1;
+                    cores.push(paletaCores[c]);tamanho -=1;
                 }      
             }
             setCores(cores);
         }
+
         const fetchValores = async () => {
-          const valoresData = await Getcriancas(route.params.Email);
-          addcionar_cores(valoresData.length);
-          setCriancas(valoresData);
+            const valoresData = await Getcriancas(route.params.Email);
+            addcionar_cores(valoresData.length);
+            setCriancas(valoresData);
         };
-    
         fetchValores();
       }, 
     []);
@@ -91,7 +88,7 @@ export default function Home({navigation}){
                 {Criancas.map((item,index) =>
                     <TouchableOpacity style={
                         {   
-                            backgroundColor:paletaCores[Cores[index]],
+                            backgroundColor:Cores[index],
                             alignItems    :'center',
                             justifyContent: 'center',
                             width:350,
@@ -105,7 +102,7 @@ export default function Home({navigation}){
                             {   
                                 color:'white',
                                 fontWeight:'bold',
-                                fontSize:15
+                                fontSize:16
                             }
                             }>{item.Nome}</Text>
                     </TouchableOpacity>

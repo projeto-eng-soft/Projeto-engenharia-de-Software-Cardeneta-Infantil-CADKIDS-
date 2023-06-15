@@ -10,7 +10,7 @@ import { getAplicadas } from "./estilo/estilo";
 import Fechar        from "./form_button/modal_button";
 /**/
 import Logo          from 'static/icons/icon_logo.png';
-import plano_padrao  from 'static/imagens/plano_de_fundo_vacinas.jpg';
+import plano_padrao  from 'static/imagens/plano_de_fundo_crianca.jpg';
 
 const Styles = getStyles('rgb(30, 144, 255');
 const Styles_container  = getAplicadas();
@@ -41,7 +41,10 @@ export default function Aplicadas_Vacinas({navigation}){
     return(
 
         <ImageBackground source={plano_padrao} style={Styles.container}>
-            <Image source={Logo} style={Styles.icone_logo}/>
+
+            <View style={Styles.container_logo}>
+                <Image source={Logo} style={Styles.icone_logo}/>
+            </View>
             
             <View style={Styles.container_title}>
                 <Text style={Styles.text_title}>Vacinas Aplicadas</Text>

@@ -10,15 +10,18 @@ export const getStyles = (cor) =>{
         icone_logo:{
             width:80,
             height:80,
-            marginTop:40
+        },
+        container_logo:{
+            marginTop:40,
+            backgroundColor:'rgba(255,255,255,0.500)',
+            borderRadius:800 
         },
         
         container_title:{
-            backgroundColor:'rgba(255,255,255,0.500)',
+            alignItems:'center',
             width:250,
             marginTop:30,
-            marginRight:135,
-            borderBottomWidth:1.5
+            borderBottomWidth:1.0
         },        
 
         scrollview_vacinas:{
@@ -46,7 +49,6 @@ export const getStyles = (cor) =>{
 
         text_title:{
             fontSize:25,
-            marginLeft:10
         },
 
         modal_text_1:{
@@ -65,7 +67,7 @@ export const getStyles = (cor) =>{
 export const getAplicadas = ()=>{
     return StyleSheet.create({
         containers_vacinas:{
-            backgroundColor:'rgba(119, 255, 119,0.980)',
+            backgroundColor:'rgba(119, 255, 162, 0.98)',
             justifyContent :'center',            
             width:350,
             height:70,
@@ -81,7 +83,7 @@ export const getAplicadas = ()=>{
 export const getPendentes = ()=>{
     return StyleSheet.create({
         containers_vacinas:{
-            backgroundColor:'rgba(255, 219, 37,0.980)',
+            backgroundColor:'rgba(255, 223, 64, 0.98)',
             justifyContent :'center',            
             width:350,
             height:70,
@@ -96,7 +98,7 @@ export const getPendentes = ()=>{
 export const getAtrasadas = ()=>{
     return StyleSheet.create({
         containers_vacinas:{
-            backgroundColor:'rgba(245, 47, 90,0.980)',
+            backgroundColor:'rgba(255, 100, 100, 0.98)',
             justifyContent :'center',            
             width:350,
             height:70,

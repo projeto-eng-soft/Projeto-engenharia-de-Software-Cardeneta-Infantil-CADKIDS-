@@ -10,5 +10,6 @@ export const Getcriancas = async(email) => {
         const dict = doc.data()
         dicionario.push(dict);
     });        
+    
     return dicionario;      
 }

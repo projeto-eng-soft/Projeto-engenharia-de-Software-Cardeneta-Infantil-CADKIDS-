@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useNavigation }            from "@react-navigation/native";
 
 /* */ 
-import { getStyles } from "./estilo/style";
+import { getStyles }       from "./estilo/style";
 import Vacinas_aplicadas   from './paginas/Vacinas_aplicadas';
 import Vacinas_pendentes   from './paginas/Vacinas_pendentes';
 import Vacinas_atrasadas   from './paginas/Vacinas_atrasadas';
