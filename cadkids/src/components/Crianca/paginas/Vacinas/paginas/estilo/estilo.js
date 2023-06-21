@@ -31,10 +31,9 @@ export const getStyles = (cor) =>{
 
         modal_container:{
             backgroundColor:'rgb(255, 255, 255)',
-            justifyContent : 'center', 
+            justifyContent : 'flex-start', 
             alignItems     :'center',
             width:352,
-            height:320,
             left:16,
             marginTop:250,
             borderRadius:10,
@@ -42,7 +41,7 @@ export const getStyles = (cor) =>{
         },
         
         modal_informacao:{
-            alignItems: 'flex-start',
+            flexGrow:1,
             marginTop :10,
             marginLeft:10,
         },
@@ -53,13 +52,18 @@ export const getStyles = (cor) =>{
 
         modal_text_1:{
             fontSize:20,
-            marginTop:5
+            marginTop:10,
+            fontWeight:'bold'
         },
         
         modal_text_2:{
             fontSize:15,
-            marginBottom:2
-        },        
+            marginBottom:2.5
+        },
+        modal_button:{
+            marginTop:5,
+            marginBottom:10
+        }        
     });
     return Styles
 }

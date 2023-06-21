@@ -71,8 +71,11 @@ export default function Atrasadas_vacinas({navigation}){
                             <Text style={Styles.modal_text_2}>&#x025AB; Data da aplicação:</Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Doenças evitadas :  {Item['DOENÇAS EVITADAS']}  </Text>
                     </View>
+                    
+                    <View style={Styles.modal_button}>
+                        <Fechar onPress={Close_popup} />
+                    </View>
 
-                    <Fechar onPress={Close_popup} />
                 </View>
             </Modal>
         

@@ -73,7 +73,9 @@ export default function Aplicadas_Vacinas({navigation}){
                             <Text style={Styles.modal_text_2}>&#x025AB; Doenças evitadas :  {Item['DOENÇAS EVITADAS']}  </Text>
                     </View>
 
-                    <Fechar onPress={Close_popup} />
+                    <View style={Styles.modal_button}>
+                        <Fechar onPress={Close_popup} />
+                    </View>
                 </View>
             </Modal>
         
