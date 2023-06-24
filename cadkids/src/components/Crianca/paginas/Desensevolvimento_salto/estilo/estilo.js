@@ -10,15 +10,18 @@ export const getStyles = () => {
             justifyContent : 'flex-start',
             resizeMode:'center'
         },
+
         icone_logo:{
-            width:80,
+            width :80,
             height:80,
         },
+        
         icone_infor:{
-            width:39,
+            width :39,
             height:39,
             marginLeft:35
         },
+        
         container_logo:{
             marginTop:40,
             backgroundColor:'rgba(255,255,255,0.500)',
@@ -34,32 +37,46 @@ export const getStyles = () => {
 
         container_marcos:{
             backgroundColor:'#f0c69c',
-            justifyContent :'center',  
-      
+            justifyContent :'center',
+            alignItems:'center',
             width:290,
             height:80,
             paddingLeft :5,
             marginRight :60,
             marginBottom:15,
             borderRadius:10,
-            borderTopRightRadius:0,
+            borderTopRightRadius   :0,
             borderBottomRightRadius:0,
             borderWidth:1.2,
         },
         
         container_infor:{
             backgroundColor:'rgba(197, 215, 247, 0.919)',
-            position:'absolute',
+            position      :'absolute',
             justifyContent:'center',
-            alignItems:'center',
+            alignItems    :'center',
             width :90,
             height:80,
             marginLeft:260,
-            borderEndWidth:1.2,
-            borderTopWidth:1.2,
+            borderEndWidth   :1.2,
+            borderTopWidth   :1.2,
             borderBottomWidth:1.2,
-            borderTopRightRadius:10,
+            borderTopRightRadius   :10,
             borderBottomRightRadius:10,
+        },
+        
+        container_marcos_view1:{
+            position      :'absolute',
+            justifyContent:'center',
+            alignItems    :'center',
+            width:50,
+            height:80,
+            borderEndWidth:1.2
+        },
+
+        container_marcos_view2:{
+            width:230,
+            marginLeft:42,
         },
 
         scrollview_marcos:{
@@ -70,9 +87,9 @@ export const getStyles = () => {
         text_title:{
             fontSize:25
         },
+        
         vac_text:{
-            fontSize:15,
-            marginLeft:10
+            fontSize  :15,
         },
 
         modal_container:{
@@ -85,9 +102,10 @@ export const getStyles = () => {
             borderRadius:10,
             borderWidth:0.3,
         },
+        
         modal_informacao:{
-            flexGrow:1,
-            alignItems: 'flex-start',
+            flexGrow  :1,
+            alignItems:'flex-start',
             marginTop :10,
             marginLeft:10,
         },
@@ -97,10 +115,12 @@ export const getStyles = () => {
             marginTop:10,
             fontWeight:'bold'
         }, 
+        
         modal_text_2:{
-            fontSize:15,
+            fontSize    :15,
             marginBottom:2.5
         },  
+        
         modal_button:{
             marginTop:5,
             marginBottom:10

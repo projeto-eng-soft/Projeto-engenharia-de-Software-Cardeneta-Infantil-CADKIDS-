@@ -11,6 +11,7 @@ export const getStyles = (cor) =>{
             width:80,
             height:80,
         },
+        
         container_logo:{
             marginTop:40,
             backgroundColor:'rgba(255,255,255,0.500)',
@@ -82,7 +83,6 @@ export const getAplicadas = ()=>{
         },
     })
 }
-
 
 export const getPendentes = ()=>{
     return StyleSheet.create({

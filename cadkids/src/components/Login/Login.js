@@ -14,39 +14,48 @@ import Button_entrar    from "./form_button/button_entrar";
 import Button_senha     from "./form_button/button_esqueci_senha";
 import Button_cadastrar from "./form_button/button_cadastrar";
 import Visivel_senha    from "./form_button/button_visibilidade_senha";
+import Button_medico    from "./form_button/button_medico";
 
 
 const Style = getStyles();
 
 export default function Login( {navigation} )
 {
-
-
-    const [Cpf   ,setCpf  ] = useState(null)
-    const [Senha ,setSenha] = useState(null)
-    const [Olho  ,setOlho ] = useState(true)
+    const [Boleano,setBoleano]     = useState(true);
+    const [Texto ,setTexto]        = useState('');
+    const [Cpf   ,setCpf  ]        = useState(null);
+    const [Senha ,setSenha]        = useState(null);
+    const [Olho  ,setOlho ]        = useState(true);
 
     const Senha_visibilidade = () => setOlho(!Olho)
 
     const Entrar = () =>
     {
-
-        if ( true && Cpf!= null)
+        console.log(Cpf,'1')
+        if ( Cpf!= null && Boleano) 
         {
             var cpf_dominio = Cpf;
             cpf_dominio = cpf_dominio.replace('.','');
             cpf_dominio = cpf_dominio.replace('.','');
             cpf_dominio = cpf_dominio.replace('-','');
-
             readCliente(cpf_dominio+"@dominio.com",Senha,navigation)
            
+        }else if ( Cpf!= null && !Boleano)
+        {
+
         }else{
             setCpf(Cpf) ;setSenha(Senha);
             alert('Usuario ou Senha Invalido')
         }
     }
-
     
+    const Alterar =()=>{
+        if (Boleano) setTexto(' - Medico');
+        else         setTexto('');
+    }
+
+    const Medico =()=>{ setBoleano(!Boleano);Alterar(); }
+
     return(
         <ImageBackground source={plano_de_fundo} style={Style.container}>
             
@@ -55,10 +64,9 @@ export default function Login( {navigation} )
             </View>
 
             <View style={Style.container_login}>
-                <Text style={Style.text} >CPF</Text>
+                <Text style={Style.text} >Cpf{Texto}</Text>
                     <MaskInput 
-                        placeholder  = "Digite seu cpf"
-                        keyboardType = "numeric"
+                        placeholder  = {"Digite seu Cpf"}
                         maxLength    = {14}
                         style        = {Style.textInput}
                         value        = {Cpf}
@@ -66,15 +74,13 @@ export default function Login( {navigation} )
                         mask         = {Masks.BRL_CPF}
                     />
                 
-                <Text style={Style.text} >Senha</Text>
+                <Text style={Style.text}>Senha</Text>
 
                 <View>
-            
                     <View>                 
                         <TextInput 
                             placeholder     = "Digite sua senha"
                             style           = {Style.textInput}
-                            maxLength       = {25}
                             value           = {Senha}
                             onChangeText    = {setSenha} 
                             secureTextEntry = {Olho}
@@ -98,6 +104,10 @@ export default function Login( {navigation} )
             
             <View style={Style.button_cadastrar}>
                 <Button_cadastrar navigation={navigation} />
+            </View>
+                
+            <View style={Style.button_medico}>
+                    <Button_medico onPress={Medico}/>
             </View>
 
             <View>

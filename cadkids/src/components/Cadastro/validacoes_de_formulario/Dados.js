@@ -26,3 +26,25 @@ export const Dados_cadastro = (route,E_mail,Senha) =>{
     };
     return Valor;
 }
+
+export const Dados_cadastro_medico = (route,valores) =>{
+    var Cpf = route.params.Cpf
+    var n_inscricao_dominio = valores[0] + "@dominio.com";
+
+    Cpf = Cpf.replace('.','')
+    Cpf = Cpf.replace('.','')
+    Cpf = Cpf.replace('-','')
+    Cpf = parseInt(Cpf)
+    
+    
+    const Valor = { 
+        Nome          :route.params.NomeUser       ,
+        dataNascimento:route.params.dataNascimento ,    
+        Rg            :route.params.Rg             ,
+        Cpf           :Cpf                         ,
+        numero_Inscricao   :parseInt(valores[0])   ,
+        N_inscricao_dominio:n_inscricao_dominio    ,
+        Senha              : valores[1],
+    };
+    return Valor;
+}

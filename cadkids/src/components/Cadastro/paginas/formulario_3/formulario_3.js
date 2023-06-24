@@ -84,9 +84,7 @@ export default function Formulario_3({navigation}){
                         <Button_criar onPress={criar_Conta}/>
                     </View>
                 </View>
-                <View style={Style.button_medico}>
-                    <Button_medico navigation={navigation}/>
-                </View>
+
                 <View>
                     <Image source={icon_Cadkids} style={Style.icone_cadkids}/>
                 </View>

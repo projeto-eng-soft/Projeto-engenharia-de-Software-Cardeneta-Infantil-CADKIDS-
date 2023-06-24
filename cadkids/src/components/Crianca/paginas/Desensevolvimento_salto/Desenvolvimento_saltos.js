@@ -1,8 +1,6 @@
 import { useState,useEffect } from "react";
 import { View , Text , ImageBackground ,Image ,ScrollView ,TouchableOpacity,Modal} from "react-native";
 
-
-
 import { GetMarcos } from "src/back_end/FireBase/read/Marcos";
 import { getStyles } from "./estilo/estilo";
 import Fechar        from "./form_button/modal_button";
@@ -18,7 +16,6 @@ export default function Desenvolvimento_s({navigation}){
     const [Item   ,setItem]    = useState({});
     const [Marcos,setMarcos]   = useState([]);
     const [Visible,setVisible] = useState(false);
-
 
     useEffect(() => {
         const fetchValores = async () => {
@@ -50,15 +47,21 @@ export default function Desenvolvimento_s({navigation}){
                 {Marcos.map((item,index) =>
 
                     <View key={index}>
-
-                        
+        
                         <TouchableOpacity style={Styles.container_infor} onPress={()=>Informacao(item)}>
                             <Image source={icon_infor} style={Styles.icone_infor}/>
                         </TouchableOpacity>
 
-                        <View style={Styles.container_marcos} >          
-                            <Text style={Styles.vac_text}>Mês : {item.Meses}</Text>
-                            <Text style={Styles.vac_text}>Marco : {item.Marcos}</Text>
+                        <View style={Styles.container_marcos}>
+                            <View style={Styles.container_marcos_view2}>
+                                <T style={Styles.vac_text}>Marco</T>
+                                <Text>{item.Marcos}</Text>
+                            </View>         
+                        </View>
+                                                                            
+                        <View style={Styles.container_marcos_view1}>
+                            <T style={Styles.vac_text}>Mês</T>
+                            <Text>{item.Meses}</Text>
                         </View>
 
                     </View>        
@@ -91,5 +94,5 @@ export default function Desenvolvimento_s({navigation}){
         </ImageBackground>
     );
 }
-
 const B = (props) => <Text style={{fontWeight: 'bold',fontSize:16}}>{props.children}</Text>
+const T = (props) => <Text style={{fontWeight: 'bold',fontSize:15}}>{props.children}</Text>
