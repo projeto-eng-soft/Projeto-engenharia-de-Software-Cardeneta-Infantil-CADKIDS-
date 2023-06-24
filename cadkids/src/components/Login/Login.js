@@ -31,7 +31,6 @@ export default function Login( {navigation} )
 
     const Entrar = () =>
     {
-        console.log(Cpf,'1')
         if ( Cpf!= null && Boleano) 
         {
             var cpf_dominio = Cpf;
