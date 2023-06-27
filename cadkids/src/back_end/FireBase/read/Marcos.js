@@ -3,7 +3,7 @@ import { getDocs , collection, query , orderBy } from "firebase/firestore";
 
 export const GetMarcos = async() => {
     const dicionario = []
-    const cursor_exe    = query(collection(DB, "desenvolvimento_0_1.5anos"),orderBy('index'));
+    const cursor_exe    = query(collection(DB, "desenvolvimento"),orderBy('index'));
     const querySnapshot = await getDocs(cursor_exe);
     
     querySnapshot.forEach((doc) => {
