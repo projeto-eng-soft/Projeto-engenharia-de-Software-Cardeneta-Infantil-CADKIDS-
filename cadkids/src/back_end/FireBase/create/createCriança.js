@@ -4,12 +4,12 @@ import { Getvacinas_12 } from '../read/Getvacinas';
 
 export function createCrianca(data,navigation)
 {
-    
+    const docRef = collection(DB,'Criança')
     addDoc(
-        collection(DB,'Criança'),data
-    ).then(async()=> {
+        docRef,data
+    ).then(async(docRef)=> {
         const valores   = await Getvacinas_12();
-        const collecRef = collection(doc(DB, "Criança", data.Email), "Vacinas");
+        const collecRef = collection(doc(DB, "Criança",docRef.id), "Vacinas");
         
         for(let i=0;i<valores.length;i++){ addDoc(collecRef,valores[i]); }
         navigation.navigate('Inicio_crianca',{Email:data.Email});
