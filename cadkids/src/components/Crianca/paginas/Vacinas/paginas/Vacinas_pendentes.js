@@ -4,8 +4,8 @@ import { View , Text , ImageBackground ,
         Modal } from "react-native";
 /**/
 import { Getvacinas_12 } from "src/back_end/FireBase/read/Getvacinas";
-import { getStyles    }  from "./estilo/estilo";
-import { getPendentes }  from './estilo/estilo';
+import { getStyles    }  from "./estilo/vacinas";
+import { getPendentes }  from './estilo/vacinas';
 import Fechar            from "./form_button/modal_button";
 /**/ 
 import Logo          from 'static/icons/icon_logo.png';

@@ -7,7 +7,7 @@ export const GetMarcos = async() => {
     const querySnapshot = await getDocs(cursor_exe);
     
     querySnapshot.forEach((doc) => {
-        const dict = doc.data()
+        const dict = doc.data();
         dicionario.push(dict);
     });        
     return dicionario;      

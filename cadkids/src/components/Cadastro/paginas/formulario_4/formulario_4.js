@@ -27,7 +27,6 @@ export default function Formulario_4({navigation})
     const criar_Conta = () =>{
         if(VSenha(Senha,Rsenha)){
             const valores = Dados_cadastro_medico(route,[inscricao_Conselho,Senha]);
-            console.log(valores)
             createMedico(valores,navigation);
         }else{
             alert('Senha invalida');

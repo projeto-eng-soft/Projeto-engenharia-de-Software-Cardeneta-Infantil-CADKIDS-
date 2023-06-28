@@ -1,9 +1,10 @@
 import React ,{ useState } from "react";
 
-import { View , Text , TextInput , ImageBackground , Image  } from "react-native";
+import { View , Text , TextInput , ImageBackground , Image, Alert  } from "react-native";
 import MaskInput ,{ Masks } from 'react-native-mask-input';
 
 import { readCliente } from "src/back_end/FireBase/read/login";
+import { readMedico  } from 'src/back_end/FireBase/read/Medico';
 import { getStyles }    from "./estilo/login";
 /*Imagens*/ 
 import Logo             from 'static/icons/icon_logo.png';
@@ -31,17 +32,24 @@ export default function Login( {navigation} )
 
     const Entrar = () =>
     {
-        if ( Cpf!= null && Boleano) 
-        {
+        try{
             var cpf_dominio = Cpf;
             cpf_dominio = cpf_dominio.replace('.','');
             cpf_dominio = cpf_dominio.replace('.','');
             cpf_dominio = cpf_dominio.replace('-','');
+        }
+        catch(error){
+            alert(error.message);
+            return;
+        }
+
+        if ( Cpf!= null && Boleano) 
+        {
             readCliente(cpf_dominio+"@dominio.com",Senha,navigation)
            
         }else if ( Cpf!= null && !Boleano)
         {
-
+            readMedico(cpf_dominio+"@dominio.med.com",Senha,navigation)
         }else{
             setCpf(Cpf) ;setSenha(Senha);
             alert('Usuario ou Senha Invalido')
@@ -53,7 +61,9 @@ export default function Login( {navigation} )
         else         setTexto('');
     }
 
-    const Medico =()=>{ setBoleano(!Boleano);Alterar(); }
+    const Medico =()=>{ 
+        setBoleano(!Boleano);
+        Alterar(); }
 
     return(
         <ImageBackground source={plano_de_fundo} style={Style.container}>

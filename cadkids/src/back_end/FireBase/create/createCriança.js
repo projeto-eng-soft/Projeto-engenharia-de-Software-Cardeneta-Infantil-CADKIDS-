@@ -11,7 +11,9 @@ export function createCrianca(data,navigation)
         const valores   = await Getvacinas_12();
         const collecRef = collection(doc(DB, "Criança",docRef.id), "Vacinas");
         
-        for(let i=0;i<valores.length;i++){ addDoc(collecRef,valores[i]); }
+        for(let i=0;i<valores.length;i++){ 
+            addDoc(collecRef,valores[i]); 
+        }
         navigation.navigate('Inicio_crianca',{Email:data.Email});
     }
     ).catch((error)=>{ 

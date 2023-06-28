@@ -9,7 +9,7 @@ import { Getcriancas } from "src/back_end/FireBase/read/Criancas";
 import { getStyles }   from '../estilo/style';
 
 /**/ 
-import plano_de_fundo           from 'static/imagens/plano_de_fundo_home_crianca.jpg';
+import plano_de_fundo           from 'static/imagens/plano_de_fundo_padrao.png';
 import Icone_criancas           from 'static/icons/icon_crianças.png';
 import Button_menu              from "../form_button/button_menu";
 import Button_adicionar_crianca from '../form_button/button_cadastrar_crianca';

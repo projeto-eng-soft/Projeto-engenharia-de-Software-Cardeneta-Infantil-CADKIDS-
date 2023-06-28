@@ -4,7 +4,7 @@ import { getAuth ,createUserWithEmailAndPassword } from 'firebase/auth';
 
 
 function createEmailPassword(data,navigation){
-    const email    = data.N_inscricao_dominio;
+    const email    = data.CpfDominio;
     const password = data.Senha;
     const auth     = getAuth(FireApp);
 
