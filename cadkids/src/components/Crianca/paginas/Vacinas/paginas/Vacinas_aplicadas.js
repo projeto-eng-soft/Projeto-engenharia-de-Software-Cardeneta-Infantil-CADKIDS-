@@ -5,12 +5,12 @@ import { View , Text , ImageBackground ,
 
 /**/
 import { Getvacinas_12 } from "src/back_end/FireBase/read/Getvacinas";
-import { getStyles }    from "./estilo/estilo";
-import { getAplicadas } from "./estilo/estilo";
+import { getStyles }    from "./estilo/vacinas";
+import { getAplicadas } from "./estilo/vacinas";
 import Fechar        from "./form_button/modal_button";
 /**/
 import Logo          from 'static/icons/icon_logo.png';
-import plano_padrao  from 'static/imagens/plano_de_fundo_vacinas.jpg';
+import plano_padrao  from 'static/imagens/plano_de_fundo_crianca.jpg';
 
 const Styles = getStyles('rgb(30, 144, 255');
 const Styles_container  = getAplicadas();
@@ -20,14 +20,7 @@ export default function Aplicadas_Vacinas({navigation}){
     const [Visible,setVisible] = useState(false);
     const [Vacinas,setVacinas] = useState([])
 
-    useEffect(() => {
-        const fetchValores = async () => {
-          const valoresData = await Getvacinas_12();
-          setVacinas(valoresData);
-        };
-        fetchValores();
-      }, 
-    []);
+CZZZ
 
     const Informacao = (item) => {
         setItem(item);
@@ -41,7 +34,10 @@ export default function Aplicadas_Vacinas({navigation}){
     return(
 
         <ImageBackground source={plano_padrao} style={Styles.container}>
-            <Image source={Logo} style={Styles.icone_logo}/>
+
+            <View style={Styles.container_logo}>
+                <Image source={Logo} style={Styles.icone_logo}/>
+            </View>
             
             <View style={Styles.container_title}>
                 <Text style={Styles.text_title}>Vacinas Aplicadas</Text>
@@ -70,7 +66,9 @@ export default function Aplicadas_Vacinas({navigation}){
                             <Text style={Styles.modal_text_2}>&#x025AB; Doenças evitadas :  {Item['DOENÇAS EVITADAS']}  </Text>
                     </View>
 
-                    <Fechar onPress={Close_popup} />
+                    <View style={Styles.modal_button}>
+                        <Fechar onPress={Close_popup} />
+                    </View>
                 </View>
             </Modal>
         

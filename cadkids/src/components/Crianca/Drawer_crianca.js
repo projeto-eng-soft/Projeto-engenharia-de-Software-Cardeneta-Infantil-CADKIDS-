@@ -11,7 +11,7 @@ import Crianca           from "./paginas/Crianca/Crianca";
 import Vacinas           from "./paginas/Vacinas/home_Vacinas";
 import Desenvolvimento_c from "./paginas/Desenvolvimento_Cognitivo/Desenvolvimento_c";
 import Desenvolvimento_f from "./paginas/Desenvolvimento_Fisico/paginas/Desenvolvimento_fisico";
-
+import Desenvolvimento_s from "./paginas/Desensevolvimento_salto/Desenvolvimento_saltos";
 
 const Drawer = createDrawerNavigator()
 const Stack  = createStackNavigator();
@@ -41,6 +41,8 @@ const Stack_navigation = () =>{
             <Stack.Screen name="Vacinas"           component={Vacinas}           />
             <Stack.Screen name="Desenvolvimento_c" component={Desenvolvimento_c} />
             <Stack.Screen name="Desenvolvimento_f" component={Desenvolvimento_f} />
+            <Stack.Screen name="Desenvolvimento_s" component={Desenvolvimento_s} />
+
         </Stack.Navigator>
     );
 }

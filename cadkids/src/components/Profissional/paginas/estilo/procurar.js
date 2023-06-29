@@ -1,45 +1,50 @@
-import { StyleSheet }   from "react-native";
-
-
+import { StyleSheet }  from "react-native";
 
 export const getStyles = () => 
 {
+
     const Style = StyleSheet.create({
         container: {
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-
+            flex           : 1,
+            alignItems     : 'center',
+            justifyContent : 'flex-start',
         },
-    
+
         formulario_view:{
             backgroundColor:'rgba(255, 255, 255, 0.450)',
             alignItems: 'center',
             width     :350,
-            height    :435,
+            height    :190,
             borderRadius:20,
+            marginTop:50
         },
 
-        icone_logo:{
-            width :100,
-            height:100,
-            marginTop   :80,
-            marginBottom:60
+
+        icone:{
+            width       :100,
+            height      :100,
+            marginTop   :100,
+            marginBottom:80,
+            //backgroundColor:'rgb(255, 255, 255)',
+            borderRadius:100,
+
         },
 
         icone_cadkids:{
             width    :110,
             height   :50,
-            marginTop:120,
-        },
-
-        text:{
-            fontSize:15,
-            marginTop:20,
-            marginLeft:4,
+            marginTop:280,
+            
         },
         
+
+        text:{
+            fontSize :17,
+            marginTop:20,
+
+        },
+    
         textInput:{
-            backgroundColor:'rgba(255, 255, 255, 0)',
             fontSize:14,
             width :300,
             height:40 ,
@@ -49,14 +54,11 @@ export const getStyles = () =>
             marginTop:2
         },
     
-        button_continua:{
-            marginTop:25,
-            borderRadius:20   
+        button_recuperar:{
+            marginTop:30,
+            borderRadius:20
         },
-        button_medico:{
-            marginTop:10,
-            marginRight:100
-        }
+
     })
     return Style;
 };

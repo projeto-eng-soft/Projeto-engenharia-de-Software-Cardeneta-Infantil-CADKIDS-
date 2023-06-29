@@ -4,12 +4,13 @@ import { View , Text , ImageBackground ,
     Modal } from "react-native";
 
 import { Getvacinas_12 } from "src/back_end/FireBase/read/Getvacinas";
-import { getStyles }    from "./estilo/estilo";
-import { getAtrasadas } from "./estilo/estilo";
+import { getStyles }    from "./estilo/vacinas";
+import { getAtrasadas } from "./estilo/vacinas";
 import Fechar        from "./form_button/modal_button";
 
 import Logo          from 'static/icons/icon_logo.png';
-import plano_padrao  from 'static/imagens/plano_de_fundo_vacinas.jpg';
+import plano_padrao  from 'static/imagens/plano_de_fundo_crianca.jpg';
+
 
 const Styles = getStyles();
 const Styles_container = getAtrasadas();
@@ -39,8 +40,11 @@ export default function Atrasadas_vacinas({navigation}){
     }
     return(
         <ImageBackground source={plano_padrao} style={Styles.container}>
-            <Image source={Logo} style={Styles.icone_logo}/>
             
+            <View style={Styles.container_logo}>
+                <Image source={Logo} style={Styles.icone_logo}/>
+            </View>
+
             <View style={Styles.container_title}>
                 <Text style={Styles.text_title}>Vacinas Atrasadas</Text>
             </View>
@@ -60,15 +64,18 @@ export default function Atrasadas_vacinas({navigation}){
                     <Text style={Styles.modal_text_1}>Informações adicionais</Text>
                     
                     <View style={Styles.modal_informacao}>
-                            <Text style={Styles.modal_text_2}>&#x025AB; Lote   :</Text>
+                            <Text style={Styles.modal_text_2}>&#x025AB; Atraso :</Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Doses  :  {Item.DOSES}  </Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Vacina :  {Item.VACINAS} </Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Idade   :  {Item.IDADE}  </Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Data da aplicação:</Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Doenças evitadas :  {Item['DOENÇAS EVITADAS']}  </Text>
                     </View>
+                    
+                    <View style={Styles.modal_button}>
+                        <Fechar onPress={Close_popup} />
+                    </View>
 
-                    <Fechar onPress={Close_popup} />
                 </View>
             </Modal>
         

@@ -16,7 +16,7 @@ export default function Crianca({navigation})
     const Vacinas    = () =>                { navigation.navigate('Vacinas');          };
     const Desenvolvimento_Cognitivo = () => { navigation.navigate('Desenvolvimento_c');};
     const Desenvolvimento_Fisico    = () => { navigation.navigate('Desenvolvimento_f');};
-
+    const Desensevolvimento_Salto   = () => { navigation.navigate('Desenvolvimento_s');}; 
 
     return(
         <ImageBackground source={plano_de_fundo} style={Style.container}>
@@ -33,6 +33,11 @@ export default function Crianca({navigation})
 
                 <TouchableOpacity style={Style.button_opcoes} onPress={Vacinas}>
                     <Text style={Style.text}>Vacinas</Text>
+                </TouchableOpacity>
+
+
+                <TouchableOpacity style={Style.button_opcoes} onPress={Desensevolvimento_Salto}>
+                    <Text style={Style.text}>Marcos do Desenvolvimento</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={Style.button_opcoes} onPress={Desenvolvimento_Fisico}>

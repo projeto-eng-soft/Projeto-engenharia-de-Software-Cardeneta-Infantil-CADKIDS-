@@ -9,12 +9,13 @@ export const getStyles = () =>
         },
     
         formulario_view:{
-            backgroundColor:'rgba(221, 222, 239, 0.419)',
+            backgroundColor:'rgba(255, 255, 255,0.450)',
             alignItems: 'center',
-            width  :350,
-            height :330,
+            width :350,
+            height:330,
             padding:5,
             borderRadius:20,
+            marginTop  :40
         },
         
         icone_logo:{
@@ -27,28 +28,29 @@ export const getStyles = () =>
         icone_cadkids:{
             width    :110,
             height   :50,
-            marginTop:225,
+            marginTop:190
         },
 
         text:{
-            fontSize :16,
+            fontSize:16,
             marginTop:15,
             marginLeft:4
         },
-        
+
         textInput:{
-            backgroundColor:'white',
+            backgroundColor:'rgba(255, 255, 255, 0)',
             fontSize:14,
             width :300,
             height:40 ,
             paddingLeft :12,
             paddingRight:12,        
-            borderRadius:15,
+            borderBottomWidth:1.5,
+            marginTop:2
         },
 
         button_continua:{
             padding:20,
-            borderRadius:20
+            borderRadius:10
             
         },
 

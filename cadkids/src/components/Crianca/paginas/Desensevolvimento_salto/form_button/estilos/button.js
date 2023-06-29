@@ -12,7 +12,8 @@ export const getStyles = () => {
             paddingLeft :14,
             paddingRight:14,
             borderRadius:10,
+            marginTop:19,
         }
     });
-    return Style
+    return Style;
 }

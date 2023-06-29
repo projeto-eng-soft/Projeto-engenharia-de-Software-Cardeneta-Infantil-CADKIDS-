@@ -7,7 +7,7 @@ export const getStyles = () => {
             fontSize:15,
         },
         view:{
-            backgroundColor:'#98acfc',
+            backgroundColor:'rgb(31, 138, 239)',
             padding     :10,
             paddingLeft :14,
             paddingRight:14,

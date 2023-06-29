@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 
 export const getStyles = () => {
-    const Style = StyleSheet.create({
+    return StyleSheet.create({
         container: {
             flex           : 1,
             alignItems     : 'center',
@@ -23,12 +23,11 @@ export const getStyles = () => {
         },
 
         container_nome_usuario:{
-            backgroundColor:'rgba(255, 255, 255,0.900)',
-            justifyContent :'center',
+            alignItems:'center',
             width:400,
             marginTop:150,
-            marginRight:25,
-            borderBottomWidth:1.3,
+
+
         },
 
         button_opcoes:{
@@ -47,13 +46,8 @@ export const getStyles = () => {
         },
 
         text_nome_usuario:{
-            fontSize:29,
-            marginLeft:20
+            fontSize:30,
         }
-        
-
-
-        
+          
     })
-    return Style
 }

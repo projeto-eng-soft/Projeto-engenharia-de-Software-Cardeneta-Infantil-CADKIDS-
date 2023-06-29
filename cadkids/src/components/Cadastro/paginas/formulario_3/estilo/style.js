@@ -29,7 +29,7 @@ export const getStyles = () =>
         icone_cadkids:{
             width    :110,
             height   :50,
-            marginTop:200,
+            marginTop:550,
         },
 
         text:{
@@ -55,10 +55,6 @@ export const getStyles = () =>
             
         },
 
-        button_medico:{
-            marginTop:350,
-            marginRight:150 
-        }
     })
     return Style;
 };

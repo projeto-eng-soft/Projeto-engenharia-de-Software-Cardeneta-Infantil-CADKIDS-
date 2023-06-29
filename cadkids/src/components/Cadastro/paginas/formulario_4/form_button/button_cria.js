@@ -21,6 +21,6 @@ const Style = StyleSheet.create({
         padding     :10,
         paddingLeft :14,
         paddingRight:14,
-        borderRadius:19,
+        borderRadius:10,
     }
 })

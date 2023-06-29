@@ -11,6 +11,7 @@ import Logo             from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
 import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
 import Button_continuar from './form_touch/button_continua';
+import Button_medico    from "./form_touch/button_medico";
 
 const Style = getStyles();
 
@@ -47,7 +48,15 @@ export default function Formulario_1({navigation}){
                     "RG :"              + Rg             +"\n"+
                     "Cpf :"             + Cpf);
             }
-        
+    }
+
+    const Medico= () =>{
+        navigation.navigate('Formulario_4',{
+            NomeUser      : NomeUser,
+            dataNascimento: dataNascimento,
+            Rg:Rg,
+            Cpf:Cpf
+        });
     }
     return(
         <ImageBackground source={plano_de_fundo} style={{flex:1}}>
@@ -119,6 +128,10 @@ export default function Formulario_1({navigation}){
                 
                 </View>
                 
+                <View style={Style.button_medico}>
+                    <Button_medico onPress={Medico}/>
+                </View>
+
                 <View>
                     <Image source={icon_Cadkids} style={Style.icone_cadkids}/>
                 </View>
