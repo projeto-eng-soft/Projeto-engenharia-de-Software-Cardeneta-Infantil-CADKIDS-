@@ -14,7 +14,6 @@ export const Getvacinas_12 = async() => {
 }
 
 export const Getvacinas_crianca = async(userId) => {
-    console.log(userId)
     const dicionario = []
     const docRef        = collection(DB,'Criança')
     const cursor_exe    = query(collection(collection(doc(DB, "Criança",docRef.id), "Vacinas")),orderBy('index'));

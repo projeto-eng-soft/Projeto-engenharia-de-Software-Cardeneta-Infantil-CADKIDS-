@@ -2,8 +2,8 @@ import { useState,useEffect } from "react";
 import { View , Text , ImageBackground ,Image ,ScrollView ,TouchableOpacity,Modal} from "react-native";
 
 import { GetMarcos } from "src/back_end/FireBase/read/Marcos";
-import { getStyles } from "./estilo/estilo";
-import Fechar        from "./form_button/modal_button";
+import { getStyles } from "../estilo/estilo";
+import Fechar        from "../form_button/modal_button";
 
 import Logo           from 'static/icons/icon_logo.png';
 import icon_infor     from 'static/icons/icon_infor.png';

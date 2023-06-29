@@ -4,14 +4,14 @@ import MaskInput,{ Masks } from "react-native-mask-input";
 import { View , Text , TextInput , ImageBackground , Image} from "react-native";
 
 import { createCrianca } from "src/back_end/FireBase/create/createCriança";
-import { getStyles }     from './estilo/cad_crianca';
+import { getStyles }     from '../estilo/cad_crianca';
 /**/
 import Logo             from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
 import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
 
 /**/ 
-import Button_cadastrar from './form_touch/button_cadastrar';
+import Button_cadastrar from '../form_touch/button_cadastrar';
 
 const Style = getStyles();
 export default function Cadastro_criança({navigation}){
@@ -21,7 +21,7 @@ export default function Cadastro_criança({navigation}){
     const [Nome,setNome]                     = useState(null);
     const [dataNascimento,setDataNascimento] = useState(null);
 
-    const Cadastrando_criança = () =>{  
+    const Cadastrando_crianca = () =>{  
         createCrianca({
             Email:route.params.Email,
             Certidao:Certidao,
@@ -74,7 +74,7 @@ export default function Cadastro_criança({navigation}){
             
             
             <View style={Style.button_criar}>
-                <Button_cadastrar onPress = {Cadastrando_criança} />
+                <Button_cadastrar onPress = {Cadastrando_crianca} />
             </View>
 
             </View>

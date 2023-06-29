@@ -29,8 +29,8 @@ const paletaCores = [
 export default function Home({navigation}){
 
     const route = useRoute();
-    const [Cores,setCores] = useState([]);
-    const [view, setView] = useState([]);
+    const [Cores,setCores]       = useState([]);
+    const [view, setView]        = useState([]);
     const [Criancas,setCriancas] = useState([]);
 
     
@@ -38,23 +38,22 @@ export default function Home({navigation}){
         const addcionar_cores = (tamanho) =>
         {
             var cores = [];
-            cores.push(paletaCores[Math.ceil(Math.random() * paletaCores.length-1)])
-            
-            while (tamanho-1 != 0)
+            for (let i=0;i<tamanho;i++)
             {
-                var c = Math.ceil(Math.random() * paletaCores.length-1)
-                if (cores.indexOf(paletaCores[c]) == -1)
-                {
-                    cores.push(paletaCores[c]);tamanho -=1;
-                }      
+                var c = Math.ceil(Math.random() * paletaCores.length-1)              
+                cores.push(paletaCores[c]);
             }
             setCores(cores);
         }
 
         const fetchValores = async () => {
             const valoresData = await Getcriancas(route.params.Email);
-            addcionar_cores(valoresData.length);
-            setCriancas(valoresData);
+
+            if (valoresData.length !=0)
+            {
+                addcionar_cores(valoresData.length);
+                setCriancas(valoresData);
+            }
         };
         fetchValores();
       }, 
@@ -64,7 +63,7 @@ export default function Home({navigation}){
         navigation.navigate('Cadastro_Crianca',{Email:route.params.Email})
     }  
 
-    const Crianca = (Nome) =>{
+    const Crianca = (Nome) =>{ 
         navigation.navigate('Crianca',{Nome:Nome})
     }
 

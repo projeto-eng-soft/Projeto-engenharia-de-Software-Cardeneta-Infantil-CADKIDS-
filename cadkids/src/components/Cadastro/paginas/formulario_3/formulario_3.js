@@ -1,6 +1,6 @@
 import   React,{ useState } from "react";
 import { useRoute } from "@react-navigation/native";
-import { View , Text , TextInput , ImageBackground , Image, ScrollView } from "react-native";
+import { View , Text , TextInput , ImageBackground , Image, ScrollView ,Button} from "react-native";
 
 
 
@@ -15,17 +15,16 @@ import Logo             from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
 import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
 import Button_criar     from './form_touch/button_cria';
-import Button_medico    from "./form_touch/button_medico";
 
 const Style = getStyles();
 
 export default function Formulario_3({navigation}){
-    const route = new useRoute();
+    const route = useRoute();
     const [E_mail,setE_mail]  = useState(null);
     const [Senha ,setSenha]   = useState(null);
     const [Rsenha,setRsenha]  = useState(null);
 
-    const criar_Conta = () =>
+    const criarConta = () =>
     {
         setE_mail(E_mail);
         setRsenha(Rsenha);
@@ -81,7 +80,7 @@ export default function Formulario_3({navigation}){
                     </View>
 
                     <View style = {Style.button_continua}>
-                        <Button_criar onPress={criar_Conta}/>
+                        <Button_criar onPress={criarConta}/>
                     </View>
                 </View>
 

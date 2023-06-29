@@ -5,12 +5,12 @@ export const Getcriancas = async(email) => {
     const dicionario = []
     const cursor_exe    = query(collection(DB, "Criança"),where('Email','==',email));
     const querySnapshot = await getDocs(cursor_exe);
-    
+
     querySnapshot.forEach((doc) => {
         const dict = doc.data()
         dicionario.push(dict);
     });        
-    
+    console.log(dicionario)    
     return dicionario;      
 }
 
@@ -19,7 +19,6 @@ export const Getcrianca_medico = async(numero,navigation) => {
     const querySnapshot = await getDocs(cursor_exe);
     querySnapshot.forEach((doc) => {
         const dict = doc.data()
-        console.log(dict.Nome)
         navigation.navigate('MedicoCrianca',{id:doc.id,Nome:dict.Nome});
 
     });        
