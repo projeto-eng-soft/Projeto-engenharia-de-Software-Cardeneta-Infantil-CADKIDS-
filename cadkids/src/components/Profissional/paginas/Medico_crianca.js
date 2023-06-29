@@ -16,7 +16,7 @@ export default function MedicoCrianca({navigation}){
     const Dados  = route.params.dados 
     const userId = route.params.id
     const [Vacinas,setVacinas] = useState([]);
-    console.log(Dados)
+
     useEffect(() => {
         const fetchValores = async () => {
           const valoresData = await Getvacinas_crianca(userId);
@@ -24,8 +24,9 @@ export default function MedicoCrianca({navigation}){
         };
         fetchValores();
       }, 
-    []);   
-    console.log(Vacinas)
+    []);  
+    
+    
     return(
         <ImageBackground source={plano_de_fundo} style={Style.container}>  
 
