@@ -16,10 +16,12 @@ export const Getcriancas = async(email) => {
 export const Getcrianca_medico = async(numero,navigation) => {
     const cursor_exe    = query(collection(DB, "Criança"),where('Certidao','==',numero));
     const querySnapshot = await getDocs(cursor_exe);
+    console.log(querySnapshot)
+    
     
     querySnapshot.forEach((doc) => {
         const dict = doc.data()
-        navigation.navigate('MedicoCrianca',{id:doc.id,Nome:dict.Nome});
+        navigation.navigate('MedicoCrianca',{id:doc.id,Nome:dict.Nome, doc: dict});
 
     });        
 

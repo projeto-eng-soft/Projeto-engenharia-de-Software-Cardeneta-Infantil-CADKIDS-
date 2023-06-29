@@ -10,7 +10,7 @@ export function createCrianca(data,navigation)
         docRef,data
     ).then(async(docRef) => {
         const valores   = await Getvacinas_12();
-        const collecRef = collection(doc(DB, "Criança",docRef.id), "Vacinas");
+        const collecRef = collection(doc(DB, "Criança", docRef.id), "Vacinas");
         
         for(let i=0;i<valores.length;i++) addDoc(collecRef,valores[i]); 
 
