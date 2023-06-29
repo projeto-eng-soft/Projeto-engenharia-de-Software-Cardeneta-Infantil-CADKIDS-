@@ -5,23 +5,23 @@ import MaskInput ,{ Masks } from 'react-native-mask-input';
 
 import { readCliente } from "src/back_end/FireBase/read/login";
 import { readMedico  } from 'src/back_end/FireBase/read/Medico';
-import { getStyles }    from "./estilo/login";
+import { getStyles }    from "../estilo/login";
 /*Imagens*/ 
 import Logo             from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
 import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
 /*buttons de entrar ,esqueci a senha , cadastrar além de icone de ver a senha*/ 
-import Button_entrar    from "./form_button/button_entrar";
-import Button_senha     from "./form_button/button_esqueci_senha";
-import Button_cadastrar from "./form_button/button_cadastrar";
-import Visivel_senha    from "./form_button/button_visibilidade_senha";
-import Button_medico    from "./form_button/button_medico";
+import Button_entrar    from "../form_button/button_entrar";
+import Button_senha     from "../form_button/button_esqueci_senha";
+import Button_cadastrar from "../form_button/button_cadastrar";
+import Visivel_senha    from "../form_button/button_visibilidade_senha";
+import Button_medico    from "../form_button/button_medico";
 
 
 const Style = getStyles();
 
-export default function Login( {navigation} ) {
-    
+export default function Login( {navigation} )
+{
     const [Boleano,setBoleano]     = useState(true);
     const [Texto ,setTexto]        = useState('');
     const [Cpf   ,setCpf  ]        = useState(null);
@@ -30,25 +30,25 @@ export default function Login( {navigation} ) {
 
     const Senha_visibilidade = () => setOlho(!Olho)
 
-    const Entrar = () => {
-        if ( Cpf!= null && Boleano) {
-            try{
-                var cpf_dominio = Cpf;
-                cpf_dominio = cpf_dominio.replace('.','');
-                cpf_dominio = cpf_dominio.replace('.','');
-                cpf_dominio = cpf_dominio.replace('-','');
-            }
-            catch(error){
-                alert(error.message);
-                return;
-            }
+    const Entrar = () =>
+    {
+        try{
+            var cpf_dominio = Cpf;
+            cpf_dominio = cpf_dominio.replace('.','');
+            cpf_dominio = cpf_dominio.replace('.','');
+            cpf_dominio = cpf_dominio.replace('-','');
+        }
+        catch(error){
+            alert(error.message);
+            return;
         }
 
         if ( Cpf!= null && Boleano) 
         {
             readCliente(cpf_dominio+"@dominio.com",Senha,navigation)
            
-        }else if ( Cpf!= null && !Boleano){
+        }else if ( Cpf!= null && !Boleano)
+        {
             readMedico(cpf_dominio+"@dominio.med.com",Senha,navigation)
         }else{
             setCpf(Cpf) ;setSenha(Senha);
@@ -63,8 +63,7 @@ export default function Login( {navigation} ) {
 
     const Medico =()=>{ 
         setBoleano(!Boleano);
-        Alterar(); 
-    }
+        Alterar(); }
 
     return(
         <ImageBackground source={plano_de_fundo} style={Style.container}>

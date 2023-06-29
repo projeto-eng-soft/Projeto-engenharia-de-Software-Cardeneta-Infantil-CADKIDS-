@@ -3,15 +3,15 @@ import { useRoute } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createStackNavigator  } from "@react-navigation/stack";
 
-import DrawerCustom     from './Drawer_custom/Drawer_custom'
+import DrawerCustom      from './Drawer_custom/Drawer_custom'
 import Home_Criança      from "./paginas/Home/paginas/Home_Criancas";
-import Ajuda             from "./paginas/Ajuda/Ajuda";
-import Cadastro_criança  from "./paginas/Cadastro_crianca/Cadastro_crianca";
-import Crianca           from "./paginas/Crianca/Crianca";
+import Ajuda             from "./paginas/Ajuda/paginas/Ajuda";
+import Cadastro_criança  from "./paginas/Cadastro_crianca/paginas/Cadastro_crianca";
+import Crianca           from "./paginas/Crianca/paginas/Crianca";
 import Vacinas           from "./paginas/Vacinas/home_Vacinas";
-import Desenvolvimento_c from "./paginas/Desenvolvimento_Cognitivo/Desenvolvimento_c";
+import Desenvolvimento_c from "./paginas/Desenvolvimento_Cognitivo/paginas/Desenvolvimento_c";
 import Desenvolvimento_f from "./paginas/Desenvolvimento_Fisico/paginas/Desenvolvimento_fisico";
-import Desenvolvimento_s from "./paginas/Desensevolvimento_salto/Desenvolvimento_saltos";
+import Desenvolvimento_s from "./paginas/Desensevolvimento_salto/paginas/Desenvolvimento_saltos";
 
 const Drawer = createDrawerNavigator()
 const Stack  = createStackNavigator();

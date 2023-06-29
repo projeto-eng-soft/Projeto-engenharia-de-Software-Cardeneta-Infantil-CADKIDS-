@@ -5,8 +5,8 @@ import { View , Text , ImageBackground ,
 
 /**/
 import { Getvacinas_12 } from "src/back_end/FireBase/read/Getvacinas";
-import { getStyles }    from "./estilo/estilo";
-import { getAplicadas } from "./estilo/estilo";
+import { getStyles }    from "./estilo/vacinas";
+import { getAplicadas } from "./estilo/vacinas";
 import Fechar        from "./form_button/modal_button";
 /**/
 import Logo          from 'static/icons/icon_logo.png';
@@ -20,14 +20,7 @@ export default function Aplicadas_Vacinas({navigation}){
     const [Visible,setVisible] = useState(false);
     const [Vacinas,setVacinas] = useState([])
 
-    useEffect(() => {
-        const fetchValores = async () => {
-          const valoresData = await Getvacinas_12();
-          setVacinas(valoresData);
-        };
-        fetchValores();
-      }, 
-    []);
+CZZZ
 
     const Informacao = (item) => {
         setItem(item);

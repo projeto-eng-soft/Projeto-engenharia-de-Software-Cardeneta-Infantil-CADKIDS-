@@ -1,7 +1,5 @@
-import { StyleSheet , TouchableOpacity, View, Text } from "react-native";
-
+import { TouchableOpacity, View, Text } from "react-native";
 import { getStyles } from "../../estilo_button_continuar/continuar";
-import { get } from "react-native/Libraries/TurboModule/TurboModuleRegistry";
 
 export default function Button({onPress})
 {

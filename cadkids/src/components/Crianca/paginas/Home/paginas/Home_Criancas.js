@@ -9,62 +9,51 @@ import { Getcriancas } from "src/back_end/FireBase/read/Criancas";
 import { getStyles }   from '../estilo/style';
 
 /**/ 
-import plano_de_fundo           from 'static/imagens/plano_de_fundo_home_crianca.jpg';
+import plano_de_fundo           from 'static/imagens/plano_de_fundo_padrao.png';
 import Icone_criancas           from 'static/icons/icon_crianças.png';
 import Button_menu              from "../form_button/button_menu";
 import Button_adicionar_crianca from '../form_button/button_cadastrar_crianca';
 
 const Style = getStyles();
 const paletaCores = [
-    /*'#eecbca',
+    '#eecbca',
     '#80c6f2',
     '#d3b5f6',
     '#c17383',
     '#ff7fa8',
     '#e5804d',
-    '#938672',*/
-    '#DFFF00',
-    '#FFBF00',
-    '#FF7F50',
-    '#DE3163',
-    '#9FE2BF',
-    '#40E0D0',
-    '#6495ED',
-    '#CCCCFF',
-    /*'#5DADE2',
-    '#DAF7A6',
-    '#FFB6C1',
-    '#FFFAA0',*/
-
-
+    '#938672'
   ];
   
 
 export default function Home({navigation}){
 
     const route = useRoute();
-    const [Cores,setCores] = useState([]);
-    const [view, setView] = useState([]);
+    const [Cores,setCores]       = useState([]);
+    const [view, setView]        = useState([]);
     const [Criancas,setCriancas] = useState([]);
 
+    
     useEffect(() => {
         const addcionar_cores = (tamanho) =>
         {
             var cores = [];
-            cores.push(paletaCores[Math.ceil(Math.random() * paletaCores.length-1)])
-            
-            while (tamanho-1 != 0)
+            for (let i=0;i<tamanho;i++)
             {
-                var c = Math.ceil(Math.random() * paletaCores.length-1)
-                cores.push(paletaCores[c]);tamanho -=1;
+                var c = Math.ceil(Math.random() * paletaCores.length-1)              
+                cores.push(paletaCores[c]);
             }
             setCores(cores);
         }
 
         const fetchValores = async () => {
             const valoresData = await Getcriancas(route.params.Email);
-            addcionar_cores(valoresData.length);
-            setCriancas(valoresData);
+
+            if (valoresData.length !=0)
+            {
+                addcionar_cores(valoresData.length);
+                setCriancas(valoresData);
+            }
         };
         fetchValores();
       }, 
@@ -74,7 +63,7 @@ export default function Home({navigation}){
         navigation.navigate('Cadastro_Crianca',{Email:route.params.Email})
     }  
 
-    const Crianca = (Nome) =>{
+    const Crianca = (Nome) =>{ 
         navigation.navigate('Crianca',{Nome:Nome})
     }
 
