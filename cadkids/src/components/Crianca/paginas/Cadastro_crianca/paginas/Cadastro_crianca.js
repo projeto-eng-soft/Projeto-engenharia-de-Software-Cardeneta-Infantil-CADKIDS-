@@ -73,9 +73,9 @@ export default function Cadastro_criança({navigation}){
                 />
             
             
-            <View style={Style.button_criar}>
-                <Button_cadastrar onPress = {Cadastrando_crianca} />
-            </View>
+                <View style={Style.button_criar}>
+                    <Button_cadastrar onPress = {Cadastrando_crianca} />
+                </View>
 
             </View>
 

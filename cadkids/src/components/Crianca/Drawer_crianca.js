@@ -3,7 +3,7 @@ import { useRoute } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createStackNavigator  } from "@react-navigation/stack";
 
-import DrawerCustom     from './Drawer_custom/Drawer_custom'
+import DrawerCustom      from './Drawer_custom/Drawer_custom'
 import Home_Criança      from "./paginas/Home/paginas/Home_Criancas";
 import Ajuda             from "./paginas/Ajuda/paginas/Ajuda";
 import Cadastro_criança  from "./paginas/Cadastro_crianca/paginas/Cadastro_crianca";
