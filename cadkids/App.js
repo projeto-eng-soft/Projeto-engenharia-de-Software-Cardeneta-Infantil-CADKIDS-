@@ -2,7 +2,7 @@ import { NavigationContainer  }       from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 /*Login  , cadastro de usuario(formulario 1a3) e recuperacao de senha */ 
-import Login           from './src/components/Login/Login';
+import Login           from './src/components/Login/paginas/Login';
 import Cadastro        from 'src/components/Cadastro/Cadastro';
 import Medico          from 'src/components/Profissional/stack_profisssional';
 import Recuperar_senha from './src/components/Recuperar_senha/Recuperar_senha';

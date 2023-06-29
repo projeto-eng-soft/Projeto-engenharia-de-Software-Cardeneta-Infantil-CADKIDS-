@@ -5,17 +5,17 @@ import MaskInput ,{ Masks } from 'react-native-mask-input';
 
 import { readCliente } from "src/back_end/FireBase/read/login";
 import { readMedico  } from 'src/back_end/FireBase/read/Medico';
-import { getStyles }    from "./estilo/login";
+import { getStyles }    from "../estilo/login";
 /*Imagens*/ 
 import Logo             from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
 import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
 /*buttons de entrar ,esqueci a senha , cadastrar além de icone de ver a senha*/ 
-import Button_entrar    from "./form_button/button_entrar";
-import Button_senha     from "./form_button/button_esqueci_senha";
-import Button_cadastrar from "./form_button/button_cadastrar";
-import Visivel_senha    from "./form_button/button_visibilidade_senha";
-import Button_medico    from "./form_button/button_medico";
+import Button_entrar    from "../form_button/button_entrar";
+import Button_senha     from "../form_button/button_esqueci_senha";
+import Button_cadastrar from "../form_button/button_cadastrar";
+import Visivel_senha    from "../form_button/button_visibilidade_senha";
+import Button_medico    from "../form_button/button_medico";
 
 
 const Style = getStyles();
