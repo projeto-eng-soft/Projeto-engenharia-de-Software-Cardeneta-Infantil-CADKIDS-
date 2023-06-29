@@ -21,7 +21,7 @@ export default function Cadastro_criança({navigation}){
     const [Nome,setNome]                     = useState(null);
     const [dataNascimento,setDataNascimento] = useState(null);
 
-    const Cadastrando_criança = () =>{  
+    const Cadastrando_crianca = () =>{  
         createCrianca({
             Email:route.params.Email,
             Certidao:Certidao,
@@ -73,9 +73,9 @@ export default function Cadastro_criança({navigation}){
                 />
             
             
-            <View style={Style.button_criar}>
-                <Button_cadastrar onPress = {Cadastrando_criança} />
-            </View>
+                <View style={Style.button_criar}>
+                    <Button_cadastrar onPress = {Cadastrando_crianca} />
+                </View>
 
             </View>
 

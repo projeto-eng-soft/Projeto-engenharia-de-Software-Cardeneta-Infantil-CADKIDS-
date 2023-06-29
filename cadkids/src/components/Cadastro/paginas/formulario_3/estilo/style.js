@@ -14,9 +14,8 @@ export const getStyles = () =>
             width :350,
             height:330,
             padding:5,
-            position:'absolute',
             borderRadius:20,
-            marginTop  :250
+            marginTop  :20
         },
 
         icone_logo:{

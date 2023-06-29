@@ -43,18 +43,25 @@ export default function Home({navigation}){
             while (tamanho-1 != 0)
             {
                 var c = Math.ceil(Math.random() * paletaCores.length-1)
-                if (cores.indexOf(paletaCores[c]) == -1)
-                {
-                    cores.push(paletaCores[c]);tamanho -=1;
-                }      
+                // if (cores.indexOf(paletaCores[c]) == -1)
+                // {
+                cores.push(paletaCores[c]);
+                tamanho -=1;
+                // }      
             }
             setCores(cores);
         }
 
         const fetchValores = async () => {
             const valoresData = await Getcriancas(route.params.Email);
-            addcionar_cores(valoresData.length);
-            setCriancas(valoresData);
+
+            if (valoresData.length !=0)
+            {
+                addcionar_cores(valoresData.length);
+                setCriancas(valoresData);
+            }
+
+
         };
         fetchValores();
       }, 
@@ -65,13 +72,15 @@ export default function Home({navigation}){
     }  
 
     const Crianca = (Nome) =>{
+        // if (Nome!='Não tem') navigation.navigate('Crianca',{Nome:Nome})
+        // alert('Não tem criança');
         navigation.navigate('Crianca',{Nome:Nome})
+        return;
     }
 
     const Abrir_menu = () => { 
         navigation.openDrawer(); 
     }
-   
     
     return(
         <ImageBackground source={plano_de_fundo} style={Style.container}>
