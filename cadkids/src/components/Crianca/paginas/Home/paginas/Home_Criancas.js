@@ -16,13 +16,27 @@ import Button_adicionar_crianca from '../form_button/button_cadastrar_crianca';
 
 const Style = getStyles();
 const paletaCores = [
-    '#eecbca',
+    /*'#eecbca',
     '#80c6f2',
     '#d3b5f6',
     '#c17383',
     '#ff7fa8',
     '#e5804d',
-    '#938672'
+    '#938672',*/
+    '#DFFF00',
+    '#FFBF00',
+    '#FF7F50',
+    '#DE3163',
+    '#9FE2BF',
+    '#40E0D0',
+    '#6495ED',
+    '#CCCCFF',
+    /*'#5DADE2',
+    '#DAF7A6',
+    '#FFB6C1',
+    '#FFFAA0',*/
+
+
   ];
   
 
@@ -33,7 +47,6 @@ export default function Home({navigation}){
     const [view, setView] = useState([]);
     const [Criancas,setCriancas] = useState([]);
 
-    
     useEffect(() => {
         const addcionar_cores = (tamanho) =>
         {
@@ -43,10 +56,7 @@ export default function Home({navigation}){
             while (tamanho-1 != 0)
             {
                 var c = Math.ceil(Math.random() * paletaCores.length-1)
-                if (cores.indexOf(paletaCores[c]) == -1)
-                {
-                    cores.push(paletaCores[c]);tamanho -=1;
-                }      
+                cores.push(paletaCores[c]);tamanho -=1;
             }
             setCores(cores);
         }
