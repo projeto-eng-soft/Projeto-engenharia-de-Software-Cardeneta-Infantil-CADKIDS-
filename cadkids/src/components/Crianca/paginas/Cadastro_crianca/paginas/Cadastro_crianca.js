@@ -14,6 +14,7 @@ import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
 import Button_cadastrar from '../form_touch/button_cadastrar';
 
 const Style = getStyles();
+
 export default function Cadastro_criança({navigation}){
     const route = useRoute()
 

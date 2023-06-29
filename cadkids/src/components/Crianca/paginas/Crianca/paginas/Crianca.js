@@ -10,7 +10,7 @@ const Style = getStyles();
 
 export default function Crianca({navigation})
 {
-    const route = useRoute();
+    const route          = useRoute();
     const [Nome,setNome] = useState(route.params.Nome)
     const Abrir_menu = () =>                { navigation.openDrawer();                 };
     const Vacinas    = () =>                { navigation.navigate('Vacinas');          };
