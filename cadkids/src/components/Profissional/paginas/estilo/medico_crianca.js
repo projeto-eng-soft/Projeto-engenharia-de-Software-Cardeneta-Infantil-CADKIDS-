@@ -11,9 +11,9 @@ export const getStyles = () =>
         },
 
         icone:{
-            width       :100,
-            height      :100,
-            marginTop   :100,
+            width       :85,
+            height      :85,
+            marginTop   :80,
             marginBottom:80,
             borderRadius:100,
         },
@@ -23,5 +23,22 @@ export const getStyles = () =>
             height   :50,
             marginTop:280,
         },
+
+        scrollview_vacinas:{
+            marginTop:50,
+            marginBottom:40
+        },
+        
+        containers_vacinas:{
+            backgroundColor:'rgba(119, 255, 162, 0.98)',
+            justifyContent :'center',            
+            width:350,
+            height:70,
+            paddingLeft :10,
+            marginBottom:15,
+            borderRadius:10,
+            borderWidth:1.2
+        },
+
     });
 }

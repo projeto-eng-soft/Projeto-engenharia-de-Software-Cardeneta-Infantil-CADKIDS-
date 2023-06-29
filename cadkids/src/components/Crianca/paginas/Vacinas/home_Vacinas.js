@@ -71,20 +71,6 @@ export default function Vacinas(){
                             }, 
                         }}/>
                         
-            <Tab.Screen name="Atrasadas"  
-                        component={Vacinas_atrasadas} 
-                        options={
-                            {
-                            tabBarLabel:'',
-                            tabBarIcon : () => {
-                            return(
-                                <TouchableOpacity onPress={()=>navigation.navigate('Atrasadas')}
-                                                  activeOpacity={0.3} 
-                                >
-                                    <Image source={Icon_atrasadas} style={{ width: 50, height:50 }}/>
-                                </TouchableOpacity>);
-                            }, 
-                        }}/>
             </Tab.Navigator>
     );
 }

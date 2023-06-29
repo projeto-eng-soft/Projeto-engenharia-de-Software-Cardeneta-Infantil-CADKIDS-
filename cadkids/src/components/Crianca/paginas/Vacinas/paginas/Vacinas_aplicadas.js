@@ -20,8 +20,16 @@ export default function Aplicadas_Vacinas({navigation}){
     const [Visible,setVisible] = useState(false);
     const [Vacinas,setVacinas] = useState([])
 
-CZZZ
-
+    useEffect(() => {
+        const fetchValores = async () => {
+          const valoresData = await Getvacinas_12();
+          setVacinas(valoresData);
+        };
+    
+        fetchValores();
+      }, 
+    []);
+    
     const Informacao = (item) => {
         setItem(item);
         setVisible(true);
@@ -46,8 +54,8 @@ CZZZ
             <ScrollView style={Styles.scrollview_vacinas}>
                 {Vacinas.map((item,index) =>
                     <TouchableOpacity style={Styles_container.containers_vacinas} key={index} onPress={()=>Informacao(item)}>
-                        <Text style={Styles.vac_text}>{item.DOSES}</Text>
-                        <Text style={Styles.vac_text}>&#8226; {item.VACINAS}</Text>
+                        <Text style={Styles.vac_text}>{item.DOSE}</Text>
+                        <Text style={Styles.vac_text}>&#8226; {item.VACINA}</Text>
                     </TouchableOpacity>        
                 )}
             </ScrollView>
@@ -59,8 +67,8 @@ CZZZ
                     
                     <View style={Styles.modal_informacao}>
                             <Text style={Styles.modal_text_2}>&#x025AB; Lote   :</Text>
-                            <Text style={Styles.modal_text_2}>&#x025AB; Doses  :  {Item.DOSES}</Text>
-                            <Text style={Styles.modal_text_2}>&#x025AB; Vacina :  {Item.VACINAS}</Text>
+                            <Text style={Styles.modal_text_2}>&#x025AB; Doses  :  {Item.DOSE}</Text>
+                            <Text style={Styles.modal_text_2}>&#x025AB; Vacina :  {Item.VACINA}</Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Idade   :  {Item.IDADE}</Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Data da aplicação:</Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Doenças evitadas :  {Item['DOENÇAS EVITADAS']}  </Text>

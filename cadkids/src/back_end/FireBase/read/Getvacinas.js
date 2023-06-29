@@ -15,13 +15,13 @@ export const Getvacinas_12 = async() => {
 
 export const Getvacinas_crianca = async(userId) => {
     const dicionario = []
-    const docRef        = collection(DB,'Criança')
-    const cursor_exe    = query(collection(collection(doc(DB, "Criança",docRef.id), "Vacinas")),orderBy('index'));
+    const collecRef     = collection(doc(DB, "Criança", userId), "Vacinas");
+    const cursor_exe    = query((collecRef),orderBy('index'));
     const querySnapshot = await getDocs(cursor_exe);
     
     querySnapshot.forEach((doc) => {
         const dict = doc.data()
         dicionario.push(dict);
-    });        
+    });
     return dicionario;      
-}
+} 
