@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "src/*"     : ["./src/*"],
+        "static/*"  : ["./src/static/*"],
+        "back_end/*": ["./src/back_end/*"],
+      }
+    }
+}
+  
