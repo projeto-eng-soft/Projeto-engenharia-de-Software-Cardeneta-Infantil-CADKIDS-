@@ -6,7 +6,7 @@ import icone_logo     from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
 import plano_de_fundo from 'static/imagens/plano_de_fundo_padrao.png';
 
-import Button_enviar_e_mail from "./form_button/button_enviar_e_mail";
+import Button_enviar_e_mail from "./formButton/buttonEnviarEmail";
 const Style = getStyles();
 
 export default function Recuperar_senha({navigation}){

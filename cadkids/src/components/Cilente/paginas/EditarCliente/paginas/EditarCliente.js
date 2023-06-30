@@ -11,7 +11,7 @@ import { round } from 'react-native-reanimated';
 const Style = getStyles();
 
 export default function EditarCliente(){
-    const route = useRoute();
+    const route     = useRoute();
     const dadosUser = route.params.dadosUser;
     const [NomeUser,setNomeUser]             = useState(dadosUser.Nome);
     const [dataNascimento,setdataNascimento] = useState(dadosUser.dataNascimento);
@@ -27,7 +27,7 @@ export default function EditarCliente(){
     const Editar = () =>{
         console.log('FUTU')
     }
-    
+
     return(
         <ImageBackground>
             <ScrollView >

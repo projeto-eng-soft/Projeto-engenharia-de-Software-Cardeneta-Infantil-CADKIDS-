@@ -14,7 +14,7 @@ import { getStyles }      from "./estilo/style";
 import Logo             from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
 import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
-import Button_criar     from './form_touch/buttonCria';
+import Button_criar     from './formTouch/buttonCria';
 
 const Style = getStyles();
 

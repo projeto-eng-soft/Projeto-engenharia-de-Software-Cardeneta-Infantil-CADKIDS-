@@ -9,7 +9,7 @@ import Logo             from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
 import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
 
-import Button_criar     from './form_button/button_cria';
+import Button_criar     from './formButton/button_cria';
 
 import { VSenha }         from "../../ValidacaoManipulacao/Formulario_3";
 import { createMedico } from "src/BackEnd/FireBase/create/createMedico";
