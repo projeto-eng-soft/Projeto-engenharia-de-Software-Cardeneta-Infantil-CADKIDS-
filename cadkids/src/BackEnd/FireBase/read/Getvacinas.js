@@ -13,15 +13,20 @@ export const Getvacinas_12 = async() => {
     return dicionario;      
 }
 
-export const Getvacinas_crianca = async(userId) => {
-    const dicionario = []
+export const GetvacinasCrianca = async(userId,type) =>{
+    const dicionario    = []
     const collecRef     = collection(doc(DB, "Criança", userId), "Vacinas");
     const cursor_exe    = query((collecRef),orderBy('index'));
     const querySnapshot = await getDocs(cursor_exe);
     
     querySnapshot.forEach((doc) => {
         const dict = doc.data()
-        dicionario.push(dict);
+        if (type == 0){
+            if (dict.status == true ) dicionario.push(dict);
+        }else{
+            if (dict.status == false) dicionario.push(dict)
+        }
     });
-    return dicionario;      
-} 
+    return dicionario;
+}
+

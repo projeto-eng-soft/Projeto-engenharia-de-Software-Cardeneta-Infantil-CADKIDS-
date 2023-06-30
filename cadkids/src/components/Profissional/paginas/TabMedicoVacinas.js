@@ -1,53 +1,77 @@
-import { useRoute }           from "@react-navigation/native";
-import { useEffect,useState } from "react";
-import { View,ImageBackground ,Text ,Image ,ScrollView ,TouchableOpacity } from "react-native";
+import { Image ,TouchableOpacity  } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { useNavigation, useRoute  } from "@react-navigation/native";
 
-import { getStyles }          from "./estilo/medico_crianca";
-import { Getvacinas_crianca } from "src/back_end/FireBase/read/Getvacinas";
+/* */ 
+import VacinasAplicadas   from './Vacinas/VacinasAplicadas';
+import VacinasPendentes   from './Vacinas/VacinasPendentes';
+/**/
+import Icon_aplicadas from 'static/icons/icon_vacina_aplicada.png';
+import Icon_pendentes from 'static/icons/icon_vacina_pendente.png';
 
-import icone_logo       from 'static/icons/icon_logo.png';
-import icon_Cadkids     from 'static/icons/icon_cadkids.png';
-import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
 
-const Style = getStyles();
+const Tab = createBottomTabNavigator();
 
-export default function MedicoCrianca({navigation}){
+export default function MedicoVacinas(){
+    const navigation = useNavigation();
     const route  = useRoute();
-    const Dados  = route.params.dados 
-    const userId = route.params.id
-    const [Vacinas,setVacinas] = useState([]);
-
-    useEffect(() => {
-        const fetchValores = async () => {
-          const valoresData = await Getvacinas_crianca(userId);
-          setVacinas(valoresData);
-        };
-        fetchValores();
-      }, 
-    []);  
-    
-    
+    const userId = route.params.id;
+    const dados  = route.params.dados;
+ 
     return(
-        <ImageBackground source={plano_de_fundo} style={Style.container}>  
+        <Tab.Navigator initialRouteName="Aplicadas" 
+                    screenOptions={{ 
+                        headerShown:false,
+                        tabBarStyle:{
+                            position:'absolute',
+                            backgroundColor:'rgba(255, 255, 255, 0.690)',
+                            borderTopWidth:0, 
+                            bottom:0,
+                            left :2,
+                            right:2,
+                            elevation:0,
+                            borderTopLeftRadius:30,
+                            borderTopRightRadius:30,
+                            height:50,
+                            
+                            }
+                        }}>
 
-            <View>
-                <Image source={icone_logo} style={Style.icone}/>
-            </View>
-            <View>
-                <Text>Nome: {Dados.Nome }</Text>
-                <Text>Data de Nascimento : {Dados.dataNascimento}</Text>
-            </View>
+            <Tab.Screen name="Aplicadas" 
+                        component={VacinasAplicadas}
+                        options={
+                            {
+                            tabBarLabel:'',
+                            tabBarIcon : () => {    
+                                return( 
+                                    <TouchableOpacity onPress={()=>navigation.navigate('Aplicadas')}
+                                                      activeOpacity={0.3} 
+                                    >
+                                        <Image source={Icon_aplicadas} style={{ width: 50, height:50 }}/>
+                                    </TouchableOpacity>
+                                );
+                            },
+                        }}
+                        initialParams={{userId:userId,dados:dados}}/>
 
-            <View>
-                <ScrollView style={Style.scrollview_vacinas}>
-                    {Vacinas.map((item,index) =>
-                        <TouchableOpacity style={Style.containers_vacinas} key={index}>
-                            <Text style={Style.vac_text}>{item.DOSE}</Text>
-                            <Text style={Style.vac_text}>&#8226; {item.VACINA}</Text>
-                        </TouchableOpacity>        
-                    )}
-                </ScrollView>
-            </View>
-        </ImageBackground>
-    )
+            <Tab.Screen name="Pendentes"  
+                        component={VacinasPendentes} 
+                        options={
+                            {
+                            tabBarLabel:'',
+                            tabBarIcon : () => {
+                            return(
+                                <TouchableOpacity onPress={()=>navigation.navigate('Pendentes')}
+                                                  activeOpacity={0.3} 
+                                >
+                                    <Image source={Icon_pendentes} style={{ width: 50, height:50 }}/>
+                                </TouchableOpacity>);
+                            }, 
+                        }}
+                        initialParams={{userId:userId,dados:dados}}/>
+                        
+            </Tab.Navigator>
+    );
 }
+
+

@@ -5,7 +5,7 @@ import { TouchableOpacity , View , Text ,
          ImageBackground , Image , ScrollView } from "react-native";
 
 /**/ 
-import { Getcriancas } from "src/back_end/FireBase/read/Criancas";
+import { Getcriancas } from "src/BackEnd/FireBase/read/Criancas";
 import { getStyles }   from '../estilo/style';
 
 /**/ 

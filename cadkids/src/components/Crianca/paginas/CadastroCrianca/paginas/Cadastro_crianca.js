@@ -3,7 +3,7 @@ import { useRoute } from "@react-navigation/native";
 import MaskInput,{ Masks } from "react-native-mask-input";
 import { View , Text , TextInput , ImageBackground , Image} from "react-native";
 
-import { createCrianca } from "src/back_end/FireBase/create/createCriança";
+import { createCrianca } from "src/BackEnd/FireBase/create/createCriança";
 import { getStyles }     from '../estilo/cad_crianca';
 /**/
 import Logo             from 'static/icons/icon_logo.png';

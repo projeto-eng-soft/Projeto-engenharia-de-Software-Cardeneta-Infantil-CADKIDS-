@@ -11,7 +11,7 @@ module.exports = function(api) {
           alias: {
             src:'./src',
             static: "./src/static",
-            back_end:"./src/back_end",
+            BackEnd:"./src/BackEnd",
             
           }
         }]

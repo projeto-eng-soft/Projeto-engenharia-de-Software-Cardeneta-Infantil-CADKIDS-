@@ -3,8 +3,8 @@ import React ,{ useState } from "react";
 import { View , Text , TextInput , ImageBackground , Image, Alert  } from "react-native";
 import MaskInput ,{ Masks } from 'react-native-mask-input';
 
-import { readCliente } from "src/back_end/FireBase/read/login";
-import { readMedico  } from 'src/back_end/FireBase/read/Medico';
+import { readCliente } from "src/BackEnd/FireBase/read/Cliente";
+import { readMedico  } from 'src/BackEnd/FireBase/read/Medico';
 import { getStyles }    from "../estilo/login";
 /*Imagens*/ 
 import Logo             from 'static/icons/icon_logo.png';

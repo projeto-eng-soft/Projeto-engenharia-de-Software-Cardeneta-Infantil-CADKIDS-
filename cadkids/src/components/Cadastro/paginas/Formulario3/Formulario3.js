@@ -5,7 +5,7 @@ import { View , Text , TextInput , ImageBackground , Image, ScrollView ,Button} 
 
 
 /**/
-import { createCliente }  from "src/back_end/FireBase/create/createCliente";
+import { createCliente }  from "src/BackEnd/FireBase/create/createCliente";
 /**/
 import { Dados_cadastro } from "../../ValidacaoManipulacao/Dados";
 import { VSenha }         from "../../ValidacaoManipulacao/Formulario_3";

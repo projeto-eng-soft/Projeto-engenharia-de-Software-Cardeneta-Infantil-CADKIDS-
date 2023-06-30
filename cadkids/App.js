@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login           from './src/components/Login/paginas/Login';
 import Cadastro        from 'src/components/Cadastro/Cadastro';
 import Medico          from 'src/components/Profissional/stack_profisssional';
-import Recuperar_senha from './src/components/Recuperar_senha/Recuperar_senha';
+import Recuperar_senha from './src/components/RecuperarSenha/Recuperar_senha';
 
 
 /**/
