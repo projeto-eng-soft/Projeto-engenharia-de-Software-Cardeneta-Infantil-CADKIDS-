@@ -11,7 +11,7 @@ import icon_Cadkids     from 'static/icons/icon_cadkids.png';
 import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
 
 /**/ 
-import Button_cadastrar from '../form_touch/button_cadastrar';
+import Button_cadastrar from '../formTouch/button_cadastrar';
 
 const Style = getStyles();
 

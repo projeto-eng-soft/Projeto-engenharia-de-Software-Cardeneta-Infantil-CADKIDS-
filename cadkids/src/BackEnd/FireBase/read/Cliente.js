@@ -10,7 +10,8 @@ export const Getcliente = async(email,navigation) => {
 
     querySnapshot.forEach((doc) => {
         const dict = doc.data();
-        navigation.navigate('home_Criança',{Email:email,dadosUser:dict});
+        const userId = doc.id
+        navigation.navigate('home_Criança',{Email:email,dadosUser:dict,userId:userId});
 
     });        
 }

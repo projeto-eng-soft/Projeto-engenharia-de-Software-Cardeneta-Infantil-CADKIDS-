@@ -3,7 +3,7 @@ import { View , Text , TouchableOpacity ,ImageBackground , Image } from "react-n
 
 import { getStyles }  from "../estilo/style";
 import plano_de_fundo from 'static/imagens/plano_de_fundo_crianca.jpg';
-import Button_menu    from "../form_button/button_menu";
+import Button_menu    from "../formButton/button_menu";
 import { useRoute } from "@react-navigation/native";
 
 const Style = getStyles();

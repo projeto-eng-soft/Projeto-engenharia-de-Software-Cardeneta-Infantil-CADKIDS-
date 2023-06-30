@@ -11,11 +11,11 @@ import Logo             from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
 import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
 /*buttons de entrar ,esqueci a senha , cadastrar além de icone de ver a senha*/ 
-import Button_entrar    from "../form_button/buttonEntrar";
-import Button_senha     from "../form_button/buttonEsqueciSenha";
-import Button_cadastrar from "../form_button/buttonCadastrar";
-import Visivel_senha    from "../form_button/buttonVisibilidadeSenha";
-import Button_medico    from "../form_button/buttonMedico";
+import Button_entrar    from "../formButton/buttonEntrar";
+import Button_senha     from "../formButton/buttonEsqueciSenha";
+import Button_cadastrar from "../formButton/buttonCadastrar";
+import Visivel_senha    from "../formButton/buttonVisibilidadeSenha";
+import Button_medico    from "../formButton/buttonMedico";
 
 
 const Style = getStyles();

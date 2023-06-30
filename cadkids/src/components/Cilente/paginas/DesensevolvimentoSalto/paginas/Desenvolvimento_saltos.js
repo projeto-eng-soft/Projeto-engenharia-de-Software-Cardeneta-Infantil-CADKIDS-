@@ -3,7 +3,7 @@ import { View , Text , ImageBackground ,Image ,ScrollView ,TouchableOpacity,Moda
 
 import { GetMarcos } from "src/BackEnd/FireBase/read/Marcos";
 import { getStyles } from "../estilo/estilo";
-import Fechar        from "../form_button/modal_button";
+import Fechar        from "../formButton/modal_button";
 
 import Logo           from 'static/icons/icon_logo.png';
 import icon_infor     from 'static/icons/icon_infor.png';
