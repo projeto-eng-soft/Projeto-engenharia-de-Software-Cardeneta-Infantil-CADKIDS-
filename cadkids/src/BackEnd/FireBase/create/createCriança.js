@@ -1,8 +1,8 @@
 import { DB }                       from 'src/firebaseConfig';
 import { addDoc  ,collection ,doc}  from 'firebase/firestore';
 import { Getvacinas_12 }            from '../read/Getvacinas';
+import { CommonActions }            from '@react-navigation/native';
 
-import { CommonActions } from '@react-navigation/native';
 export function createCrianca(data,navigation)
 {
     const docRef = collection(DB,'Criança')

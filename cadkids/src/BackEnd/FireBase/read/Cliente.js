@@ -15,7 +15,7 @@ export const Getcliente = async(email,navigation) => {
 
     });        
 }
-
+ 
 export const readCliente = (email,password,navigation) =>{
     const auth  = getAuth(FireApp);
     signInWithEmailAndPassword(auth, email, password)

@@ -1,18 +1,24 @@
 import { useState } from 'react';
 import { useRoute } from '@react-navigation/native';
 import MaskInput ,{ Masks } from 'react-native-mask-input';
+import { ScrollView,ImageBackground , View, Text, TextInput,Modal } from "react-native";
 
-import { getStyles } from '../estilo/style';
-import { ScrollView,ImageBackground , View, Text, TextInput } from "react-native";
+import { getStyles  }    from '../estilo/style';
+import { GetValores }    from '../pegandoValores/pegandoValores';
+import { updateCliente } from 'src/BackEnd/FireBase/update/Cliente';
 
-import ButtonEdit from '../formTouch/buttonEditar';
-import { round } from 'react-native-reanimated';
+import ButtonEdit        from '../formTouch/buttonEditar';
+import Confirma          from '../formTouch/buttonConfima';
+import Negacao           from '../formTouch/buttonNega';
+
+import plano_de_fundo    from 'src/static/imagens/drawerFundo.png';
 
 const Style = getStyles();
 
-export default function EditarCliente(){
+export default function EditarCliente({navigation}){
     const route     = useRoute();
     const dadosUser = route.params.dadosUser;
+    const [Visible,setVisible]               = useState(false)
     const [NomeUser,setNomeUser]             = useState(dadosUser.Nome);
     const [dataNascimento,setdataNascimento] = useState(dadosUser.dataNascimento);
     const [Rg,setRg]                         = useState(dadosUser.Rg);
@@ -25,11 +31,33 @@ export default function EditarCliente(){
     const [Estado,setEstado]                 = useState(dadosUser.Estado);
 
     const Editar = () =>{
-        console.log('FUTU')
+        dadosUser.Nome           = NomeUser
+        dadosUser.dataNascimento = dataNascimento
+        dadosUser.Rg             = Rg
+        dadosUser.Cep            = Cep
+        dadosUser.nome_Rua       = nome_Rua
+        dadosUser.numero_Rua     = numero_Rua
+        dadosUser.Bairro         = Bairro
+        dadosUser.Completemento  = Completemento
+        dadosUser.Cidade         = Cidade
+        dadosUser.Estado         = Estado
+
+        updateCliente(dadosUser,route.params.userId,navigation)
+
+    }
+    const Confirmacao = () =>{
+        setVisible(!Visible);
     }
 
+    const ClosePopup = ()=>{
+        setVisible(!Visible)
+    }
+    const ClosePopupConfirm =()=>{
+        setVisible(!Visible)
+        Editar()
+    }
     return(
-        <ImageBackground>
+        <ImageBackground source={plano_de_fundo}>
             <ScrollView >
                 <View style={Style.formulario_view}>
                 <Text style={Style.text}>Nome Completo </Text>
@@ -138,11 +166,22 @@ export default function EditarCliente(){
                     />
 
                     <View style={Style.button_edit}>
-                        <ButtonEdit onPress={Editar}/>
+                        <ButtonEdit onPress={Confirmacao}/>
                     </View>
-
                 </View>
             </ScrollView>
+
+            <Modal animationType='slide' transparent={true} visible={Visible}>
+                <View style={Style.modal_container}>
+                    <View>
+                        <Text style={Style.text_title}> Tem certeza ?</Text>
+                    </View>
+                    <View style={{flexDirection:'row'}}>
+                        <Confirma onPress={ClosePopupConfirm}/>
+                        <Negacao  onPress={ClosePopup} />
+                    </View>
+                </View>
+            </Modal>
         </ImageBackground>
     );
 }

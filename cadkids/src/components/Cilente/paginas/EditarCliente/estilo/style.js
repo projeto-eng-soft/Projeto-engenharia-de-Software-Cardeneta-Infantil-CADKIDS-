@@ -10,6 +10,23 @@ export const getStyles = () =>
             justifyContent: 'flex-start',
 
         },
+        
+        modal_container:{
+            backgroundColor:'rgb(255, 255, 255)',
+            justifyContent : 'flex-start', 
+            alignItems     :'center',
+            width:200,
+            left:95,
+            marginTop:300,
+            borderRadius:10,
+            borderWidth:1.0,
+        },
+        
+        text_title:{
+            fontSize:25,
+            marginTop:10,
+            marginBottom:10,
+        },
 
         container_bairro_rua:{
             flexDirection:'row',
@@ -40,6 +57,13 @@ export const getStyles = () =>
             marginTop:20,
             marginLeft:4,
         },
+    
+        text_bairro_rua:{
+            fontSize  :15,
+            marginLeft:4,
+            marginTop:15
+        },
+    
         
         textInput:{
             backgroundColor:'rgba(255, 255, 255, 0)',
@@ -76,6 +100,7 @@ export const getStyles = () =>
     
         button_edit:{
             marginTop:25,
+            marginBottom:10,
             borderRadius:20   
         },
 
