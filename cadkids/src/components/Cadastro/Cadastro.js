@@ -1,9 +1,9 @@
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Formulario_1 from "./paginas/formulario_1/formulario_1";
-import Formulario_2 from "./paginas/formulario_2/formulario_2";
-import Formulario_3 from "./paginas/formulario_3/formulario_3";
-import Formulario_4 from "./paginas/formulario_4/formulario_4";
+import Formulario_1 from "./paginas/Formulario1/Formulario1";
+import Formulario_2 from "./paginas/Formulario2/Formulario2";
+import Formulario_3 from "./paginas/Formulario3/Formulario3";
+import Formulario_4 from "./paginas/Formulario4/Formulario4";
 const Stack = createStackNavigator();
 
 export default function Cadastro(){

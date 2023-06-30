@@ -2,13 +2,12 @@ import   React,{ useState } from "react";
 import { useRoute } from "@react-navigation/native";
 import { View , Text , TextInput , ImageBackground ,Image, ScrollView } from "react-native";
 
-import { Dados_nulos }  from "../../validacoes_de_formulario/Formulario_2";
 import   MaskInput      from 'react-native-mask-input';
 import { getStyles }    from "./estilo/style";
 import Logo             from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
 import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
-import Button_continuar from './form_touch/button_continua';
+import Button_continuar from './form_touch/buttonContinua';
 
 
 const Style = getStyles();

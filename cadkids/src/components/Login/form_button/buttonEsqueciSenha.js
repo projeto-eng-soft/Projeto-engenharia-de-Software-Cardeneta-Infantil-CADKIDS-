@@ -1,6 +1,6 @@
 import { TouchableOpacity , View , Text } from "react-native";
 
-import { getStyles } from "./estilo/esqueci_senha";
+import { getStyles } from "./estilo/esqueciSenha";
 
 export default function Button({navigation}){
     return(

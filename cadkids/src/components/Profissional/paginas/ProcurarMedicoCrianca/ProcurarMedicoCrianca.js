@@ -13,8 +13,8 @@ import { Getcrianca_medico } from "src/back_end/FireBase/read/Criancas";
 const Style = getStyles();
 
 export default function Procurar({navigation}){
-
     const [Codigo,setCodigo] = useState(null);
+    
     const Procura_crianca = () =>{
         try{
            Getcrianca_medico(Codigo,navigation);

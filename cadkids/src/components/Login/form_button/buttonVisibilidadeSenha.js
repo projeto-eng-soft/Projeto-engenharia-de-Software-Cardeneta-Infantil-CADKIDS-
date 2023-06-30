@@ -1,6 +1,6 @@
 import { TouchableOpacity , Image } from "react-native";
 
-import { getStyles } from "./estilo/visibilidade_senha";
+import { getStyles } from "./estilo/visibilidadeSenha";
 import Visivel_senha from 'static/icons/icon_olho.png';
 
 

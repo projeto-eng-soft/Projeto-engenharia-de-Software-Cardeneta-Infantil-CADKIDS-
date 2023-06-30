@@ -1,6 +1,6 @@
 import { TouchableOpacity, View, Text } from "react-native";
 
-import { getStyles } from "../../estilo_button_continuar/continuar";
+import { getStyles } from "../../estiloButtonContinuar/continuar";
 
 export default function Button({onPress})
 {
