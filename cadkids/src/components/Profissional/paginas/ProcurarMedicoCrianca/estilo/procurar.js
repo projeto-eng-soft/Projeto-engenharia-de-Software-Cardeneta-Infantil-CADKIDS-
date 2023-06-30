@@ -51,11 +51,11 @@ export const getStyles = () =>
             paddingLeft :12,
             paddingRight:12,       
             borderBottomWidth:1.5,
-            marginTop:2
+            marginTop:15
         },
     
         button_recuperar:{
-            marginTop:30,
+            marginTop:25,
             borderRadius:20
         },
 

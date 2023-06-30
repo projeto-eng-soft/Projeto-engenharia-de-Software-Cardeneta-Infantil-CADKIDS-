@@ -9,7 +9,7 @@ import Recuperar_senha from './src/components/RecuperarSenha/Recuperar_senha';
 
 
 /**/
-import Crianca         from './src/components/Crianca/DrawerCrianca';
+import Crianca         from './src/components/Cilente/DrawerCrianca';
 
 const Stack  = createNativeStackNavigator();
 
