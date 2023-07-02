@@ -72,11 +72,11 @@ export const getStyles = (cor) =>{
 export const getAplicadas = ()=>{
     return StyleSheet.create({
         containers_vacinas:{
-            backgroundColor:'rgba(119, 255, 162, 0.98)',
-            justifyContent :'center',            
+            backgroundColor:'rgba(119, 255, 162, 0.78)',
+            justifyContent :'center',  
+            alignItems:'center',          
             width:350,
-            height:70,
-            paddingLeft :10,
+            height:90,
             marginBottom:15,
             borderRadius:10,
             borderWidth:1.2
@@ -87,11 +87,11 @@ export const getAplicadas = ()=>{
 export const getPendentes = ()=>{
     return StyleSheet.create({
         containers_vacinas:{
-            backgroundColor:'rgba(255, 223, 64, 0.98)',
-            justifyContent :'center',            
+            backgroundColor:'rgba(255, 223, 64, 0.78)',
+            justifyContent :'center', 
+            alignItems:'center',          
             width:350,
-            height:70,
-            paddingLeft :10,
+            height:90,
             marginBottom:15,
             borderRadius:10,
             borderWidth:1.2

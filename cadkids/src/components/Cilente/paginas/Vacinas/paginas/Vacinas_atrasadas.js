@@ -53,7 +53,7 @@ export default function Atrasadas_vacinas({navigation}){
                 {Vacinas.map((item,index) =>
                     <TouchableOpacity style={Styles_container.containers_vacinas} key={index} onPress={()=>Informacao(item)}>
                         <Text style={Styles.vac_text}>{item.DOSES}</Text>
-                        <Text style={Styles.vac_text}>&#8226; {item.VACINAS}</Text>
+                        <Text                        >{item.VACINAS}</Text>
                     </TouchableOpacity>
                 )}
             </ScrollView>

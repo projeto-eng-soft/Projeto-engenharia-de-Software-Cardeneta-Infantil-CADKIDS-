@@ -31,18 +31,18 @@ export const getStyles = () => {
         },
 
         button_opcoes:{
-            backgroundColor:'#228dff',
+            backgroundColor:'#67c7ffcf',
             alignItems:'center',
             width:350,
             padding:10,
             marginBottom:20,
             borderRadius:10,
-            borderWidth:1.2,
+            borderWidth:1.0,
         },
         
         text:{
             color:'rgb(255, 255, 255)',
-            fontSize:20,
+            fontSize:19,
         },
 
         text_nome_usuario:{

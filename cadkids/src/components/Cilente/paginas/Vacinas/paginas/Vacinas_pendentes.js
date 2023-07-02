@@ -9,7 +9,7 @@ import { getPendentes }  from './estilo/vacinas';
 import Fechar            from "./form_button/modal_button";
 /**/ 
 import Logo          from 'static/icons/icon_logo.png';
-import plano_padrao  from 'static/imagens/plano_de_fundo_crianca.jpg';
+import plano_padrao  from 'static/imagens/plano_de_fundo_padrao.png';
 
 
 const Styles = getStyles();
@@ -52,8 +52,8 @@ export default function Vacinas_pendentes({navigation}){
             <ScrollView style={Styles.scrollview_vacinas}>
                 {Vacinas.map((item,index) =>
                     <TouchableOpacity style={Styles_container.containers_vacinas} key={index} onPress={()=>Informacao(item)}>
-                        <Text style={Styles.vac_text}>{item.DOSE}</Text>
-                        <Text style={Styles.vac_text}>&#8226; {item.VACINA}</Text>
+                        <Text style={{fontWeight:'bold'}}>{item.DOSE}</Text>
+                        <Text                            >{item.VACINA}</Text>
                     </TouchableOpacity>
                 )}
             </ScrollView>

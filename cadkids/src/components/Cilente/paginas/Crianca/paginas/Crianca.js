@@ -2,7 +2,7 @@ import { useState } from "react";
 import { View , Text , TouchableOpacity ,ImageBackground , Image } from "react-native";
 
 import { getStyles }  from "../estilo/style";
-import plano_de_fundo from 'static/imagens/plano_de_fundo_crianca.jpg';
+import plano_de_fundo from 'static/imagens/plano_de_fundo_padrao.png';
 import Button_menu    from "../formButton/button_menu";
 import { useRoute } from "@react-navigation/native";
 

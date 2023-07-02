@@ -6,6 +6,7 @@ import { getStyles }          from "./estilo/medico_crianca";
 import { GetvacinasCrianca }  from "src/BackEnd/FireBase/read/Getvacinas";
 
 import icone_logo       from 'static/icons/icon_logo.png';
+import icone_aplicada   from 'static/icons/icon_medico_aplicado.png'
 import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
 
 const Style = getStyles();
@@ -35,17 +36,27 @@ export default function VacinasPendentes({navigation}){
                 <Image source={icone_logo} style={Style.icone}/>
             </View>
             <View>
-                <Text>Nome: {Dados.Nome }</Text>
-                <Text>Data de Nascimento : {Dados.dataNascimento}</Text>
+                <Text style={{fontSize:16}}>Nome: {Dados.Nome }</Text>
+                <Text style={{fontSize:16}}>Data de Nascimento : {Dados.dataNascimento}</Text>
             </View>
 
             <View>
                 <ScrollView style={Style.scrollview_vacinas}>
                     {Vacinas.map((item,index) =>
-                        <TouchableOpacity style={Style.containers_vacinas} key={index}>
-                            <Text style={Style.vac_text}>{item.DOSE}</Text>
-                            <Text style={Style.vac_text}>&#8226; {item.VACINA}</Text>
-                        </TouchableOpacity>        
+                        <View key={index}>
+                            <TouchableOpacity style={Style.button_aplicar}>
+                                <View style={Style.view_1}>
+                                    <Text>Aplicar vacina</Text>
+                                    <Image source={icone_aplicada} style={{height:35,width:35}}/>
+                                </View>
+                            </TouchableOpacity>
+
+                            <View style={Style.containers_vacinas} >
+                                <Text style={{fontWeight:'bold'}}>{item.DOSE}</Text>
+                                <Text style={Style.vac_text}>{item.VACINA}</Text>
+                            </View>  
+                        </View>
+      
                     )}
                 </ScrollView>
             </View>

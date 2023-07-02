@@ -24,7 +24,7 @@ export default function Vacinas(){
                         headerShown:false,
                         tabBarStyle:{
                             position:'absolute',
-                            backgroundColor:'rgba(255, 255, 255, 0.690)',
+                            backgroundColor:'rgba(255, 255, 255, 0.699)',
                             borderTopWidth:0, 
                             bottom:0,
                             left :2,
