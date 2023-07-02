@@ -43,11 +43,10 @@ export default function Home({navigation}){
             while (tamanho-1 != 0)
             {
                 var c = Math.ceil(Math.random() * paletaCores.length-1)
-                // if (cores.indexOf(paletaCores[c]) == -1)
-                // {
-                cores.push(paletaCores[c]);
-                tamanho -=1;
-                // }      
+                if (cores.indexOf(paletaCores[c]) == -1)
+                {
+                    cores.push(paletaCores[c]);tamanho -=1;
+                }
             }
             setCores(cores);
         }
@@ -55,13 +54,8 @@ export default function Home({navigation}){
         const fetchValores = async () => {
             const valoresData = await Getcriancas(route.params.Email);
 
-            if (valoresData.length !=0)
-            {
-                addcionar_cores(valoresData.length);
-                setCriancas(valoresData);
-            }
-
-
+            addcionar_cores(valoresData.length);
+            setCriancas(valoresData);
         };
         fetchValores();
       }, 
