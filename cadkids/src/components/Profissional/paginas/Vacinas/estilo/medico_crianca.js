@@ -65,7 +65,7 @@ export const getStyles = () =>
             alignItems:'center',
             width:320,
             marginTop:250,
-            marginLeft:40,
+            marginLeft:30,
             borderRadius:10,
             borderWidth:1.2
 

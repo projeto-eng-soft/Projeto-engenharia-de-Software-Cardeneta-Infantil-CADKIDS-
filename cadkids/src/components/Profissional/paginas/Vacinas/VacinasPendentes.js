@@ -13,18 +13,20 @@ const Style = getStyles();
 
 export default function VacinasPendentes({navigation}){
 
+    const dataAtual = new Date();
+    const dia       = dataAtual.getDate();
+    const mes       = dataAtual.getMonth() + 1;
+    const ano       = dataAtual.getFullYear();
+
     const route  = useRoute();
     const Dados  = route.params.dados 
     const userId = route.params.userId
 
-    const [Vacinas,setVacinas]       = useState([]);
-    const [Visible,setVisible]       = useState(false);
-    const [NomeVacina,setNomeVacina] = useState(null);
-    const [Idade,setIdade] = useState(null);
-    const dataAtual = new Date();
-    const dia = dataAtual.getDate();
-    const mes = dataAtual.getMonth() + 1;
-    const ano = dataAtual.getFullYear();
+    const [Vacinas,setVacinas]             = useState([]);
+    const [Visible,setVisible]             = useState(false);
+    const [NomeVacina,setNomeVacina]       = useState(null);
+    const [Idade,setIdade]                 = useState(null);
+    const [Lote,setLote]                   = useState(null);
     const [DataAplicacao,setDataAplicacao] = useState(dia + "/" + mes + "/" + ano)
 
 
@@ -52,7 +54,6 @@ export default function VacinasPendentes({navigation}){
 
     }
 
-    
     
     return(
         <ImageBackground source={plano_de_fundo} style={Style.container}>  
@@ -94,14 +95,18 @@ export default function VacinasPendentes({navigation}){
                             <Text style={{fontSize:16}}>Idade   : {Idade}</Text>
                             <Text style={{fontSize:16}}>Vacina : {NomeVacina}</Text>
                             <View style={{flexDirection:"row"}}>
+
                                 <Text style={{fontSize:16}}>Lote     :</Text>
                                 <TextInput 
-                                    style={{borderWidth:0.1,width:100,borderRadius:10}}
+                                    style        = {{borderWidth:0.1,width:100,borderRadius:10}}
+                                    value        = {Lote}
+                                    onChangeText = {setLote}
                                 />
                             </View>
 
                             <Text style={{fontSize:16}}>Status : Não Aplicada</Text>   
                         </View>
+
                         <View>
                             <TouchableOpacity onPress={Assinar} >
                                 <View style={Style.modal_button}>
@@ -111,8 +116,8 @@ export default function VacinasPendentes({navigation}){
                         </View>
 
                     </View>
-
                 </Modal>
+
             </View>
         </ImageBackground>
     )
