@@ -1,6 +1,6 @@
 import { useRoute }           from "@react-navigation/native";
 import { useEffect,useState } from "react";
-import { View,ImageBackground ,Text ,Image ,ScrollView ,TouchableOpacity } from "react-native";
+import { View , ImageBackground ,Text ,Image ,ScrollView ,TouchableOpacity , Modal, TextInput } from "react-native";
 
 import { getStyles }          from "./estilo/medico_crianca";
 import { GetvacinasCrianca }  from "src/BackEnd/FireBase/read/Getvacinas";
@@ -16,7 +16,17 @@ export default function VacinasPendentes({navigation}){
     const route  = useRoute();
     const Dados  = route.params.dados 
     const userId = route.params.userId
-    const [Vacinas,setVacinas] = useState([]);
+
+    const [Vacinas,setVacinas]       = useState([]);
+    const [Visible,setVisible]       = useState(false);
+    const [NomeVacina,setNomeVacina] = useState(null);
+
+    const dataAtual = new Date();
+    const dia = dataAtual.getDate();
+    const mes = dataAtual.getMonth() + 1;
+    const ano = dataAtual.getFullYear();
+    const [DataAplicacao,setDataAplicacao] = useState(dia + "/" + mes + "/" + ano)
+
 
     useEffect(() => {
         const fetchValores = async () => {
@@ -26,6 +36,11 @@ export default function VacinasPendentes({navigation}){
         fetchValores();
       }, 
     []);  
+
+    const Aplicar = (NomeVacina) =>{
+        setVisible(!Visible)
+        setNomeVacina(NomeVacina);
+    }
 
     
     
@@ -44,7 +59,7 @@ export default function VacinasPendentes({navigation}){
                 <ScrollView style={Style.scrollview_vacinas}>
                     {Vacinas.map((item,index) =>
                         <View key={index}>
-                            <TouchableOpacity style={Style.button_aplicar}>
+                            <TouchableOpacity style={Style.button_aplicar} onPress={()=>Aplicar(item.VACINA)}>
                                 <View style={Style.view_1}>
                                     <Text>Aplicar vacina</Text>
                                     <Image source={icone_aplicada} style={{height:35,width:35}}/>
@@ -56,9 +71,28 @@ export default function VacinasPendentes({navigation}){
                                 <Text style={Style.vac_text}>{item.VACINA}</Text>
                             </View>  
                         </View>
-      
                     )}
                 </ScrollView>
+
+                <Modal animationType='slide' transparent={true} visible={Visible}>
+                    <View style={Style.modal_view}>
+                        <View>
+                            <Text>Vacina:{NomeVacina}</Text>
+                            <Text>Lote  :</Text>
+                            <Text>Status: Aplicada</Text>   
+                            <Text>Data da Aplicação:{DataAplicacao}</Text>                         
+                        </View>
+                        <View>
+                            <TouchableOpacity>
+                                <View>
+                                    <Text>Aplicar vacina</Text>
+                                </View>
+                            </TouchableOpacity>
+                        </View>
+
+                    </View>
+
+                </Modal>
             </View>
         </ImageBackground>
     )

@@ -58,9 +58,15 @@ export const getStyles = () =>
             borderStartWidth :1.2,
             borderBottomWidth:1.2,
             borderRadius     :20
+        },
+
+        modal_view:{
+            backgroundColor:'white',
+            alignItems:'center'
+        },
+        modal_button:{
+            backgroundColor:'green'
         }
-
-
 
     });
 }

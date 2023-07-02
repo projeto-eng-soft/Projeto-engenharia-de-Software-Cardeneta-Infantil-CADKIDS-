@@ -20,7 +20,7 @@ export const readCliente = (email,password,navigation) =>{
     const auth  = getAuth(FireApp);
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-        const dados = Getcliente(email,navigation);
+        Getcliente(email,navigation);
     })
     .catch((error) => {
         alert(error.code+"\n"+error.message);
