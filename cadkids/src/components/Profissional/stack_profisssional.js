@@ -1,9 +1,9 @@
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Procurar      from "./paginas/Procurar_medico_crianca";
-import MedicoCrianca from "./paginas/Medico_crianca";
-const Stack  = createStackNavigator();
+import Procurar      from "./paginas/ProcurarMedicoCrianca/ProcurarMedicoCrianca";
+import MedicoCrianca from "./paginas/TabMedicoVacinas";
 
+const Stack  = createStackNavigator();
 
 export default function Medico(){
     return (
