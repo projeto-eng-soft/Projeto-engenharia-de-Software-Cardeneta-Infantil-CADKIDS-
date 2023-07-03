@@ -58,9 +58,29 @@ export const getStyles = () =>
             borderStartWidth :1.2,
             borderBottomWidth:1.2,
             borderRadius     :20
+        },
+
+        modal_view:{
+            backgroundColor:'white',
+            alignItems:'center',
+            width:320,
+            marginTop:250,
+            marginLeft:30,
+            borderRadius:10,
+            borderWidth:1.2
+
+        },
+        modal_button:{
+            backgroundColor:'rgba(8, 255, 4, 0.733)',
+            alignItems     :'center',
+            justifyContent :'center',
+            width:120,
+            height:30,
+            marginTop:10,
+            marginBottom:10,
+            borderRadius:5,
+            borderWidth:0.5
         }
-
-
 
     });
 }

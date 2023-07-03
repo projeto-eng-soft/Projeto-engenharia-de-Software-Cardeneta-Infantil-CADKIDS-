@@ -13,6 +13,7 @@ export const Getvacinas_12 = async() => {
     return dicionario;      
 }
 
+
 export const GetvacinasCrianca = async(userId,type) =>{
     const dicionario    = []
     const collecRef     = collection(doc(DB, "Criança", userId), "Vacinas");
