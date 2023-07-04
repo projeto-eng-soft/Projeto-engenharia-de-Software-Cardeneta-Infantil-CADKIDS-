@@ -29,8 +29,8 @@ const paletaCores = [
 export default function Home({navigation}){
 
     const route = useRoute();
-    const [Cores,setCores] = useState([]);
-    const [view, setView] = useState([]);
+    const [Cores,setCores]       = useState([]);
+    const [view, setView]        = useState([]);
     const [Criancas,setCriancas] = useState([]);
 
     
@@ -38,16 +38,19 @@ export default function Home({navigation}){
         const addcionar_cores = (tamanho) =>
         {
             var cores = [];
-            cores.push(paletaCores[Math.ceil(Math.random() * paletaCores.length-1)])
-            
-            while (tamanho-1 != 0)
+            for (let i=0;i<tamanho;i++)
             {
+<<<<<<< HEAD
                 var c = Math.ceil(Math.random() * paletaCores.length-1)
                 // if (cores.indexOf(paletaCores[c]) == -1)
                 // {
                 cores.push(paletaCores[c]);
                 tamanho -=1;
                 // }      
+=======
+                var c = Math.ceil(Math.random() * paletaCores.length-1)              
+                cores.push(paletaCores[c]);
+>>>>>>> 16fd49ae82d9cf7c7da9f39a1cb936438ed2ff1c
             }
             setCores(cores);
         }
@@ -60,8 +63,11 @@ export default function Home({navigation}){
                 addcionar_cores(valoresData.length);
                 setCriancas(valoresData);
             }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 16fd49ae82d9cf7c7da9f39a1cb936438ed2ff1c
         };
         fetchValores();
       }, 
@@ -71,16 +77,14 @@ export default function Home({navigation}){
         navigation.navigate('Cadastro_Crianca',{Email:route.params.Email})
     }  
 
-    const Crianca = (Nome) =>{
-        // if (Nome!='Não tem') navigation.navigate('Crianca',{Nome:Nome})
-        // alert('Não tem criança');
+    const Crianca = (Nome) =>{ 
         navigation.navigate('Crianca',{Nome:Nome})
-        return;
     }
 
     const Abrir_menu = () => { 
         navigation.openDrawer(); 
     }
+   
     
     return(
         <ImageBackground source={plano_de_fundo} style={Style.container}>

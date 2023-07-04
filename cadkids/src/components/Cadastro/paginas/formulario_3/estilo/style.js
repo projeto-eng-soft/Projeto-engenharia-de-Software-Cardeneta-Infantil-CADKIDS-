@@ -49,6 +49,7 @@ export const getStyles = () =>
         },
     
         button_continua:{
+            marginTop:5,
             padding:20,
             borderRadius:20,
             

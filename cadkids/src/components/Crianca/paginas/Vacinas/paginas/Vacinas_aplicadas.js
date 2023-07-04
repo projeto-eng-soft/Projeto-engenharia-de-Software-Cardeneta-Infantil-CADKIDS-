@@ -20,8 +20,6 @@ export default function Aplicadas_Vacinas({navigation}){
     const [Visible,setVisible] = useState(false);
     const [Vacinas,setVacinas] = useState([])
 
-CZZZ
-
     const Informacao = (item) => {
         setItem(item);
         setVisible(true);

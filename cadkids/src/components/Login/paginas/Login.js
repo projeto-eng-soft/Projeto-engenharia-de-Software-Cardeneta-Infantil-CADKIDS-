@@ -3,19 +3,32 @@ import React ,{ useState } from "react";
 import { View , Text , TextInput , ImageBackground , Image, Alert  } from "react-native";
 import MaskInput ,{ Masks } from 'react-native-mask-input';
 
+<<<<<<< HEAD
 import { readCliente } from "src/BackEnd/FireBase/read/Cliente";
 import { readMedico  } from 'src/BackEnd/FireBase/read/Medico';
+=======
+import { readCliente } from "src/back_end/FireBase/read/login";
+import { readMedico  } from 'src/back_end/FireBase/read/Medico';
+>>>>>>> 16fd49ae82d9cf7c7da9f39a1cb936438ed2ff1c
 import { getStyles }    from "../estilo/login";
 /*Imagens*/ 
 import Logo             from 'static/icons/icon_logo.png';
 import icon_Cadkids     from 'static/icons/icon_cadkids.png';
 import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
 /*buttons de entrar ,esqueci a senha , cadastrar além de icone de ver a senha*/ 
+<<<<<<< HEAD
 import Button_entrar    from "../formButton/buttonEntrar";
 import Button_senha     from "../formButton/buttonEsqueciSenha";
 import Button_cadastrar from "../formButton/buttonCadastrar";
 import Visivel_senha    from "../formButton/buttonVisibilidadeSenha";
 import Button_medico    from "../formButton/buttonMedico";
+=======
+import Button_entrar    from "../form_button/button_entrar";
+import Button_senha     from "../form_button/button_esqueci_senha";
+import Button_cadastrar from "../form_button/button_cadastrar";
+import Visivel_senha    from "../form_button/button_visibilidade_senha";
+import Button_medico    from "../form_button/button_medico";
+>>>>>>> 16fd49ae82d9cf7c7da9f39a1cb936438ed2ff1c
 
 
 const Style = getStyles();

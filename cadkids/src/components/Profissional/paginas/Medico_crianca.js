@@ -15,13 +15,15 @@ export default function MedicoCrianca({navigation}){
     const nome   = route.params.Nome
     const userId = route.params.id
     const [Vacinas,setVacinas] = useState([]);
+    const doc = route.params.doc;
 
     useEffect(() => {
         const fetchValores = async () => {
           const valoresData = await Getvacinas_crianca(userId);
           setVacinas(valoresData);
         };
-        fetchValores();
+        setVacinas(fetchValores());
+        // navigation.navigate('medVacinas', {Vacinas, doc})r
       }, 
     []);   
     return(
