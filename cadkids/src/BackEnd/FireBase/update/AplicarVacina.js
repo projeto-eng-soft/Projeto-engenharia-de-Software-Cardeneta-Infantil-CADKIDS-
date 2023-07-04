@@ -5,43 +5,56 @@ import { useRoute }           from "@react-navigation/native";
 
 export const AplicarVacina = async(data, navigation) =>{
 
-    const vaccine = query(collection(doc(DB, "Criança", data.userId), "Vacinas"), where("VACINA", "==", data.vacina));
+    console.log("Aplicar Vacina")
+    console.log(data.vacina)
 
-    const querySnapshot = await getDocs(vaccine);
-
-    querySnapshot.forEach((doc) => {
-        // console.log(doc.id)
-        updateDoc(
-            doc.id, {
-                status: data.status,
-                lote: data.lote,
-                data_aplicacao: data.DataAplicacao
-            }
+    updateDoc(
+        doc(collection(doc(DB, "Criança", data.userId), "Vacinas"), data.vacina), {
+            status: data.status,
+            lote: data.lote,
+            data_aplicacao: data.DataAplicacao
+        }
+    ).then(() => {
+        navigation.dispatch(
+            CommonActions.reset({
+                index: 1 ,
+                routes:[
+                    { 
+                        name:'MedicoCrianca',
+                        params: {
+                            ...data.params
+                        }
+                    },
+                ]
+            })
         )
-        // .then(async() => {
-        //     navigation.dispatch(
-        //         CommonActions.reset({
-        //             index:0,
-        //             routes:[
-        //                 { 
-        //                     name:'VacinasAplicadasMedico',
-        //                 },
-        //             ]
-        //         })
-        //     )
-        // }).catch((error)=>{ 
-        //     alert('Invalido'+error.message);
-        // });
+    }).catch((error)=>{ 
+        alert('Invalido'+error.message);
     });
-    // navigation.dispatch(
-    //     CommonActions.reset({
-    //         index:0,
-    //         routes:[
-    //             { 
-    //                 name:'VacinasAplicadasMedico',
-    //                 data: data.params
-    //             },
-    //         ]
-    //     })
-    // )
+
+    // querySnapshot.forEach((doc) => {
+    //     updateDoc(
+    //         doc(collection(doc(DB, "Criança", data.userId), "Vacinas"), doc.id), {
+    //             status: data.status,
+    //             lote: data.lote,
+    //             data_aplicacao: data.DataAplicacao
+    //         }
+    //     ).then(async() => {
+    //         navigation.dispatch(
+    //             CommonActions.reset({
+    //                 index:0,
+    //                 routes:[
+    //                     { 
+    //                         name:'VacinasAplicadasMedico',
+    //                         params: {
+    //                             ...data.params
+    //                         }
+    //                     },
+    //                 ]
+    //             })
+    //         )
+    //     }).catch((error)=>{ 
+    //         alert('Invalido'+error.message);
+    //     });
+    // });
 }

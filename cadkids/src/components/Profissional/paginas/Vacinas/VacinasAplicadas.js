@@ -11,8 +11,10 @@ import plano_de_fundo   from 'static/imagens/plano_de_fundo_padrao.png';
 const Style = getStyles();
 
 export default function VacinasAplicadas({navigation}){
+    // console.log("Vacinas Aplicadas")
     const route  = useRoute();
-    const Dados  = route.params.dados
+    // console.log(route.params)
+    const Dados  = route.params.dados 
     const userId = route.params.userId
     const [Vacinas,setVacinas] = useState([]);
 
@@ -22,6 +24,7 @@ export default function VacinasAplicadas({navigation}){
           setVacinas(valoresData);
         };
         fetchValores();
+        // console.log(Vacinas)
       }, 
     []);  
     

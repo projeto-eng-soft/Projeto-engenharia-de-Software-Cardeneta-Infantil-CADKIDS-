@@ -21,7 +21,7 @@ export const Getcrianca_medico = async(numero,navigation) => {
     
     querySnapshot.forEach((doc) => {
         const dict = doc.data()
-        navigation.navigate('MedicoCrianca',{id:doc.id,Nome:dict.Nome, doc: dict});
+        navigation.navigate('MedicoCrianca',{userId: doc.id ,dados: doc.data()});
 
     });        
 

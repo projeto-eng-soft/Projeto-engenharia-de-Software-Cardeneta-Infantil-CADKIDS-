@@ -15,8 +15,10 @@ const Tab = createBottomTabNavigator();
 export default function MedicoVacinas(){
     const navigation = useNavigation();
     const route  = useRoute();
-    const userId = route.params.id;
+    const userId = route.params.userId;
     const dados  = route.params.dados;
+    console.log(route.params.userId)
+    console.log(route.params.dados)
  
     return(
         <Tab.Navigator initialRouteName="Aplicadas" 

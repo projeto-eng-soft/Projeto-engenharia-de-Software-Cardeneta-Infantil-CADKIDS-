@@ -30,19 +30,6 @@ export default function Login( {navigation} ) {
 
     const Senha_visibilidade = () => setOlho(!Olho)
 
-<<<<<<< HEAD
-    const Entrar = () =>
-    {
-        try{
-            var cpf_dominio = Cpf;
-            cpf_dominio = cpf_dominio.replace('.','');
-            cpf_dominio = cpf_dominio.replace('.','');
-            cpf_dominio = cpf_dominio.replace('-','');
-        }
-        catch(error){
-            alert(error.message);
-            return;
-=======
     const Entrar = () => {
         if ( Cpf!= null && Boleano) {
             try{
@@ -55,19 +42,12 @@ export default function Login( {navigation} ) {
                 alert(error.message);
                 return;
             }
->>>>>>> 16fd49ae82d9cf7c7da9f39a1cb936438ed2ff1c
         }
 
         if ( Cpf!= null && Boleano) 
         {
             readCliente(cpf_dominio+"@dominio.com",Senha,navigation)
-           
-<<<<<<< HEAD
-        }else if ( Cpf!= null && !Boleano)
-        {
-=======
         }else if ( Cpf!= null && !Boleano){
->>>>>>> 16fd49ae82d9cf7c7da9f39a1cb936438ed2ff1c
             readMedico(cpf_dominio+"@dominio.med.com",Senha,navigation)
         }else{
             setCpf(Cpf) ;setSenha(Senha);
@@ -82,12 +62,8 @@ export default function Login( {navigation} ) {
 
     const Medico =()=>{ 
         setBoleano(!Boleano);
-<<<<<<< HEAD
-        Alterar(); }
-=======
         Alterar(); 
     }
->>>>>>> 16fd49ae82d9cf7c7da9f39a1cb936438ed2ff1c
 
     return(
         <ImageBackground source={plano_de_fundo} style={Style.container}>

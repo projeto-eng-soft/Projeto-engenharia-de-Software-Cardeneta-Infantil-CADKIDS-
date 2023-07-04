@@ -22,6 +22,10 @@ export const GetvacinasCrianca = async(userId,type) =>{
     
     querySnapshot.forEach((doc) => {
         const dict = doc.data()
+        const id   = doc.id
+    
+        dict['id'] = id;
+        
         if (type == 0){
             if (dict.status == true ) dicionario.push(dict);
         }else{

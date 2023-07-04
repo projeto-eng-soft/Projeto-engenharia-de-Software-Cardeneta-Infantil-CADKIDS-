@@ -29,7 +29,6 @@ export default function VacinasPendentes({navigation}){
     const [Idade,setIdade]                 = useState(null);
     const [Lote,setLote]                   = useState(null);
     const [DataAplicacao,setDataAplicacao] = useState(dia + "/" + mes + "/" + ano)
-    const [IdVac  ,setIdVac  ]             = useState(null);
 
 
     useEffect(() => {
@@ -41,11 +40,10 @@ export default function VacinasPendentes({navigation}){
       }, 
     []);  
 
-    const Aplicar = (NomeVacina,Idade,ID) =>{
+    const Aplicar = (NomeVacina,Idade) =>{
         setVisible(!Visible);
         setNomeVacina(NomeVacina);
         setIdade(Idade)
-        setIdVac(ID)
     }
     const Assinar = () =>{
         setVisible(!Visible);
@@ -54,7 +52,7 @@ export default function VacinasPendentes({navigation}){
             DataAplicacao: DataAplicacao,
             lote: Lote,
             userId: userId,
-            vacina: IdVac,
+            vacina: NomeVacina,
             params: route.params,
         }
         AplicarVacina(data, navigation)
@@ -76,7 +74,7 @@ export default function VacinasPendentes({navigation}){
                 <ScrollView style={Style.scrollview_vacinas}>
                     {Vacinas.map((item,index) =>
                         <View key={index}>
-                            <TouchableOpacity style={Style.button_aplicar} onPress={()=>Aplicar(item.VACINA, item.IDADE, item.id)}>
+                            <TouchableOpacity style={Style.button_aplicar} onPress={()=>Aplicar(item.VACINA,item.IDADE, item.id)}>
                                 <View style={Style.view_1}>
                                     <Text>Aplicar vacina</Text>
                                     <Image source={icone_aplicada} style={{height:35,width:35}}/>

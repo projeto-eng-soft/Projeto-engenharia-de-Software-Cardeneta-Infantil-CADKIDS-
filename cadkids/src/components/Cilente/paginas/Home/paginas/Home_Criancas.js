@@ -16,19 +16,13 @@ import Button_adicionar_crianca from '../form_button/button_cadastrar_crianca';
 
 const Style = getStyles();
 const paletaCores = [
-    // '#eecbca',
-    // '#80c6f2',
-    // '#d3b5f6',
-    // '#c17383',
-    // '#ff7fa8',
-    // '#e5804d',
-    // '#938672'
-    '#FE9E56',
-    // '#CBF173',
-    '#98CB21',
-    '#3D99E1',
-    '#957DF4',
-    '#F789DC',
+    '#eecbca',
+    '#80c6f2',
+    '#d3b5f6',
+    '#c17383',
+    '#ff7fa8',
+    '#e5804d',
+    '#938672'
   ];
   
 
@@ -106,11 +100,8 @@ export default function Home({navigation}){
                         <Text style={
                             {   
                                 color:'white',
-                                fontWeight: '700',
-                                fontSize: 17,
-                                textShadowColor: 'rgba(50, 50, 50, 1)',
-                                textShadowOffset: {width: 3, height: 3},
-                                textShadowRadius: 4
+                                fontWeight:'bold',
+                                fontSize:16
                             }
                             }>{item.Nome}</Text>
                     </TouchableOpacity>

@@ -10,16 +10,7 @@ export function createCrianca(data,navigation)
         docRef,data
     ).then(async(docRef) => {
         const valores   = await Getvacinas_12();
-<<<<<<< HEAD
-        const collecRef = await collection(doc(DB, "Criança",docRef.id), "Vacinas");
-        
-        for(let i=0;i<valores.length;i++){ 
-            addDoc(collecRef,valores[i]); 
-        }
-        navigation.navigate('Inicio_crianca',{Email:data.Email});
-    }
-    ).catch((error)=>{ 
-=======
+
         const collecRef = collection(doc(DB, "Criança", docRef.id), "Vacinas");
         
         for(let i=0;i<valores.length;i++) addDoc(collecRef,valores[i]); 
@@ -33,8 +24,7 @@ export function createCrianca(data,navigation)
             })
         )
 
-    }).catch((error)=>{ 
->>>>>>> 16fd49ae82d9cf7c7da9f39a1cb936438ed2ff1c
+    }).catch((error)=>{
         alert('Invalido'+error.message);
     });
 }

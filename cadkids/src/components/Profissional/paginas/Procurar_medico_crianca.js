@@ -34,8 +34,8 @@ export default function Procurar({navigation}){
                 <Text style={Style.text}>Número do S.u.S</Text>
                 <MaskInput
                     style        = {Style.textInput}
-                    placeholder  ="digite o número"
-                    keyboardType ="numeric" 
+                    placeholder  = "digite o número"
+                    keyboardType = "numeric" 
                     maxLength    = {19}
                     value        = {Codigo}
                     onChangeText = {setCodigo}
