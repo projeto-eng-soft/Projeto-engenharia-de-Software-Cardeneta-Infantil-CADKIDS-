@@ -64,7 +64,8 @@ export default function Home({navigation}){
     }  
 
     const Crianca = (Nome,id) =>{ 
-        navigation.navigate('Crianca',{Nome:Nome,userId:id})
+       
+        navigation.navigate('Crianca',{Nome:Nome,criancaId:id})
     }
 
     const Abrir_menu = () => { 

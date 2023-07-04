@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { View , Text , ImageBackground , 
         Image , TouchableOpacity , ScrollView ,
-        Modal } from "react-native";
+        Modal }     from "react-native";
+import { useRoute } from '@react-navigation/native';
 
 /**/
-import { Getvacinas_12 } from "src/BackEnd/FireBase/read/Getvacinas";
-import { getStyles }    from "./estilo/vacinas";
-import { getAplicadas } from "./estilo/vacinas";
-import Fechar        from "./form_button/modal_button";
+import { GetvacinasCrianca } from 'src/BackEnd/FireBase/read/Getvacinas';
+import { getStyles }       from "./estilo/vacinas";
+import { getAplicadas }    from "./estilo/vacinas";
+import Fechar              from "./form_button/modal_button";
 /**/
 import Logo          from 'static/icons/icon_logo.png';
 import plano_padrao  from 'static/imagens/plano_de_fundo_padrao.png';
@@ -19,12 +20,12 @@ export default function Aplicadas_Vacinas({navigation}){
     const [Item   ,setItem]    = useState({});
     const [Visible,setVisible] = useState(false);
     const [Vacinas,setVacinas] = useState([])
-    const userId               = useRoute().params.userId;
+    const criancaId            = useRoute().params.criancaId;
 
 
     useEffect(() => {
         const fetchValores = async () => {
-          const valoresData = await GetvacinasCrianca(userId,0);
+          const valoresData = await GetvacinasCrianca(criancaId,0);
           setVacinas(valoresData);
         };
     

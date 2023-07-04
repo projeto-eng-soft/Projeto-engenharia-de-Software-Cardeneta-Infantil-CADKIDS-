@@ -17,7 +17,7 @@ const Tab = createBottomTabNavigator();
 
 export default function Vacinas(){
     const navigation = useNavigation();
-    const userId     = useRoute().params.userId;
+    const criancaId     = useRoute().params.criancaId;
 
 
     return(
@@ -57,7 +57,7 @@ export default function Vacinas(){
                                 );
                             },
                         }}
-                        initialParams={{userId:userId}}
+                        initialParams={{criancaId:criancaId}}
                         />
 
             <Tab.Screen name="Pendentes"  
@@ -74,7 +74,7 @@ export default function Vacinas(){
                                 </TouchableOpacity>);
                             }, 
                         }}
-                        initialParams={{userId:userId}}
+                        initialParams={{criancaId:criancaId}}
                         />
                         
             </Tab.Navigator>

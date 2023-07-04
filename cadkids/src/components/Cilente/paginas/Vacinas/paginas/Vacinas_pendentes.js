@@ -20,13 +20,13 @@ export default function Vacinas_pendentes({navigation}){
     const [Item   ,setItem]    = useState({});
     const [Visible,setVisible] = useState(false);
     const [Vacinas,setVacinas] = useState([])
-    
-    const userId               = useRoute().params.userId;
+    const criancaId            = useRoute().params.criancaId;
+
 
 
     useEffect(() => {
         const fetchValores = async () => {
-          const valoresData = await GetvacinasCrianca(a1,1);
+          const valoresData = await GetvacinasCrianca(criancaId,1);
           setVacinas(valoresData);
         };
     
