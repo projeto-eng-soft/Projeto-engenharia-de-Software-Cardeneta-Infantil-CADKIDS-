@@ -63,8 +63,8 @@ export default function Home({navigation}){
         navigation.navigate('Cadastro_Crianca',{Email:route.params.Email})
     }  
 
-    const Crianca = (Nome) =>{ 
-        navigation.navigate('Crianca',{Nome:Nome})
+    const Crianca = (Nome,id) =>{ 
+        navigation.navigate('Crianca',{Nome:Nome,userId:id})
     }
 
     const Abrir_menu = () => { 
@@ -96,7 +96,7 @@ export default function Home({navigation}){
                             borderRadius:10,
                             borderWidth:1.2,
                         }
-                    } key={index} onPress={()=>Crianca(item.Nome)}>
+                    } key={index} onPress={()=>Crianca(item.Nome,item.id)}>
                         <Text style={
                             {   
                                 color:'white',

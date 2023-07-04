@@ -1,9 +1,10 @@
 import { useState ,useEffect} from 'react';
 import { View , Text , ImageBackground , 
         Image , TouchableOpacity , ScrollView ,
-        Modal } from "react-native";
+        Modal }     from "react-native";
+import { useRoute } from '@react-navigation/native';
 /**/
-import { Getvacinas_12 } from "src/BackEnd/FireBase/read/Getvacinas";
+import { GetvacinasCrianca } from 'src/BackEnd/FireBase/read/Getvacinas';
 import { getStyles    }  from "./estilo/vacinas";
 import { getPendentes }  from './estilo/vacinas';
 import Fechar            from "./form_button/modal_button";
@@ -19,10 +20,13 @@ export default function Vacinas_pendentes({navigation}){
     const [Item   ,setItem]    = useState({});
     const [Visible,setVisible] = useState(false);
     const [Vacinas,setVacinas] = useState([])
+    
+    const userId               = useRoute().params.userId;
+
 
     useEffect(() => {
         const fetchValores = async () => {
-          const valoresData = await Getvacinas_12();
+          const valoresData = await GetvacinasCrianca(a1,1);
           setVacinas(valoresData);
         };
     

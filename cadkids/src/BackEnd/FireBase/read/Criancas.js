@@ -7,7 +7,8 @@ export const Getcriancas = async(email) => {
     const querySnapshot = await getDocs(cursor_exe);
 
     querySnapshot.forEach((doc) => {
-        const dict = doc.data()
+        const dict = doc.data();
+        dict['id'] = doc.id;
         dicionario.push(dict);
     });        
     return dicionario;      

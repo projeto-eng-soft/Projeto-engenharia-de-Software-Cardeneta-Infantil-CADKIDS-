@@ -19,10 +19,12 @@ export default function Aplicadas_Vacinas({navigation}){
     const [Item   ,setItem]    = useState({});
     const [Visible,setVisible] = useState(false);
     const [Vacinas,setVacinas] = useState([])
+    const userId               = useRoute().params.userId;
+
 
     useEffect(() => {
         const fetchValores = async () => {
-          const valoresData = await Getvacinas_12();
+          const valoresData = await GetvacinasCrianca(userId,0);
           setVacinas(valoresData);
         };
     

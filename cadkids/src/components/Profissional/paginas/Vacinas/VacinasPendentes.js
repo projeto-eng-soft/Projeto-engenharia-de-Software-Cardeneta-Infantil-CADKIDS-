@@ -57,7 +57,6 @@ export default function VacinasPendentes({navigation}){
             idvacina: IdVac,
             params  : route.params,
         }
-        console.log(data)
         AplicarVacina(data, navigation)
 
     }
