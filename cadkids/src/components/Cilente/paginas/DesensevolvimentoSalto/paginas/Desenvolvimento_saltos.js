@@ -7,7 +7,7 @@ import Fechar        from "../formButton/modal_button";
 
 import Logo           from 'static/icons/icon_logo.png';
 import icon_infor     from 'static/icons/icon_infor.png';
-import plano_de_fundo from 'static/imagens/plano_de_fundo_crianca.jpg';
+import plano_de_fundo from 'static/imagens/plano_de_fundo_padrao.png';
 
 const Styles = getStyles()
 
