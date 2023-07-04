@@ -102,7 +102,13 @@ export default function Home({navigation}){
                             {   
                                 color:'white',
                                 fontWeight:'bold',
-                                fontSize:16
+                                fontSize:16,
+                                textShadowColor:'black',
+                                textShadowRadius:10,
+                                textShadowOffset:{
+                                    width:1,
+                                    height:-1
+                                }
                             }
                             }>{item.Nome}</Text>
                     </TouchableOpacity>

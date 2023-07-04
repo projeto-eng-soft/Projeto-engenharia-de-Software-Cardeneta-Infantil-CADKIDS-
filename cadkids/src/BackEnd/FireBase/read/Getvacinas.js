@@ -15,7 +15,6 @@ export const Getvacinas_12 = async() => {
 
 
 export const GetvacinasCrianca = async(userId,type) =>{
-    console.log(userId)
     const dicionario    = []
     const collecRef     = collection(doc(DB, "Criança", userId), "Vacinas");
     const cursor_exe    = query((collecRef),orderBy('index'));

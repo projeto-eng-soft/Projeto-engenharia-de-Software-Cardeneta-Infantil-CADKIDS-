@@ -69,11 +69,11 @@ export default function Aplicadas_Vacinas({navigation}){
                     <Text style={Styles.modal_text_1}>Informações adicionais</Text>
                     
                     <View style={Styles.modal_informacao}>
-                            <Text style={Styles.modal_text_2}>&#x025AB; Lote   :</Text>
+                            <Text style={Styles.modal_text_2}>&#x025AB; Lote   :  {Item.lote}</Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Doses  :  {Item.DOSE}</Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Vacina :  {Item.VACINA}</Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Idade   :  {Item.IDADE}</Text>
-                            <Text style={Styles.modal_text_2}>&#x025AB; Data da aplicação:</Text>
+                            <Text style={Styles.modal_text_2}>&#x025AB; Data da aplicação:  {Item.data_aplicacao}</Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Doenças evitadas :  {Item['DOENÇAS EVITADAS']}  </Text>
                     </View>
 
