@@ -42,6 +42,18 @@ export const getStyles = () =>
             borderBottomWidth:1.2,
 
         },
+
+        containers_vacinas_aplicada:{
+            backgroundColor:'#e6ac84',
+            justifyContent :'center',
+            alignItems     :"center",
+            width :350,
+            height:80,
+            marginBottom:10,  
+            borderWidth :1.2,
+            borderRadius:10
+        },
+
         view_1:{
             flexDirection:'row',
             alignItems:'center',

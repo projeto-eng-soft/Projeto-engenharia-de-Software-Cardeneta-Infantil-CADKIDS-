@@ -11,9 +11,10 @@ const Style = getStyles();
 export default function Crianca({navigation})
 {
     const route          = useRoute();
-    const [Nome,setNome] = useState(route.params.Nome)
+    const criancaId      = route.params.criancaId;
+    const [Nome,setNome] = useState(route.params.Nome);
     const Abrir_menu = () =>                { navigation.openDrawer();                 };
-    const Vacinas    = () =>                { navigation.navigate('Vacinas');          };
+    const Vacinas    = () =>                { navigation.navigate('Vacinas',{criancaId:criancaId}); };
     const Desenvolvimento_Cognitivo = () => { navigation.navigate('Desenvolvimento_c');};
     const Desenvolvimento_Fisico    = () => { navigation.navigate('Desenvolvimento_f');};
     const Desensevolvimento_Salto   = () => { navigation.navigate('Desenvolvimento_s');}; 

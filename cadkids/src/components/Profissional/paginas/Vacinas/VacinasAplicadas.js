@@ -43,9 +43,9 @@ export default function VacinasAplicadas({navigation}){
             <View>
                 <ScrollView style={Style.scrollview_vacinas}>
                     {Vacinas.map((item,index) =>
-                        <TouchableOpacity style={Style.containers_vacinas} key={index}>
-                            <Text style={Style.vac_text}>{item.DOSE}</Text>
-                            <Text style={Style.vac_text}>&#8226; {item.VACINA}</Text>
+                        <TouchableOpacity style={Style.containers_vacinas_aplicada} key={index}>
+                            <Text style={{fontWeight:'bold'}}>{item.DOSE}</Text>
+                            <Text style={Style.vac_text}     >{item.VACINA}</Text>
                         </TouchableOpacity>        
                     )}
                 </ScrollView>

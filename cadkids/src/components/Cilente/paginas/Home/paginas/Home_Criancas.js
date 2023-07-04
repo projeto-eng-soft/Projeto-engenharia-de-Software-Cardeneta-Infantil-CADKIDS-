@@ -63,8 +63,9 @@ export default function Home({navigation}){
         navigation.navigate('Cadastro_Crianca',{Email:route.params.Email})
     }  
 
-    const Crianca = (Nome) =>{ 
-        navigation.navigate('Crianca',{Nome:Nome})
+    const Crianca = (Nome,id) =>{ 
+       
+        navigation.navigate('Crianca',{Nome:Nome,criancaId:id})
     }
 
     const Abrir_menu = () => { 
@@ -94,14 +95,19 @@ export default function Home({navigation}){
                             height:50,
                             marginBottom:20,
                             borderRadius:10,
-                            borderWidth:1.2,
                         }
-                    } key={index} onPress={()=>Crianca(item.Nome)}>
+                    } key={index} onPress={()=>Crianca(item.Nome,item.id)}>
                         <Text style={
                             {   
                                 color:'white',
                                 fontWeight:'bold',
-                                fontSize:16
+                                fontSize:16,
+                                textShadowColor:'black',
+                                textShadowRadius:10,
+                                textShadowOffset:{
+                                    width:1,
+                                    height:-1
+                                }
                             }
                             }>{item.Nome}</Text>
                     </TouchableOpacity>

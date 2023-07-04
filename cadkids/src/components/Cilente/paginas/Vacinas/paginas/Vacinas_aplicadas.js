@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { View , Text , ImageBackground , 
         Image , TouchableOpacity , ScrollView ,
-        Modal } from "react-native";
+        Modal }     from "react-native";
+import { useRoute } from '@react-navigation/native';
 
 /**/
-import { Getvacinas_12 } from "src/BackEnd/FireBase/read/Getvacinas";
-import { getStyles }    from "./estilo/vacinas";
-import { getAplicadas } from "./estilo/vacinas";
-import Fechar        from "./form_button/modal_button";
+import { GetvacinasCrianca } from 'src/BackEnd/FireBase/read/Getvacinas';
+import { getStyles }       from "./estilo/vacinas";
+import { getAplicadas }    from "./estilo/vacinas";
+import Fechar              from "./form_button/modal_button";
 /**/
 import Logo          from 'static/icons/icon_logo.png';
 import plano_padrao  from 'static/imagens/plano_de_fundo_padrao.png';
@@ -19,10 +20,12 @@ export default function Aplicadas_Vacinas({navigation}){
     const [Item   ,setItem]    = useState({});
     const [Visible,setVisible] = useState(false);
     const [Vacinas,setVacinas] = useState([])
+    const criancaId            = useRoute().params.criancaId;
+
 
     useEffect(() => {
         const fetchValores = async () => {
-          const valoresData = await Getvacinas_12();
+          const valoresData = await GetvacinasCrianca(criancaId,0);
           setVacinas(valoresData);
         };
     
@@ -66,11 +69,11 @@ export default function Aplicadas_Vacinas({navigation}){
                     <Text style={Styles.modal_text_1}>Informações adicionais</Text>
                     
                     <View style={Styles.modal_informacao}>
-                            <Text style={Styles.modal_text_2}>&#x025AB; Lote   :</Text>
+                            <Text style={Styles.modal_text_2}>&#x025AB; Lote   :  {Item.lote}</Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Doses  :  {Item.DOSE}</Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Vacina :  {Item.VACINA}</Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Idade   :  {Item.IDADE}</Text>
-                            <Text style={Styles.modal_text_2}>&#x025AB; Data da aplicação:</Text>
+                            <Text style={Styles.modal_text_2}>&#x025AB; Data da aplicação:  {Item.data_aplicacao}</Text>
                             <Text style={Styles.modal_text_2}>&#x025AB; Doenças evitadas :  {Item['DOENÇAS EVITADAS']}  </Text>
                     </View>
 
