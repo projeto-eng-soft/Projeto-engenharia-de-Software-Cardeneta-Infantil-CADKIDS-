@@ -19,7 +19,7 @@ export const getStyles = () => {
             marginRight:320,
             backgroundColor:'white',
             borderRadius:20,
-            borderWidth:1.4
+            borderWidth:1.2
         },
 
         container_nome_usuario:{
@@ -31,13 +31,12 @@ export const getStyles = () => {
         },
 
         button_opcoes:{
-            backgroundColor:'#67c7ffcf',
+            backgroundColor:'#1299e7',
             alignItems:'center',
             width:350,
             padding:10,
             marginBottom:20,
             borderRadius:10,
-            borderWidth:1.0,
         },
         
         text:{

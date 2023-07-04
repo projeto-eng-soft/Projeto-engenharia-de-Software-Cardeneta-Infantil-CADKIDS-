@@ -17,7 +17,7 @@ export const getStyles = () => {
             marginRight:320,
             backgroundColor:'white',
             borderRadius:20,
-            borderWidth:1.4
+            borderWidth:1.2
         },
 
         conteiner_nome_crianca:{

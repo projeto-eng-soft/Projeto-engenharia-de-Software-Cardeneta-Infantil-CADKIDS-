@@ -95,7 +95,6 @@ export default function Home({navigation}){
                             height:50,
                             marginBottom:20,
                             borderRadius:10,
-                            borderWidth:1.2,
                         }
                     } key={index} onPress={()=>Crianca(item.Nome,item.id)}>
                         <Text style={
