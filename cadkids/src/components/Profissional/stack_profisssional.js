@@ -2,6 +2,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import Procurar      from "./paginas/ProcurarMedicoCrianca/ProcurarMedicoCrianca";
 import MedicoCrianca from "./paginas/TabMedicoVacinas";
+import VacinasAplicadas from "./paginas/Vacinas/VacinasAplicadas";
 
 const Stack  = createStackNavigator();
 
@@ -10,6 +11,7 @@ export default function Medico(){
         <Stack.Navigator screenOptions={{ headerShown:false }} initialRouteName="Procurar">
             <Stack.Screen name="Procurar"      component={Procurar} />
             <Stack.Screen name="MedicoCrianca" component={MedicoCrianca} />
+            <Stack.Screen name="VacinasAplicadasMedico" component={VacinasAplicadas} />
         </Stack.Navigator>
     );
 }

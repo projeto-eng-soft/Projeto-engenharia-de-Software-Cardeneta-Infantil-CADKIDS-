@@ -1,5 +1,5 @@
 import { DB }                       from 'src/firebaseConfig';
-import { addDoc  ,collection ,doc}  from 'firebase/firestore';
+import { addDoc, collection, doc}  from 'firebase/firestore';
 import { Getvacinas_12 }            from '../read/Getvacinas';
 import { CommonActions }            from '@react-navigation/native';
 

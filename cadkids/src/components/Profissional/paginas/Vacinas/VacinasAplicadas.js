@@ -12,7 +12,7 @@ const Style = getStyles();
 
 export default function VacinasAplicadas({navigation}){
     const route  = useRoute();
-    const Dados  = route.params.dados 
+    const Dados  = route.params.dados
     const userId = route.params.userId
     const [Vacinas,setVacinas] = useState([]);
 
