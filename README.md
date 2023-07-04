@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-# Projeto Engenharia de Software
+# Projeto CadKids
 
-## Teste
-=======
-# Projeto Engenharia de Software Cardeneta Infantil (cadkids)
->>>>>>> 75ba0b611ef4ad330046b6807d3b1b958e9a5850
+## Projeto da disciplina de Engenharia de Software: Caderneta Infantil (CadKids)
+- Projeto para desenvolver uma aplicação mobile para auxiliar no acompanhamento do quadro de saúde infantil.
+- Vacinas, Medidas Antropométricas, Desenvolvimento cognitivo, linguístico, motor e social e Saúde Bucal.

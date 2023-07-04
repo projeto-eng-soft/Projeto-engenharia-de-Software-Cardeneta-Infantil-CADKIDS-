@@ -16,13 +16,12 @@ import Button_adicionar_crianca from '../form_button/button_cadastrar_crianca';
 
 const Style = getStyles();
 const paletaCores = [
-    '#eecbca',
-    '#80c6f2',
-    '#d3b5f6',
-    '#c17383',
-    '#ff7fa8',
-    '#e5804d',
-    '#938672'
+    '#EEE71B',
+    '#FFB293',
+    '#A1FF7B',
+    '#7BFFFB',
+    '#7B95FF',
+    '#EAA3F9'
   ];
   
 
@@ -40,17 +39,8 @@ export default function Home({navigation}){
             var cores = [];
             for (let i=0;i<tamanho;i++)
             {
-<<<<<<< HEAD
-                var c = Math.ceil(Math.random() * paletaCores.length-1)
-                // if (cores.indexOf(paletaCores[c]) == -1)
-                // {
-                cores.push(paletaCores[c]);
-                tamanho -=1;
-                // }      
-=======
                 var c = Math.ceil(Math.random() * paletaCores.length-1)              
                 cores.push(paletaCores[c]);
->>>>>>> 16fd49ae82d9cf7c7da9f39a1cb936438ed2ff1c
             }
             setCores(cores);
         }
@@ -63,11 +53,6 @@ export default function Home({navigation}){
                 addcionar_cores(valoresData.length);
                 setCriancas(valoresData);
             }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 16fd49ae82d9cf7c7da9f39a1cb936438ed2ff1c
         };
         fetchValores();
       }, 
@@ -108,14 +93,22 @@ export default function Home({navigation}){
                             height:50,
                             marginBottom:20,
                             borderRadius:10,
-                            borderWidth:1.2,
+                            shadowProp: {
+                                shadowColor: '#171717',
+                                shadowOffset: {width: -2, height: 4},
+                                shadowOpacity: 0.2,
+                                shadowRadius: 3,
+                              },
                         }
                     } key={index} onPress={()=>Crianca(item.Nome)}>
                         <Text style={
                             {   
                                 color:'white',
                                 fontWeight:'bold',
-                                fontSize:16
+                                fontSize:16,
+                                textShadowColor: 'rgba(0, 0, 0, 1)',
+                                textShadowOffset: {width: -1, height: 1},
+                                textShadowRadius: 10
                             }
                             }>{item.Nome}</Text>
                     </TouchableOpacity>
