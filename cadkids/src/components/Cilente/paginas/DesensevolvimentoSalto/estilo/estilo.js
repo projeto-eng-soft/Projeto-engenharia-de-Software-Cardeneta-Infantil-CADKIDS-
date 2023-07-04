@@ -36,7 +36,7 @@ export const getStyles = () => {
         },
 
         container_marcos:{
-            backgroundColor:'#f0c69c',
+            backgroundColor:'#e39fdae0',
             justifyContent :'center',
             alignItems:'center',
             width:290,
