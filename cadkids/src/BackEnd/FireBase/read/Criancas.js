@@ -18,7 +18,7 @@ export const Getcrianca_medico = async(numero,navigation) => {
     const querySnapshot = await getDocs(cursor_exe);
 
     querySnapshot.forEach((doc) => {
-        navigation.navigate('MedicoCrianca',{id:doc.id,dados:doc.data()});
+        navigation.navigate('MedicoCrianca',{userId:doc.id,dados:doc.data()});
     });        
 
 }
