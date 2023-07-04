@@ -1,0 +1,20 @@
+IDADE,DOSES,VACINAS,DOENÇAS EVITADAS
+0 Ao nascer ,Dose única ,BCG-ID ,Formas graves de tuberculose 
+0 Ao nascer ,Dose,Vacina hepatite B ,Hepatite B 
+2 meses ,Dose 1 ,Vacina pentavalente (DTP + HB + Hib) ,"Difteria, tétano, coqueluche, hepatite B, meningite e outras infecções causadas pelo Haemophilus influenzae tipo b. "
+2 meses ,Dose 1 ,VIP (vacina inativada poliomielite) ,Poliomielite (paralisia infantil) 
+2 meses ,Dose 1 ,VORH (Vacina Oral de Rotavírus Humano) ,Diarreia por Rotavírus 
+2 meses ,Dose 1 ,Vacina pneumocócica 10 valente ,"Doenças invasivas e otite média aguda causadas por Streptococcus pneumoniae sorotipos 1, 4, 5, 6B, 7F, 9V, 14, 18C, 19F e 23F. "
+3 meses ,Dose 1 ,Vacina meningocócica C (conjugada) ,Doenças invasivas causadas por Neisseria meningitidis do sorogrupo C. 
+4 meses ,Dose 2 ,Vacina pentavalente (DTP + HB + Hib) ,"Difteria, tétano, coqueluche, hepatite B, meningite e outras infecções causadas pelo Haemophilus influenzae tipo b. "
+4 meses ,Dose 2 ,VIP (vacina inativada poliomielite) ,Poliomielite (paralisia infantil) 
+4 meses ,Dose 2 ,VORH (Vacina Oral de Rotavírus Humano) ,Diarreia por Rotavírus 
+4 meses ,Dose 2 ,Vacina pneumocócica 10 valente ,"Doenças invasivas e otite média aguda causadas por Streptococcus pneumoniae sorotipos 1, 4, 5, 6B, 7F, 9V, 14, 18C, 19F e 23F. "
+5 meses ,Dose 2 ,Vacina meningocócica C (conjugada) ,Doenças invasivas causadas por Neisseria meningitidis do sorogrupo C. 
+6 meses ,Dose 3,Vacina pentavalente (DTP + HB + Hib) ,"Difteria, tétano, coqueluche, hepatite B, meningite e outras infecções causadas pelo Haemophilus influenzae tipo b. "
+6 meses ,Dose 3,VIP (vacina inativada poliomielite) ,Poliomielite (paralisia infantil) 
+6 meses ,Doses 3#,Vacina Covid-19,Covid-19
+9 meses,Dose 1 ,Vacina febre amarela ,Febre amarela
+12 meses,Dose 1 ,SRC (tríplice viral) ,"Sarampo, caxumba e rubeola. "
+12 meses,Reforço,Vacina pneumocócica 10 valente ,"Doenças invasivas e otite média aguda causadas por Streptococcus pneumoniae sorotipos 1, 4, 5, 6B, 7F, 9V, 14, 18C, 19F e 23F. "
+12 meses,Reforço,Vacina meningocócica C (conjugada) ,Doenças invasivas causadas por Neisseria meningitidis do sorogrupo C
