@@ -4,6 +4,7 @@ import { View , ImageBackground ,Text ,Image ,ScrollView ,TouchableOpacity , Mod
 
 import { getStyles }          from "./estilo/medico_crianca";
 import { GetvacinasCrianca }  from "src/BackEnd/FireBase/read/Getvacinas";
+
 import { AplicarVacina }      from "src/BackEnd/FireBase/update/AplicarVacina";
 
 import icone_logo       from 'static/icons/icon_logo.png';
@@ -57,6 +58,7 @@ export default function VacinasPendentes({navigation}){
             vacina: IdVac,
             params: route.params,
         }
+        console.log(data)
         AplicarVacina(data, navigation)
     }
 
@@ -76,7 +78,7 @@ export default function VacinasPendentes({navigation}){
                 <ScrollView style={Style.scrollview_vacinas}>
                     {Vacinas.map((item,index) =>
                         <View key={index}>
-                            <TouchableOpacity style={Style.button_aplicar} onPress={()=>Aplicar(item.VACINA, item.IDADE, item.id)}>
+                            <TouchableOpacity style={Style.button_aplicar} onPress={()=>Aplicar(item.VACINA,item.IDADE,item.id)}>
                                 <View style={Style.view_1}>
                                     <Text>Aplicar vacina</Text>
                                     <Image source={icone_aplicada} style={{height:35,width:35}}/>

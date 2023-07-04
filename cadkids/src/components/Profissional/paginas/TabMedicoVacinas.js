@@ -17,8 +17,10 @@ export default function MedicoVacinas(){
     const route  = useRoute();
     const userId = route.params.userId;
     const dados  = route.params.dados;
+    
     console.log(route.params.userId)
     console.log(route.params.dados)
+    
  
     return(
         <Tab.Navigator initialRouteName="Aplicadas" 
